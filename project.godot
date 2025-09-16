@@ -11,7 +11,18 @@ config_version=5
 [application]
 
 config/name="Cyber Dive"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+run/main_scene="uid://lmshsqxqnni3"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/size/resizable=false
+window/size/borderless=true
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [rendering]
 
