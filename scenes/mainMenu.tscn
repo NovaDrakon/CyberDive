@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://lmshsqxqnni3"]
+[gd_scene load_steps=3 format=3 uid="uid://lmshsqxqnni3"]
 
 [ext_resource type="Script" uid="uid://bgqy5e3bcbiyi" path="res://scripts/main_menu.gd" id="1_3d1i7"]
 [ext_resource type="LabelSettings" uid="uid://dv805e0kmrqyh" path="res://assets/fonts/cyberFont.tres" id="1_qkhwq"]
-[ext_resource type="Texture2D" uid="uid://dlorgf6pfcnmq" path="res://assets/sprites/start.png" id="3_7nrmo"]
-[ext_resource type="Texture2D" uid="uid://bqs37dwi4yt" path="res://assets/sprites/settings.png" id="4_clbkb"]
-[ext_resource type="Texture2D" uid="uid://70rn453fgl4w" path="res://assets/sprites/quit2.png" id="5_7nrmo"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -46,19 +43,16 @@ label_settings = ExtResource("1_qkhwq")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("3_7nrmo")
 
 [node name="settingsButton" type="TextureButton" parent="CanvasLayer/BoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("4_clbkb")
 
 [node name="quitButton" type="TextureButton" parent="CanvasLayer/BoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("5_7nrmo")
 
 [connection signal="pressed" from="CanvasLayer/BoxContainer/VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/BoxContainer/VBoxContainer/quitButton" to="." method="_on_quit_button_pressed"]
