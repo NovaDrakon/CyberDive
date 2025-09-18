@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxl7f5r0hgwvd"
-path="res://.godot/imported/cyberDiveButtons.png-e6d245a0d7848e2c2ba4787a4e9f0fa6.ctex"
+uid="uid://cnx1yue0wialm"
+path="res://.godot/imported/settingsButton.png-fbac96a1e9161613e9b7093878526fdd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cyberDiveButtons.png"
-dest_files=["res://.godot/imported/cyberDiveButtons.png-e6d245a0d7848e2c2ba4787a4e9f0fa6.ctex"]
+source_file="res://assets/sprites/settingsButton.png"
+dest_files=["res://.godot/imported/settingsButton.png-fbac96a1e9161613e9b7093878526fdd.ctex"]
 
 [params]
 

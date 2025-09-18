@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cyber Dive"
-run/main_scene="uid://lmshsqxqnni3"
+run/main_scene="res://scenes/mainMenu.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
 [display]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh3o81ysnpy7a"
-path="res://.godot/imported/Menu_ui_blue_base.png-ff42bfea717512ff2ec472f33183f4e9.ctex"
+uid="uid://b33w1gfa0myjd"
+path="res://.godot/imported/starMailSmall.png-25f4b1941d4e34c28299ca8e239411e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Menu_ui_blue_base.png"
-dest_files=["res://.godot/imported/Menu_ui_blue_base.png-ff42bfea717512ff2ec472f33183f4e9.ctex"]
+source_file="res://assets/sprites/starMailSmall.png"
+dest_files=["res://.godot/imported/starMailSmall.png-25f4b1941d4e34c28299ca8e239411e3.ctex"]
 
 [params]
 
