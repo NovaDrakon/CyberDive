@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doiuijbxp8y2k"
-path="res://.godot/imported/settingsButton.png-fbac96a1e9161613e9b7093878526fdd.ctex"
+uid="uid://bo5a3w0mk5d8q"
+path="res://.godot/imported/starlightButton.png-51325c808a8591ac8ddb5d89e4c52a2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/settingsButton.png"
-dest_files=["res://.godot/imported/settingsButton.png-fbac96a1e9161613e9b7093878526fdd.ctex"]
+source_file="res://assets/sprites/starlightButton.png"
+dest_files=["res://.godot/imported/starlightButton.png-51325c808a8591ac8ddb5d89e4c52a2b.ctex"]
 
 [params]
 
