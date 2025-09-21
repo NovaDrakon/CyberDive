@@ -13,6 +13,11 @@ config_version=5
 config/name="Cyber Dive"
 run/main_scene="res://scenes/mainMenu.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+config/icon="uid://bondd7aot77e4"
+
+[audio]
+
+buses/default_bus_layout="res://assets/audio/busLayout.tres"
 
 [display]
 

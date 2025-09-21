@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmwdoig74ypas"]
+
+[ext_resource type="Texture2D" uid="uid://ugwbyxico1w6" path="res://assets/sprites/topAppBar.png" id="1_to7fh"]
+[ext_resource type="Script" uid="uid://slbfc1crxrft" path="res://scripts/drag.gd" id="2_qnju7"]
+[ext_resource type="Texture2D" uid="uid://bq3dt74gq8iut" path="res://assets/sprites/appButtons.png" id="2_qvkcj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnju7"]
+atlas = ExtResource("2_qvkcj")
+region = Rect2(70, 6, 20, 20)
+
+[node name="window" type="Node2D"]
+
+[node name="windowBar" type="Sprite2D" parent="."]
+texture = ExtResource("1_to7fh")
+script = ExtResource("2_qnju7")
+
+[node name="Button" type="Button" parent="windowBar"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_right = 0.96700007
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_top = -16.0
+offset_right = -480.32007
+offset_bottom = -16.0
+
+[node name="exit" type="TextureButton" parent="windowBar"]
+offset_left = 454.0
+offset_top = -10.0
+offset_right = 474.0
+offset_bottom = 10.0
+texture_normal = SubResource("AtlasTexture_qnju7")
+
+[connection signal="button_down" from="windowBar/Button" to="windowBar" method="_on_button_button_down"]
+[connection signal="button_up" from="windowBar/Button" to="windowBar" method="_on_button_button_up"]
+[connection signal="pressed" from="windowBar/exit" to="windowBar" method="_on_exit_pressed"]

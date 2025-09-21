@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dtfn0u2prmb60"
-path="res://.godot/imported/coinNoise.wav-19ee201c4ef0ed61562285abc9cddd48.sample"
+uid="uid://dn0bli7nincty"
+path="res://.godot/imported/clickNoise.wav-009bbb18580a32a6bacc0548beeee766.sample"
 
 [deps]
 
-source_file="res://assets/sounds/coinNoise.wav"
-dest_files=["res://.godot/imported/coinNoise.wav-19ee201c4ef0ed61562285abc9cddd48.sample"]
+source_file="res://assets/audio/clickNoise.wav"
+dest_files=["res://.godot/imported/clickNoise.wav-009bbb18580a32a6bacc0548beeee766.sample"]
 
 [params]
 
