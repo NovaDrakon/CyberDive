@@ -1,0 +1,189 @@
+[gd_scene load_steps=20 format=3 uid="uid://dekg7nrbw3kbt"]
+
+[ext_resource type="Texture2D" uid="uid://dfspedwjqaut2" path="res://assets/sprites/background.jpg" id="1_81rff"]
+[ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/fonts/desktopButtons.tres" id="2_81rff"]
+[ext_resource type="Script" uid="uid://dxttxglm5t2nq" path="res://scripts/taskbar.gd" id="2_q2hki"]
+[ext_resource type="Texture2D" uid="uid://o7kkb1u8mn67" path="res://assets/sprites/starlightLogoBig.png" id="3_dcrhm"]
+[ext_resource type="Texture2D" uid="uid://dx2wwml5yp6fg" path="res://assets/sprites/timeBG.png" id="4_gl26t"]
+[ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="5_gl26t"]
+[ext_resource type="Script" uid="uid://df88glk2jnvjt" path="res://scripts/startMenu.gd" id="5_nd1jb"]
+[ext_resource type="Texture2D" uid="uid://d0udavkyhxjp0" path="res://assets/sprites/starMailBig.png" id="6_gl26t"]
+[ext_resource type="Script" uid="uid://barml4itm6ho5" path="res://scripts/time.gd" id="6_vcvwy"]
+[ext_resource type="LabelSettings" uid="uid://7mavfiqoggw0" path="res://assets/fonts/spacers.tres" id="7_vcvwy"]
+[ext_resource type="Texture2D" uid="uid://bondd7aot77e4" path="res://assets/sprites/cyberDiveBig.png" id="8_nikxi"]
+[ext_resource type="Texture2D" uid="uid://cvbhxdxldm58x" path="res://assets/sprites/dictionaryBig.png" id="9_q2hki"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ajoh"]
+bg_color = Color(0.5921569, 0.6901961, 0.7607843, 1)
+
+[sub_resource type="Theme" id="Theme_veafp"]
+Panel/styles/panel = SubResource("StyleBoxFlat_6ajoh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ox5hf"]
+draw_center = false
+border_width_top = 8
+border_color = Color(0.7926564, 0.84887123, 0.8884855, 1)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_dcrhm"]
+Panel/styles/panel = SubResource("StyleBoxFlat_ox5hf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dcrhm"]
+texture = ExtResource("4_gl26t")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_6ajoh"]
+Panel/styles/panel = SubResource("StyleBoxTexture_dcrhm")
+
+[sub_resource type="LabelSettings" id="LabelSettings_veafp"]
+font = ExtResource("5_gl26t")
+font_size = 24
+font_color = Color(0.044650093, 0.38440096, 0.6699675, 1)
+outline_color = Color(0.17508438, 0.29932195, 0.67671543, 1)
+
+[node name="Desktop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
+scale = Vector2(0.74999857, 0.74999857)
+texture = ExtResource("1_81rff")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="taskbar" type="Panel" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_veafp")
+script = ExtResource("2_q2hki")
+
+[node name="taskbarHighlight" type="Panel" parent="CanvasLayer/taskbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_dcrhm")
+
+[node name="startButton" type="Button" parent="CanvasLayer/taskbar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -35.0
+offset_right = 82.0
+offset_bottom = 35.0
+grow_vertical = 2
+theme = ExtResource("2_81rff")
+toggle_mode = true
+icon = ExtResource("3_dcrhm")
+
+[node name="menuBox" type="Panel" parent="CanvasLayer/taskbar"]
+visible = false
+layout_mode = 0
+offset_top = -126.0
+offset_right = 280.0
+script = ExtResource("5_nd1jb")
+
+[node name="settingButton" type="Button" parent="CanvasLayer/taskbar/menuBox"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 271.0
+offset_bottom = 61.0
+grow_horizontal = 2
+theme = ExtResource("2_81rff")
+text = "Settings"
+
+[node name="quitButton" type="Button" parent="CanvasLayer/taskbar/menuBox"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 66.0
+offset_right = 271.0
+offset_bottom = 120.0
+theme = ExtResource("2_81rff")
+text = "Quit
+"
+
+[node name="timePanel" type="Panel" parent="CanvasLayer/taskbar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -25.25
+offset_right = -25.0
+offset_bottom = 25.25
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_6ajoh")
+
+[node name="clock" type="Label" parent="CanvasLayer/taskbar/timePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x:xx PM"
+label_settings = SubResource("LabelSettings_veafp")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_vcvwy")
+
+[node name="apps" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 88.0
+offset_bottom = 200.0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="starMail" type="TextureButton" parent="CanvasLayer/apps"]
+layout_mode = 2
+texture_normal = ExtResource("6_gl26t")
+
+[node name="spacer" type="Label" parent="CanvasLayer/apps"]
+layout_mode = 2
+text = "."
+label_settings = ExtResource("7_vcvwy")
+
+[node name="cyberDive" type="TextureButton" parent="CanvasLayer/apps"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("8_nikxi")
+
+[node name="spacer2" type="Label" parent="CanvasLayer/apps"]
+layout_mode = 2
+text = "."
+label_settings = ExtResource("7_vcvwy")
+
+[node name="dictionary" type="TextureButton" parent="CanvasLayer/apps"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("9_q2hki")
+
+[connection signal="pressed" from="CanvasLayer/taskbar/startButton" to="CanvasLayer/taskbar" method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/taskbar/menuBox/settingButton" to="CanvasLayer/taskbar/menuBox" method="_on_setting_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/taskbar/menuBox/quitButton" to="CanvasLayer/taskbar/menuBox" method="_on_quit_button_pressed"]

@@ -1,75 +1,86 @@
-[gd_scene load_steps=20 format=3 uid="uid://b25awan36tifh"]
+[gd_scene load_steps=24 format=3 uid="uid://b25awan36tifh"]
 
 [ext_resource type="Script" uid="uid://cbtlv3uw0ry2q" path="res://scripts/loading_screen.gd" id="1_jl4l0"]
 [ext_resource type="Texture2D" uid="uid://cnu5r1iqmoldp" path="res://assets/sprites/crtBackground.png" id="1_yufpw"]
-[ext_resource type="Texture2D" uid="uid://te4m7gd33xt1" path="res://assets/sprites/loadingBar.png" id="2_0nm63"]
+[ext_resource type="Texture2D" uid="uid://dnbvh2aqifm88" path="res://assets/sprites/loadingBar.png" id="2_0nm63"]
+[ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="3_l8g8h"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jl4l0"]
-atlas = ExtResource("2_0nm63")
-region = Rect2(0, 0, 146, 64)
+[sub_resource type="LabelSettings" id="LabelSettings_m1b5n"]
+font = ExtResource("3_l8g8h")
+font_size = 128
+font_color = Color(0, 1, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8g8h"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(146, 0, 146, 64)
+region = Rect2(0, 0, 130, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m1b5n"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(292, 0, 146, 64)
+region = Rect2(130, 0, 130, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xa5t5"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(438, 0, 146, 64)
+region = Rect2(260, 0, 130, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6id7t"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(584, 0, 146, 64)
+region = Rect2(390, 0, 130, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_voeqd"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(730, 0, 146, 64)
+region = Rect2(520, 0, 130, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qo87s"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(876, 0, 146, 64)
+region = Rect2(650, 0, 130, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yulp8"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(1022, 0, 146, 64)
+region = Rect2(780, 0, 130, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v8yd3"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(1168, 0, 146, 64)
+region = Rect2(910, 0, 130, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fa16"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(1314, 0, 146, 64)
+region = Rect2(1040, 0, 130, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvujh"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(1460, 0, 146, 64)
+region = Rect2(1170, 0, 130, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ugp6p"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(1606, 0, 146, 64)
+region = Rect2(1300, 0, 130, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ft6lo"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(1752, 0, 146, 64)
+region = Rect2(1430, 0, 130, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xddgo"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(1898, 0, 146, 64)
+region = Rect2(1560, 0, 130, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ssit6"]
 atlas = ExtResource("2_0nm63")
-region = Rect2(2044, 0, 146, 64)
+region = Rect2(1690, 0, 130, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u21f3"]
+atlas = ExtResource("2_0nm63")
+region = Rect2(1820, 0, 130, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vdes"]
+atlas = ExtResource("2_0nm63")
+region = Rect2(1950, 0, 130, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds6ux"]
+atlas = ExtResource("2_0nm63")
+region = Rect2(2080, 0, 130, 28)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wg0if"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jl4l0")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l8g8h")
 }, {
@@ -113,10 +124,13 @@ animations = [{
 "texture": SubResource("AtlasTexture_ssit6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ssit6")
+"texture": SubResource("AtlasTexture_u21f3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ssit6")
+"texture": SubResource("AtlasTexture_5vdes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds6ux")
 }],
 "loop": false,
 "name": &"Loading",
@@ -141,21 +155,24 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_yufpw")
 
-[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer"]
+[node name="titleLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -448.0
+offset_top = -175.0
+offset_right = 448.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(4, 4)
+text = "Loading"
+label_settings = SubResource("LabelSettings_m1b5n")
 
-[node name="loadingBar" type="AnimatedSprite2D" parent="CanvasLayer/BoxContainer"]
+[node name="loadingBar" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(940, 655)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_wg0if")
 animation = &"Loading"
 autoplay = "Loading"

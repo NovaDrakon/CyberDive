@@ -1,0 +1,41 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dy3caveppfer4"]
+
+[ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="1_dicr8"]
+[ext_resource type="Texture2D" uid="uid://cfnp051yq1bi8" path="res://assets/sprites/blueButton.png" id="2_f1uon"]
+[ext_resource type="Texture2D" uid="uid://cotn18p65he53" path="res://assets/sprites/bluePressed.png" id="3_bxaay"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pkmwo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gl26t"]
+texture = ExtResource("2_f1uon")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vcvwy"]
+texture = ExtResource("2_f1uon")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nikxi"]
+texture = ExtResource("3_bxaay")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[resource]
+Button/colors/font_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/colors/font_focus_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/colors/font_hover_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/colors/font_hover_pressed_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/colors/font_pressed_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_dicr8")
+Button/styles/focus = SubResource("StyleBoxEmpty_pkmwo")
+Button/styles/hover = SubResource("StyleBoxTexture_gl26t")
+Button/styles/normal = SubResource("StyleBoxTexture_vcvwy")
+Button/styles/pressed = SubResource("StyleBoxTexture_nikxi")

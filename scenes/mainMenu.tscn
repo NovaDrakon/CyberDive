@@ -1,31 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://c75bpicmodos8"]
+[gd_scene load_steps=7 format=3 uid="uid://c75bpicmodos8"]
 
 [ext_resource type="Script" uid="uid://cicgcme4htqkd" path="res://scripts/main_menu.gd" id="1_7nrmo"]
 [ext_resource type="Texture2D" uid="uid://cnu5r1iqmoldp" path="res://assets/sprites/crtBackground.png" id="1_qkhwq"]
-[ext_resource type="LabelSettings" uid="uid://dv805e0kmrqyh" path="res://assets/fonts/cyberFont.tres" id="2_3d1i7"]
-[ext_resource type="AudioStream" uid="uid://dn0bli7nincty" path="res://assets/sounds/clickNoise.wav" id="2_l7wge"]
+[ext_resource type="AudioStream" uid="uid://dn0bli7nincty" path="res://assets/audio/clickNoise.wav" id="2_l7wge"]
+[ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="3_7nrmo"]
+[ext_resource type="Theme" uid="uid://vnq3rfnwmmqa" path="res://assets/fonts/mainMenuButtons.tres" id="4_7nrmo"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3d1i7"]
-load_path = "res://.godot/imported/startButton.png-9c7b22dda404a6561aa9bb3787aa08ba.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y35fp"]
-atlas = SubResource("CompressedTexture2D_3d1i7")
-region = Rect2(8, 8, 240, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7nrmo"]
-atlas = SubResource("CompressedTexture2D_3d1i7")
-region = Rect2(264, 8, 240, 112)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_48ign"]
-load_path = "res://.godot/imported/settingsButton.png-fbac96a1e9161613e9b7093878526fdd.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6b2wv"]
-atlas = SubResource("CompressedTexture2D_48ign")
-region = Rect2(8, 8, 360, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tov5d"]
-atlas = SubResource("CompressedTexture2D_48ign")
-region = Rect2(384, 8, 360, 112)
+[sub_resource type="LabelSettings" id="LabelSettings_7nrmo"]
+font = ExtResource("3_7nrmo")
+font_size = 128
+font_color = Color(0, 1, 0, 1)
 
 [node name="mainMenu" type="Control"]
 layout_mode = 3
@@ -36,43 +20,69 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7nrmo")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="click" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_l7wge")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="background" type="TextureRect" parent="CanvasLayer"]
-offset_right = 1920.0
-offset_bottom = 1080.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_qkhwq")
 
 [node name="titleLabel" type="Label" parent="CanvasLayer"]
-offset_left = 440.0
-offset_top = 391.0
-offset_right = 1480.0
-offset_bottom = 519.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -261.0
+offset_right = 640.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Cyber Dive"
-label_settings = ExtResource("2_3d1i7")
+label_settings = SubResource("LabelSettings_7nrmo")
 
-[node name="startButton" type="TextureButton" parent="CanvasLayer"]
-offset_left = 840.0
-offset_top = 651.0
-offset_right = 1080.0
-offset_bottom = 763.0
-size_flags_horizontal = 4
-texture_normal = SubResource("AtlasTexture_y35fp")
-texture_pressed = SubResource("AtlasTexture_7nrmo")
+[node name="startButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = 6.0
+offset_right = 106.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_7nrmo")
+text = "Start"
 
-[node name="settingsButton" type="TextureButton" parent="CanvasLayer"]
-offset_left = 780.0
-offset_top = 778.0
-offset_right = 1140.0
-offset_bottom = 890.0
-size_flags_horizontal = 4
-texture_normal = SubResource("AtlasTexture_6b2wv")
-texture_pressed = SubResource("AtlasTexture_tov5d")
+[node name="settingsButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.5
+offset_top = 113.0
+offset_right = 167.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_7nrmo")
+text = "Settings"
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_l7wge")
 
 [connection signal="pressed" from="CanvasLayer/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/settingsButton" to="." method="_on_settings_button_pressed"]

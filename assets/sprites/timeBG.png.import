@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boghh26gsegtf"
-path="res://.godot/imported/starMailTab.png-71da67dbb48fc13a9444866de6a56344.ctex"
+uid="uid://dx2wwml5yp6fg"
+path="res://.godot/imported/timeBG.png-aeeeb1b2a6249799102771b4de746159.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/starMailTab.png"
-dest_files=["res://.godot/imported/starMailTab.png-71da67dbb48fc13a9444866de6a56344.ctex"]
+source_file="res://assets/sprites/timeBG.png"
+dest_files=["res://.godot/imported/timeBG.png-aeeeb1b2a6249799102771b4de746159.ctex"]
 
 [params]
 
