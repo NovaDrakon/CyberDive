@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dekg7nrbw3kbt"]
+[gd_scene load_steps=28 format=3 uid="uid://dekg7nrbw3kbt"]
 
 [ext_resource type="Texture2D" uid="uid://dfspedwjqaut2" path="res://assets/sprites/background.jpg" id="1_81rff"]
 [ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/fonts/desktopButtons.tres" id="2_81rff"]
@@ -12,6 +12,7 @@
 [ext_resource type="LabelSettings" uid="uid://7mavfiqoggw0" path="res://assets/fonts/spacers.tres" id="7_vcvwy"]
 [ext_resource type="Texture2D" uid="uid://bondd7aot77e4" path="res://assets/sprites/cyberDiveBig.png" id="8_nikxi"]
 [ext_resource type="Texture2D" uid="uid://cvbhxdxldm58x" path="res://assets/sprites/dictionaryBig.png" id="9_q2hki"]
+[ext_resource type="Theme" uid="uid://d0ylre3gbcfdh" path="res://assets/windowTheme.tres" id="13_nd1jb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ajoh"]
 bg_color = Color(0.5921569, 0.6901961, 0.7607843, 1)
@@ -21,12 +22,39 @@ Panel/styles/panel = SubResource("StyleBoxFlat_6ajoh")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ox5hf"]
 draw_center = false
-border_width_top = 8
+border_width_top = 2
 border_color = Color(0.7926564, 0.84887123, 0.8884855, 1)
-border_blend = true
 
 [sub_resource type="Theme" id="Theme_dcrhm"]
 Panel/styles/panel = SubResource("StyleBoxFlat_ox5hf")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2hki"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_color = Color(0.7921569, 0.84705883, 0.8901961, 1)
+
+[sub_resource type="Theme" id="Theme_nd1jb"]
+Panel/styles/panel = SubResource("StyleBoxFlat_q2hki")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhf0c"]
+draw_center = false
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.31473863, 0.40498957, 0.4682632, 1)
+
+[sub_resource type="Theme" id="Theme_vxgxr"]
+Panel/styles/panel = SubResource("StyleBoxFlat_yhf0c")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6r5gw"]
+bg_color = Color(0.3137255, 0.40392157, 0.46666667, 1)
+
+[sub_resource type="Theme" id="Theme_3liqb"]
+Panel/styles/panel = SubResource("StyleBoxFlat_6r5gw")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wbccy"]
+font = ExtResource("5_gl26t")
+font_color = Color(0.5921569, 0.6901961, 0.7607843, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dcrhm"]
 texture = ExtResource("4_gl26t")
@@ -77,47 +105,77 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_dcrhm")
 
-[node name="startButton" type="Button" parent="CanvasLayer/taskbar"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 12.0
-offset_top = -35.0
-offset_right = 82.0
-offset_bottom = 35.0
-grow_vertical = 2
-theme = ExtResource("2_81rff")
-toggle_mode = true
-icon = ExtResource("3_dcrhm")
-
 [node name="menuBox" type="Panel" parent="CanvasLayer/taskbar"]
 visible = false
 layout_mode = 0
-offset_top = -126.0
-offset_right = 280.0
+offset_left = 12.0
+offset_top = -147.0
+offset_right = 315.0
+offset_bottom = 9.0
 script = ExtResource("5_nd1jb")
+
+[node name="menuHighlight" type="Panel" parent="CanvasLayer/taskbar/menuBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_nd1jb")
+
+[node name="menuShadow" type="Panel" parent="CanvasLayer/taskbar/menuBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vxgxr")
+
+[node name="softwareBG" type="Panel" parent="CanvasLayer/taskbar/menuBox"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 300.0
+offset_bottom = 33.0
+theme = SubResource("Theme_3liqb")
+
+[node name="softwareName" type="Label" parent="CanvasLayer/taskbar/menuBox/softwareBG"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -12.0
+offset_right = 96.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Starlight 79"
+label_settings = SubResource("LabelSettings_wbccy")
 
 [node name="settingButton" type="Button" parent="CanvasLayer/taskbar/menuBox"]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 7.0
-offset_right = 271.0
-offset_bottom = 61.0
-grow_horizontal = 2
+offset_top = 38.0
+offset_right = 293.0
+offset_bottom = 92.0
 theme = ExtResource("2_81rff")
 text = "Settings"
 
 [node name="quitButton" type="Button" parent="CanvasLayer/taskbar/menuBox"]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 66.0
-offset_right = 271.0
-offset_bottom = 120.0
+offset_top = 96.0
+offset_right = 293.0
+offset_bottom = 150.0
 theme = ExtResource("2_81rff")
 text = "Quit
 "
@@ -184,6 +242,69 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("9_q2hki")
 
-[connection signal="pressed" from="CanvasLayer/taskbar/startButton" to="CanvasLayer/taskbar" method="_on_start_button_pressed"]
+[node name="Tabs" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 12.0
+offset_top = 1001.0
+offset_right = 82.0
+offset_bottom = 1071.0
+
+[node name="startButton" type="Button" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+theme = ExtResource("2_81rff")
+toggle_mode = true
+icon = ExtResource("3_dcrhm")
+
+[node name="spacer3" type="Label" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+text = "_____
+"
+label_settings = ExtResource("7_vcvwy")
+
+[node name="starMailTab" type="Button" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+
+[node name="spacer4" type="Label" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+text = "_____"
+label_settings = ExtResource("7_vcvwy")
+
+[node name="cyberDiveTab" type="Button" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+
+[node name="spacer5" type="Label" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+text = "_____"
+label_settings = ExtResource("7_vcvwy")
+
+[node name="dictionaryTab" type="Button" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+
+[node name="Windows" type="Node" parent="CanvasLayer"]
+
+[node name="starMailApp" type="Window" parent="CanvasLayer/Windows"]
+oversampling_override = 1.0
+title = "Star Mail"
+initial_position = 2
+size = Vector2i(1280, 720)
+visible = false
+theme = ExtResource("13_nd1jb")
+
+[node name="cyberDiveApp" type="Window" parent="CanvasLayer/Windows"]
+oversampling_override = 1.0
+title = "Cyber Dive"
+initial_position = 2
+size = Vector2i(1280, 720)
+visible = false
+theme = ExtResource("13_nd1jb")
+
+[node name="dictionaryApp" type="Window" parent="CanvasLayer/Windows"]
+oversampling_override = 1.0
+title = "Dictionary"
+initial_position = 2
+size = Vector2i(1280, 720)
+visible = false
+theme = ExtResource("13_nd1jb")
+
 [connection signal="pressed" from="CanvasLayer/taskbar/menuBox/settingButton" to="CanvasLayer/taskbar/menuBox" method="_on_setting_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/taskbar/menuBox/quitButton" to="CanvasLayer/taskbar/menuBox" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Tabs/startButton" to="CanvasLayer/taskbar" method="_on_start_button_pressed"]

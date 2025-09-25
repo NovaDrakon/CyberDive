@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://d0ylre3gbcfdh"]
+
+[ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="1_ffmf1"]
+[ext_resource type="Texture2D" uid="uid://bq3dt74gq8iut" path="res://assets/sprites/appButtons.png" id="2_qb0n5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl802"]
+atlas = ExtResource("2_qb0n5")
+region = Rect2(70, 6, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7puf7"]
+atlas = ExtResource("2_qb0n5")
+region = Rect2(70, 6, 20, 20)
+
+[resource]
+Window/colors/title_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Window/fonts/title_font = ExtResource("1_ffmf1")
+Window/icons/close = SubResource("AtlasTexture_cl802")
+Window/icons/close_pressed = SubResource("AtlasTexture_7puf7")
