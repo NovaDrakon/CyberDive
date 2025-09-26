@@ -1,18 +1,21 @@
-[gd_scene load_steps=28 format=3 uid="uid://dekg7nrbw3kbt"]
+[gd_scene load_steps=31 format=3 uid="uid://dekg7nrbw3kbt"]
 
 [ext_resource type="Texture2D" uid="uid://dfspedwjqaut2" path="res://assets/sprites/background.jpg" id="1_81rff"]
-[ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/fonts/desktopButtons.tres" id="2_81rff"]
+[ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/startButton.tres" id="2_81rff"]
 [ext_resource type="Script" uid="uid://dxttxglm5t2nq" path="res://scripts/taskbar.gd" id="2_q2hki"]
-[ext_resource type="Texture2D" uid="uid://o7kkb1u8mn67" path="res://assets/sprites/starlightLogoBig.png" id="3_dcrhm"]
+[ext_resource type="Texture2D" uid="uid://o7kkb1u8mn67" path="res://assets/sprites/starlightLogo.png" id="3_dcrhm"]
 [ext_resource type="Texture2D" uid="uid://dx2wwml5yp6fg" path="res://assets/sprites/timeBG.png" id="4_gl26t"]
 [ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="5_gl26t"]
 [ext_resource type="Script" uid="uid://df88glk2jnvjt" path="res://scripts/startMenu.gd" id="5_nd1jb"]
-[ext_resource type="Texture2D" uid="uid://d0udavkyhxjp0" path="res://assets/sprites/starMailBig.png" id="6_gl26t"]
+[ext_resource type="Texture2D" uid="uid://d0udavkyhxjp0" path="res://assets/sprites/starMailIcon.png" id="6_gl26t"]
 [ext_resource type="Script" uid="uid://barml4itm6ho5" path="res://scripts/time.gd" id="6_vcvwy"]
 [ext_resource type="LabelSettings" uid="uid://7mavfiqoggw0" path="res://assets/fonts/spacers.tres" id="7_vcvwy"]
-[ext_resource type="Texture2D" uid="uid://bondd7aot77e4" path="res://assets/sprites/cyberDiveBig.png" id="8_nikxi"]
-[ext_resource type="Texture2D" uid="uid://cvbhxdxldm58x" path="res://assets/sprites/dictionaryBig.png" id="9_q2hki"]
-[ext_resource type="Theme" uid="uid://d0ylre3gbcfdh" path="res://assets/windowTheme.tres" id="13_nd1jb"]
+[ext_resource type="Texture2D" uid="uid://bondd7aot77e4" path="res://assets/sprites/cyberDiveIcon.png" id="8_nikxi"]
+[ext_resource type="Texture2D" uid="uid://cvbhxdxldm58x" path="res://assets/sprites/dictionaryIcon.png" id="9_q2hki"]
+[ext_resource type="Theme" uid="uid://r3ga8l8x0yxw" path="res://assets/appTab.tres" id="10_6r5gw"]
+[ext_resource type="PackedScene" uid="uid://dgf3gja1rph21" path="res://scenes/starMail.tscn" id="13_nd1jb"]
+[ext_resource type="PackedScene" uid="uid://u61lviw2q2f6" path="res://scenes/dictionary.tscn" id="14_vxgxr"]
+[ext_resource type="PackedScene" uid="uid://cx8k5hjvs7c7p" path="res://scenes/cyberDive.tscn" id="15_6r5gw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ajoh"]
 bg_color = Color(0.5921569, 0.6901961, 0.7607843, 1)
@@ -69,7 +72,7 @@ Panel/styles/panel = SubResource("StyleBoxTexture_dcrhm")
 [sub_resource type="LabelSettings" id="LabelSettings_veafp"]
 font = ExtResource("5_gl26t")
 font_size = 24
-font_color = Color(0.044650093, 0.38440096, 0.6699675, 1)
+font_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
 outline_color = Color(0.17508438, 0.29932195, 0.67671543, 1)
 
 [node name="Desktop" type="Control"]
@@ -208,6 +211,54 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_vcvwy")
 
+[node name="Tabs" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 12.0
+offset_top = 1001.0
+offset_right = 1246.0
+offset_bottom = 1071.0
+
+[node name="startButton" type="Button" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+theme = ExtResource("2_81rff")
+toggle_mode = true
+icon = ExtResource("3_dcrhm")
+
+[node name="spacer" type="Label" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+text = "__"
+label_settings = ExtResource("7_vcvwy")
+
+[node name="starMailTab" type="Button" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+theme = ExtResource("10_6r5gw")
+toggle_mode = true
+text = "Star Mail"
+icon = ExtResource("6_gl26t")
+
+[node name="spacer2" type="Label" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+text = "___"
+label_settings = ExtResource("7_vcvwy")
+
+[node name="cyberDiveTab" type="Button" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+theme = ExtResource("10_6r5gw")
+toggle_mode = true
+text = "Cyber Dive"
+icon = ExtResource("8_nikxi")
+
+[node name="spacer3" type="Label" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+text = "___"
+label_settings = ExtResource("7_vcvwy")
+
+[node name="dictionaryTab" type="Button" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+theme = ExtResource("10_6r5gw")
+toggle_mode = true
+text = "Dictionary"
+icon = ExtResource("9_q2hki")
+
 [node name="apps" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = 30.0
 offset_top = 30.0
@@ -242,68 +293,14 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("9_q2hki")
 
-[node name="Tabs" type="HBoxContainer" parent="CanvasLayer"]
-offset_left = 12.0
-offset_top = 1001.0
-offset_right = 82.0
-offset_bottom = 1071.0
-
-[node name="startButton" type="Button" parent="CanvasLayer/Tabs"]
-layout_mode = 2
-theme = ExtResource("2_81rff")
-toggle_mode = true
-icon = ExtResource("3_dcrhm")
-
-[node name="spacer3" type="Label" parent="CanvasLayer/Tabs"]
-layout_mode = 2
-text = "_____
-"
-label_settings = ExtResource("7_vcvwy")
-
-[node name="starMailTab" type="Button" parent="CanvasLayer/Tabs"]
-layout_mode = 2
-
-[node name="spacer4" type="Label" parent="CanvasLayer/Tabs"]
-layout_mode = 2
-text = "_____"
-label_settings = ExtResource("7_vcvwy")
-
-[node name="cyberDiveTab" type="Button" parent="CanvasLayer/Tabs"]
-layout_mode = 2
-
-[node name="spacer5" type="Label" parent="CanvasLayer/Tabs"]
-layout_mode = 2
-text = "_____"
-label_settings = ExtResource("7_vcvwy")
-
-[node name="dictionaryTab" type="Button" parent="CanvasLayer/Tabs"]
-layout_mode = 2
-
-[node name="Windows" type="Node" parent="CanvasLayer"]
-
-[node name="starMailApp" type="Window" parent="CanvasLayer/Windows"]
-oversampling_override = 1.0
-title = "Star Mail"
-initial_position = 2
-size = Vector2i(1280, 720)
+[node name="starMail" parent="." instance=ExtResource("13_nd1jb")]
 visible = false
-theme = ExtResource("13_nd1jb")
 
-[node name="cyberDiveApp" type="Window" parent="CanvasLayer/Windows"]
-oversampling_override = 1.0
-title = "Cyber Dive"
-initial_position = 2
-size = Vector2i(1280, 720)
+[node name="dictionary" parent="." instance=ExtResource("14_vxgxr")]
 visible = false
-theme = ExtResource("13_nd1jb")
 
-[node name="dictionaryApp" type="Window" parent="CanvasLayer/Windows"]
-oversampling_override = 1.0
-title = "Dictionary"
-initial_position = 2
-size = Vector2i(1280, 720)
+[node name="cyberDive" parent="." instance=ExtResource("15_6r5gw")]
 visible = false
-theme = ExtResource("13_nd1jb")
 
 [connection signal="pressed" from="CanvasLayer/taskbar/menuBox/settingButton" to="CanvasLayer/taskbar/menuBox" method="_on_setting_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/taskbar/menuBox/quitButton" to="CanvasLayer/taskbar/menuBox" method="_on_quit_button_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvbhxdxldm58x"
-path="res://.godot/imported/dictionaryBig.png-e3f1f402cde093698a4347f708f6982e.ctex"
+uid="uid://khcpq4y43l5r"
+path="res://.godot/imported/exitPressed2.png-cf6b35fdb9cdf83c326608d41fbe92fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dictionaryBig.png"
-dest_files=["res://.godot/imported/dictionaryBig.png-e3f1f402cde093698a4347f708f6982e.ctex"]
+source_file="res://assets/sprites/exitPressed2.png"
+dest_files=["res://.godot/imported/exitPressed2.png-cf6b35fdb9cdf83c326608d41fbe92fc.ctex"]
 
 [params]
 

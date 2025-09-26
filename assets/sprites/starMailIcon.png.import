@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq3dt74gq8iut"
-path="res://.godot/imported/appButtons.png-cdb05b079d70ff08baf28c0800967363.ctex"
+uid="uid://d0udavkyhxjp0"
+path="res://.godot/imported/starMailIcon.png-b2aae5f617847c6fa65020fcf998a3c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/appButtons.png"
-dest_files=["res://.godot/imported/appButtons.png-cdb05b079d70ff08baf28c0800967363.ctex"]
+source_file="res://assets/sprites/starMailIcon.png"
+dest_files=["res://.godot/imported/starMailIcon.png-b2aae5f617847c6fa65020fcf998a3c7.ctex"]
 
 [params]
 

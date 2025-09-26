@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://u61lviw2q2f6"]
+
+[ext_resource type="Theme" uid="uid://d0ylre3gbcfdh" path="res://assets/windowTheme.tres" id="1_h0sft"]
+
+[node name="dictionary" type="Window"]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+oversampling_override = 1.0
+title = "Dictionary"
+initial_position = 1
+size = Vector2i(1280, 720)
+theme = ExtResource("1_h0sft")

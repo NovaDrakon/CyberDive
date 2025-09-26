@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0udavkyhxjp0"
-path="res://.godot/imported/starMailBig.png-64f2ac1f81cf0b50039aa279d2263489.ctex"
+uid="uid://o7kkb1u8mn67"
+path="res://.godot/imported/starlightLogo.png-185094c49968d7d2added738f64e35e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/starMailBig.png"
-dest_files=["res://.godot/imported/starMailBig.png-64f2ac1f81cf0b50039aa279d2263489.ctex"]
+source_file="res://assets/sprites/starlightLogo.png"
+dest_files=["res://.godot/imported/starlightLogo.png-185094c49968d7d2added738f64e35e0.ctex"]
 
 [params]
 

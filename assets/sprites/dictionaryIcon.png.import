@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bondd7aot77e4"
-path="res://.godot/imported/cyberDiveBig.png-b20538327187c00c60217c0e4a407826.ctex"
+uid="uid://cvbhxdxldm58x"
+path="res://.godot/imported/dictionaryIcon.png-cfd2da2e6e92288ba860d478677513eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cyberDiveBig.png"
-dest_files=["res://.godot/imported/cyberDiveBig.png-b20538327187c00c60217c0e4a407826.ctex"]
+source_file="res://assets/sprites/dictionaryIcon.png"
+dest_files=["res://.godot/imported/dictionaryIcon.png-cfd2da2e6e92288ba860d478677513eb.ctex"]
 
 [params]
 

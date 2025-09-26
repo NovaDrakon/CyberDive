@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wwyyd22turc1"
-path="res://.godot/imported/starlightLogoSmall.png-27b58f5c190ac80e0beede9e9517bc95.ctex"
+uid="uid://b2ba1aldloqm2"
+path="res://.godot/imported/windowBase2.png-63d27902abf1bc6b40575b2988b1b67f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/starlightLogoSmall.png"
-dest_files=["res://.godot/imported/starlightLogoSmall.png-27b58f5c190ac80e0beede9e9517bc95.ctex"]
+source_file="res://assets/sprites/windowBase2.png"
+dest_files=["res://.godot/imported/windowBase2.png-63d27902abf1bc6b40575b2988b1b67f.ctex"]
 
 [params]
 

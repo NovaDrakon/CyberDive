@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o7kkb1u8mn67"
-path="res://.godot/imported/starlightLogoBig.png-d9c1e249035a7bc65a9363bbff7e97e5.ctex"
+uid="uid://bpuu50dslna54"
+path="res://.godot/imported/exitButton2.png-0a4f18d230a8d8e036848db0266a4bc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/starlightLogoBig.png"
-dest_files=["res://.godot/imported/starlightLogoBig.png-d9c1e249035a7bc65a9363bbff7e97e5.ctex"]
+source_file="res://assets/sprites/exitButton2.png"
+dest_files=["res://.godot/imported/exitButton2.png-0a4f18d230a8d8e036848db0266a4bc8.ctex"]
 
 [params]
 

@@ -1,0 +1,35 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cu8ckn8ivsyew"]
+
+[ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="1_vu31j"]
+[ext_resource type="Texture2D" uid="uid://b2ba1aldloqm2" path="res://assets/sprites/windowBase2.png" id="2_0ykdg"]
+[ext_resource type="Texture2D" uid="uid://bpuu50dslna54" path="res://assets/sprites/exitButton2.png" id="2_vu31j"]
+[ext_resource type="Texture2D" uid="uid://khcpq4y43l5r" path="res://assets/sprites/exitPressed2.png" id="3_0n48u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omxpv"]
+texture = ExtResource("2_0ykdg")
+texture_margin_left = 3.0
+texture_margin_top = 15.0
+texture_margin_right = 3.0
+texture_margin_bottom = 2.0
+expand_margin_top = 52.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vu31j"]
+texture = ExtResource("2_0ykdg")
+texture_margin_left = 3.0
+texture_margin_top = 15.0
+texture_margin_right = 3.0
+texture_margin_bottom = 2.0
+expand_margin_top = 52.0
+
+[resource]
+Window/colors/title_color = Color(0, 1, 0, 1)
+Window/constants/close_h_offset = 50
+Window/constants/close_v_offset = 34
+Window/constants/resize_margin = 10
+Window/constants/title_height = 32
+Window/font_sizes/title_font_size = 32
+Window/fonts/title_font = ExtResource("1_vu31j")
+Window/icons/close = ExtResource("2_vu31j")
+Window/icons/close_pressed = ExtResource("3_0n48u")
+Window/styles/embedded_border = SubResource("StyleBoxTexture_omxpv")
+Window/styles/embedded_unfocused_border = SubResource("StyleBoxTexture_vu31j")

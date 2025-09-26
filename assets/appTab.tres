@@ -1,0 +1,48 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://r3ga8l8x0yxw"]
+
+[ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="1_q0c86"]
+[ext_resource type="Texture2D" uid="uid://cfnp051yq1bi8" path="res://assets/sprites/blueButton.png" id="2_25wmu"]
+[ext_resource type="Texture2D" uid="uid://cotn18p65he53" path="res://assets/sprites/bluePressed.png" id="3_nkxhm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0c86"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qi1my"]
+texture = ExtResource("2_25wmu")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pvl46"]
+texture = ExtResource("2_25wmu")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_he6dl"]
+texture = ExtResource("3_nkxhm")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[resource]
+Button/colors/font_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/colors/font_focus_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/colors/font_hover_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/colors/font_hover_pressed_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/colors/font_pressed_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/constants/h_separation = 10
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_q0c86")
+Button/styles/focus = SubResource("StyleBoxEmpty_q0c86")
+Button/styles/hover = SubResource("StyleBoxTexture_qi1my")
+Button/styles/normal = SubResource("StyleBoxTexture_pvl46")
+Button/styles/pressed = SubResource("StyleBoxTexture_he6dl")

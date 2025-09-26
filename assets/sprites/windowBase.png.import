@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d58k1iove2lw"
-path="res://.godot/imported/cyberDiveSmall.png-65829d06ed5bf468e0869febcc80d877.ctex"
+uid="uid://fxrvw4ahqbsd"
+path="res://.godot/imported/windowBase.png-e97b00c3a7ea02c2925d123d3aaeaa35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cyberDiveSmall.png"
-dest_files=["res://.godot/imported/cyberDiveSmall.png-65829d06ed5bf468e0869febcc80d877.ctex"]
+source_file="res://assets/sprites/windowBase.png"
+dest_files=["res://.godot/imported/windowBase.png-e97b00c3a7ea02c2925d123d3aaeaa35.ctex"]
 
 [params]
 
