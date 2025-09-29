@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dekg7nrbw3kbt"]
+[gd_scene load_steps=35 format=3 uid="uid://dekg7nrbw3kbt"]
 
 [ext_resource type="Texture2D" uid="uid://dfspedwjqaut2" path="res://assets/sprites/background.jpg" id="1_81rff"]
 [ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/startButton.tres" id="2_81rff"]
@@ -14,8 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://cvbhxdxldm58x" path="res://assets/sprites/dictionaryIcon.png" id="9_q2hki"]
 [ext_resource type="Theme" uid="uid://r3ga8l8x0yxw" path="res://assets/appTab.tres" id="10_6r5gw"]
 [ext_resource type="PackedScene" uid="uid://dgf3gja1rph21" path="res://scenes/starMail.tscn" id="13_nd1jb"]
+[ext_resource type="Script" uid="uid://hoi5lkmubha5" path="res://scripts/apps.gd" id="14_0542q"]
 [ext_resource type="PackedScene" uid="uid://u61lviw2q2f6" path="res://scenes/dictionary.tscn" id="14_vxgxr"]
 [ext_resource type="PackedScene" uid="uid://cx8k5hjvs7c7p" path="res://scenes/cyberDive.tscn" id="15_6r5gw"]
+[ext_resource type="Script" uid="uid://biot2saknirg" path="res://scripts/starMail.gd" id="15_iamu6"]
+[ext_resource type="Script" uid="uid://t2si3e51f7l8" path="res://scripts/cyberDive.gd" id="17_0542q"]
+[ext_resource type="Script" uid="uid://bleb4biti1hgq" path="res://scripts/dictionary.gd" id="19_3erbe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ajoh"]
 bg_color = Color(0.5921569, 0.6901961, 0.7607843, 1)
@@ -216,6 +220,7 @@ offset_left = 12.0
 offset_top = 1001.0
 offset_right = 1246.0
 offset_bottom = 1071.0
+size_flags_horizontal = 3
 
 [node name="startButton" type="Button" parent="CanvasLayer/Tabs"]
 layout_mode = 2
@@ -224,11 +229,13 @@ toggle_mode = true
 icon = ExtResource("3_dcrhm")
 
 [node name="spacer" type="Label" parent="CanvasLayer/Tabs"]
+visible = false
 layout_mode = 2
 text = "__"
 label_settings = ExtResource("7_vcvwy")
 
 [node name="starMailTab" type="Button" parent="CanvasLayer/Tabs"]
+visible = false
 layout_mode = 2
 theme = ExtResource("10_6r5gw")
 toggle_mode = true
@@ -236,11 +243,13 @@ text = "Star Mail"
 icon = ExtResource("6_gl26t")
 
 [node name="spacer2" type="Label" parent="CanvasLayer/Tabs"]
+visible = false
 layout_mode = 2
 text = "___"
 label_settings = ExtResource("7_vcvwy")
 
 [node name="cyberDiveTab" type="Button" parent="CanvasLayer/Tabs"]
+visible = false
 layout_mode = 2
 theme = ExtResource("10_6r5gw")
 toggle_mode = true
@@ -248,11 +257,13 @@ text = "Cyber Dive"
 icon = ExtResource("8_nikxi")
 
 [node name="spacer3" type="Label" parent="CanvasLayer/Tabs"]
+visible = false
 layout_mode = 2
 text = "___"
 label_settings = ExtResource("7_vcvwy")
 
 [node name="dictionaryTab" type="Button" parent="CanvasLayer/Tabs"]
+visible = false
 layout_mode = 2
 theme = ExtResource("10_6r5gw")
 toggle_mode = true
@@ -267,12 +278,13 @@ offset_bottom = 200.0
 scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("14_0542q")
 
 [node name="starMail" type="TextureButton" parent="CanvasLayer/apps"]
 layout_mode = 2
 texture_normal = ExtResource("6_gl26t")
 
-[node name="spacer" type="Label" parent="CanvasLayer/apps"]
+[node name="spacer4" type="Label" parent="CanvasLayer/apps"]
 layout_mode = 2
 text = "."
 label_settings = ExtResource("7_vcvwy")
@@ -282,7 +294,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("8_nikxi")
 
-[node name="spacer2" type="Label" parent="CanvasLayer/apps"]
+[node name="spacer5" type="Label" parent="CanvasLayer/apps"]
 layout_mode = 2
 text = "."
 label_settings = ExtResource("7_vcvwy")
@@ -295,13 +307,23 @@ texture_normal = ExtResource("9_q2hki")
 
 [node name="starMail" parent="." instance=ExtResource("13_nd1jb")]
 visible = false
-
-[node name="dictionary" parent="." instance=ExtResource("14_vxgxr")]
-visible = false
+script = ExtResource("15_iamu6")
 
 [node name="cyberDive" parent="." instance=ExtResource("15_6r5gw")]
 visible = false
+script = ExtResource("17_0542q")
+
+[node name="dictionary" parent="." instance=ExtResource("14_vxgxr")]
+visible = false
+script = ExtResource("19_3erbe")
 
 [connection signal="pressed" from="CanvasLayer/taskbar/menuBox/settingButton" to="CanvasLayer/taskbar/menuBox" method="_on_setting_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/taskbar/menuBox/quitButton" to="CanvasLayer/taskbar/menuBox" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Tabs/startButton" to="CanvasLayer/taskbar" method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Tabs/starMailTab" to="CanvasLayer/taskbar" method="_on_star_mail_tab_pressed"]
+[connection signal="pressed" from="CanvasLayer/Tabs/cyberDiveTab" to="CanvasLayer/taskbar" method="_on_cyber_dive_tab_pressed"]
+[connection signal="pressed" from="CanvasLayer/Tabs/dictionaryTab" to="CanvasLayer/taskbar" method="_on_dictionary_tab_pressed"]
+[connection signal="pressed" from="CanvasLayer/apps/starMail" to="CanvasLayer/apps" method="_on_star_mail_pressed"]
+[connection signal="toggled" from="CanvasLayer/apps/starMail" to="CanvasLayer/apps" method="_on_star_mail_toggled"]
+[connection signal="pressed" from="CanvasLayer/apps/cyberDive" to="CanvasLayer/apps" method="_on_cyber_dive_pressed"]
+[connection signal="pressed" from="CanvasLayer/apps/dictionary" to="CanvasLayer/apps" method="_on_dictionary_pressed"]
