@@ -40,11 +40,11 @@ func minuteChange():
 	
 	if minute == 60:
 		minute = 0
-	elif second == 600:
+	elif second == 900:
 		minute += 1
 
 func secondChange():
-	if second == 600:
+	if second == 900:
 		second = 0
 	else:
 		second += 1
