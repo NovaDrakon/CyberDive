@@ -1,7 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgf3gja1rph21"]
+[gd_scene load_steps=9 format=3 uid="uid://dgf3gja1rph21"]
 
 [ext_resource type="Theme" uid="uid://d0ylre3gbcfdh" path="res://assets/windowTheme.tres" id="1_u6gb7"]
-[ext_resource type="Script" uid="uid://b3bxpto7cu2q8" path="res://scripts/star_mail.gd" id="2_6myck"]
+[ext_resource type="Script" uid="uid://b3bxpto7cu2q8" path="res://scripts/starMail.gd" id="2_6myck"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ajoh"]
+bg_color = Color(0.5921569, 0.6901961, 0.7607843, 1)
+
+[sub_resource type="Theme" id="Theme_6myck"]
+Panel/styles/panel = SubResource("StyleBoxFlat_6ajoh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omecr"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_color = Color(0.7926564, 0.84887123, 0.8884855, 1)
+
+[sub_resource type="Theme" id="Theme_bjxje"]
+Panel/styles/panel = SubResource("StyleBoxFlat_omecr")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6myck"]
+draw_center = false
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.31473863, 0.40498957, 0.4682632, 1)
+
+[sub_resource type="Theme" id="Theme_omecr"]
+Panel/styles/panel = SubResource("StyleBoxFlat_6myck")
 
 [node name="starMail" type="Window"]
 transparent_bg = true
@@ -13,5 +37,40 @@ size = Vector2i(1280, 720)
 unresizable = true
 theme = ExtResource("1_u6gb7")
 script = ExtResource("2_6myck")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="sidePanel" type="Panel" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -705.0
+offset_right = -965.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_6myck")
+
+[node name="sidePanelHighlight" type="Panel" parent="sidePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bjxje")
+
+[node name="sidePanelShadow" type="Panel" parent="sidePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_omecr")
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]

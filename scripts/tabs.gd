@@ -2,25 +2,73 @@ extends HBoxContainer
 
 var menuOpen = false
 
-@onready var menu_box: Panel = $"../taskbar/menuBox"
-@onready var start_button: Button = $startButton
-@onready var star_mail_tab: Button = $starMailTab
-@onready var cyber_dive_tab: Button = $cyberDiveTab
-@onready var dictionary_tab: Button = $dictionaryTab
+@onready var menuBox: Panel = $"../taskbar/menuBox"
+@onready var startButton: Button = $startButton
+@onready var starMailTab: Button = $starMailTab
+@onready var cyberShopTab: Button = $cyberShopTab
+@onready var dictionaryTab: Button = $dictionaryTab
+
 
 func _on_start_button_pressed() -> void:
-	menuOpen = !menuOpen
+	menuOpen = true
 	
 	if menuOpen:
-		menu_box.show()
+		menuBox.show()
 	else:
-		menu_box.hide()
+		menuBox.hide()
+	
+	starMailTab.set_pressed(false)
+	cyberShopTab.set_pressed(false)
+	dictionaryTab.set_pressed(false)
 
+
+#Apps
+func _on_star_mail_app_pressed() -> void:
+	starMailTab.set_pressed(true)
+	cyberShopTab.set_pressed(false)
+	dictionaryTab.set_pressed(false)
+	
+	closeMenu()
+
+func _on_cyber_dive_app_pressed() -> void:
+	starMailTab.set_pressed(false)
+	cyberShopTab.set_pressed(true)
+	dictionaryTab.set_pressed(false)
+	
+	closeMenu()
+
+func _on_dictionary_app_pressed() -> void:
+	starMailTab.set_pressed(false)
+	cyberShopTab.set_pressed(false)
+	dictionaryTab.set_pressed(true)
+	
+	closeMenu()
+
+
+#Tabs
 func _on_star_mail_tab_pressed() -> void:
-	pass
+	starMailTab.set_pressed(true)
+	cyberShopTab.set_pressed(false)
+	dictionaryTab.set_pressed(false)
+	
+	closeMenu()
 
 func _on_cyber_dive_tab_pressed() -> void:
-	pass
+	starMailTab.set_pressed(false)
+	cyberShopTab.set_pressed(true)
+	dictionaryTab.set_pressed(false)
+	
+	closeMenu()
 
 func _on_dictionary_tab_pressed() -> void:
-	pass
+	starMailTab.set_pressed(false)
+	cyberShopTab.set_pressed(false)
+	dictionaryTab.set_pressed(true)
+	
+	closeMenu()
+
+
+func closeMenu():
+	startButton.set_pressed(false)
+	menuBox.hide()
+	menuOpen = false

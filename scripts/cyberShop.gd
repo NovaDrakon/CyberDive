@@ -6,9 +6,9 @@ extends Window
 
 func _on_close_requested() -> void:
 	self.hide()
-	dictionaryTab.hide()
+	cyberShopTab.hide()
 
 func _on_focus_entered() -> void:
 	starMailTab.set_pressed(false)
-	cyberShopTab.set_pressed(false)
-	dictionaryTab.set_pressed(true)
+	cyberShopTab.set_pressed(true)
+	dictionaryTab.set_pressed(false)

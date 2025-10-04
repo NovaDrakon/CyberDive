@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dekg7nrbw3kbt"]
+[gd_scene load_steps=33 format=3 uid="uid://dekg7nrbw3kbt"]
 
 [ext_resource type="Texture2D" uid="uid://dfspedwjqaut2" path="res://assets/sprites/background.jpg" id="1_81rff"]
 [ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/startButton.tres" id="2_81rff"]
@@ -16,51 +16,52 @@
 [ext_resource type="PackedScene" uid="uid://dgf3gja1rph21" path="res://scenes/starMail.tscn" id="13_nd1jb"]
 [ext_resource type="Script" uid="uid://hoi5lkmubha5" path="res://scripts/apps.gd" id="14_0542q"]
 [ext_resource type="PackedScene" uid="uid://u61lviw2q2f6" path="res://scenes/dictionary.tscn" id="14_vxgxr"]
-[ext_resource type="PackedScene" uid="uid://cx8k5hjvs7c7p" path="res://scenes/cyberDive.tscn" id="15_6r5gw"]
+[ext_resource type="PackedScene" uid="uid://cx8k5hjvs7c7p" path="res://scenes/cyberShop.tscn" id="15_6r5gw"]
+[ext_resource type="PackedScene" uid="uid://w2kvlj0mysnu" path="res://scenes/cyberDive.tscn" id="17_wbccy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ajoh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbccy"]
 bg_color = Color(0.5921569, 0.6901961, 0.7607843, 1)
 
 [sub_resource type="Theme" id="Theme_veafp"]
-Panel/styles/panel = SubResource("StyleBoxFlat_6ajoh")
+Panel/styles/panel = SubResource("StyleBoxFlat_wbccy")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ox5hf"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iamu6"]
 draw_center = false
 border_width_top = 2
 border_color = Color(0.7926564, 0.84887123, 0.8884855, 1)
 
 [sub_resource type="Theme" id="Theme_dcrhm"]
-Panel/styles/panel = SubResource("StyleBoxFlat_ox5hf")
+Panel/styles/panel = SubResource("StyleBoxFlat_iamu6")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2hki"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0542q"]
 draw_center = false
 border_width_left = 2
 border_width_top = 2
 border_color = Color(0.7921569, 0.84705883, 0.8901961, 1)
 
 [sub_resource type="Theme" id="Theme_nd1jb"]
-Panel/styles/panel = SubResource("StyleBoxFlat_q2hki")
+Panel/styles/panel = SubResource("StyleBoxFlat_0542q")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhf0c"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3erbe"]
 draw_center = false
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.31473863, 0.40498957, 0.4682632, 1)
 
 [sub_resource type="Theme" id="Theme_vxgxr"]
-Panel/styles/panel = SubResource("StyleBoxFlat_yhf0c")
+Panel/styles/panel = SubResource("StyleBoxFlat_3erbe")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6r5gw"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4dq8"]
 bg_color = Color(0.3137255, 0.40392157, 0.46666667, 1)
 
 [sub_resource type="Theme" id="Theme_3liqb"]
-Panel/styles/panel = SubResource("StyleBoxFlat_6r5gw")
+Panel/styles/panel = SubResource("StyleBoxFlat_v4dq8")
 
 [sub_resource type="LabelSettings" id="LabelSettings_wbccy"]
 font = ExtResource("5_gl26t")
 font_color = Color(0.5921569, 0.6901961, 0.7607843, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dcrhm"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1dbpt"]
 texture = ExtResource("4_gl26t")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
@@ -68,7 +69,7 @@ texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 
 [sub_resource type="Theme" id="Theme_6ajoh"]
-Panel/styles/panel = SubResource("StyleBoxTexture_dcrhm")
+Panel/styles/panel = SubResource("StyleBoxTexture_1dbpt")
 
 [sub_resource type="LabelSettings" id="LabelSettings_veafp"]
 font = ExtResource("5_gl26t")
@@ -211,62 +212,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_vcvwy")
 
-[node name="Tabs" type="HBoxContainer" parent="CanvasLayer"]
-offset_left = 12.0
-offset_top = 1001.0
-offset_right = 1246.0
-offset_bottom = 1071.0
-size_flags_horizontal = 3
-script = ExtResource("2_q2hki")
-
-[node name="startButton" type="Button" parent="CanvasLayer/Tabs"]
-layout_mode = 2
-theme = ExtResource("2_81rff")
-toggle_mode = true
-icon = ExtResource("3_dcrhm")
-
-[node name="spacer" type="Label" parent="CanvasLayer/Tabs"]
-visible = false
-layout_mode = 2
-text = "___"
-label_settings = ExtResource("7_vcvwy")
-
-[node name="starMailTab" type="Button" parent="CanvasLayer/Tabs"]
-visible = false
-layout_mode = 2
-theme = ExtResource("10_6r5gw")
-toggle_mode = true
-text = "Star Mail"
-icon = ExtResource("6_gl26t")
-
-[node name="spacer2" type="Label" parent="CanvasLayer/Tabs"]
-visible = false
-layout_mode = 2
-text = "__"
-label_settings = ExtResource("7_vcvwy")
-
-[node name="cyberDiveTab" type="Button" parent="CanvasLayer/Tabs"]
-visible = false
-layout_mode = 2
-theme = ExtResource("10_6r5gw")
-toggle_mode = true
-text = "Cyber Dive"
-icon = ExtResource("8_nikxi")
-
-[node name="spacer3" type="Label" parent="CanvasLayer/Tabs"]
-visible = false
-layout_mode = 2
-text = "__"
-label_settings = ExtResource("7_vcvwy")
-
-[node name="dictionaryTab" type="Button" parent="CanvasLayer/Tabs"]
-visible = false
-layout_mode = 2
-theme = ExtResource("10_6r5gw")
-toggle_mode = true
-text = "Dictionary"
-icon = ExtResource("9_q2hki")
-
 [node name="apps" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = 30.0
 offset_top = 30.0
@@ -281,17 +226,17 @@ script = ExtResource("14_0542q")
 layout_mode = 2
 texture_normal = ExtResource("6_gl26t")
 
-[node name="spacer4" type="Label" parent="CanvasLayer/apps"]
+[node name="spacer2" type="Label" parent="CanvasLayer/apps"]
 layout_mode = 2
 text = "."
 label_settings = ExtResource("7_vcvwy")
 
-[node name="cyberDiveApp" type="TextureButton" parent="CanvasLayer/apps"]
+[node name="cyberShopApp" type="TextureButton" parent="CanvasLayer/apps"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("8_nikxi")
 
-[node name="spacer5" type="Label" parent="CanvasLayer/apps"]
+[node name="spacer3" type="Label" parent="CanvasLayer/apps"]
 layout_mode = 2
 text = "."
 label_settings = ExtResource("7_vcvwy")
@@ -302,10 +247,63 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("9_q2hki")
 
+[node name="Tabs" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 12.0
+offset_top = 1001.0
+offset_right = 1250.0
+offset_bottom = 1071.0
+size_flags_horizontal = 3
+script = ExtResource("2_q2hki")
+
+[node name="startButton" type="Button" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+theme = ExtResource("2_81rff")
+toggle_mode = true
+icon = ExtResource("3_dcrhm")
+
+[node name="spacer" type="Label" parent="CanvasLayer/Tabs"]
+layout_mode = 2
+text = "_"
+label_settings = ExtResource("7_vcvwy")
+
+[node name="starMailTab" type="Button" parent="CanvasLayer/Tabs"]
+visible = false
+layout_mode = 2
+theme = ExtResource("10_6r5gw")
+toggle_mode = true
+text = "Star Mail"
+icon = ExtResource("6_gl26t")
+
+[node name="cyberShopTab" type="Button" parent="CanvasLayer/Tabs"]
+visible = false
+layout_mode = 2
+theme = ExtResource("10_6r5gw")
+toggle_mode = true
+text = "Cyber Shop"
+icon = ExtResource("8_nikxi")
+
+[node name="cyberDiveTab" type="Button" parent="CanvasLayer/Tabs"]
+visible = false
+layout_mode = 2
+theme = ExtResource("10_6r5gw")
+text = "Cyber Dive"
+icon = ExtResource("8_nikxi")
+
+[node name="dictionaryTab" type="Button" parent="CanvasLayer/Tabs"]
+visible = false
+layout_mode = 2
+theme = ExtResource("10_6r5gw")
+toggle_mode = true
+text = "Dictionary"
+icon = ExtResource("9_q2hki")
+
 [node name="starMail" parent="." instance=ExtResource("13_nd1jb")]
 visible = false
 
-[node name="cyberDive" parent="." instance=ExtResource("15_6r5gw")]
+[node name="cyberShop" parent="." instance=ExtResource("15_6r5gw")]
+visible = false
+
+[node name="cyberDive" parent="." instance=ExtResource("17_wbccy")]
 visible = false
 
 [node name="dictionary" parent="." instance=ExtResource("14_vxgxr")]
@@ -313,11 +311,16 @@ visible = false
 
 [connection signal="pressed" from="CanvasLayer/taskbar/menuBox/settingButton" to="CanvasLayer/taskbar/menuBox" method="_on_setting_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/taskbar/menuBox/quitButton" to="CanvasLayer/taskbar/menuBox" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/apps/starMailApp" to="CanvasLayer/apps" method="_on_star_mail_pressed"]
+[connection signal="pressed" from="CanvasLayer/apps/starMailApp" to="CanvasLayer/Tabs" method="_on_star_mail_app_pressed"]
+[connection signal="pressed" from="CanvasLayer/apps/cyberShopApp" to="CanvasLayer/apps" method="_on_cyber_dive_pressed"]
+[connection signal="pressed" from="CanvasLayer/apps/cyberShopApp" to="CanvasLayer/Tabs" method="_on_cyber_dive_app_pressed"]
+[connection signal="pressed" from="CanvasLayer/apps/dictionaryApp" to="CanvasLayer/apps" method="_on_dictionary_pressed"]
+[connection signal="pressed" from="CanvasLayer/apps/dictionaryApp" to="CanvasLayer/Tabs" method="_on_dictionary_app_pressed"]
 [connection signal="pressed" from="CanvasLayer/Tabs/startButton" to="CanvasLayer/Tabs" method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Tabs/starMailTab" to="CanvasLayer/Tabs" method="_on_star_mail_tab_pressed"]
-[connection signal="pressed" from="CanvasLayer/Tabs/cyberDiveTab" to="CanvasLayer/Tabs" method="_on_cyber_dive_tab_pressed"]
+[connection signal="pressed" from="CanvasLayer/Tabs/cyberShopTab" to="CanvasLayer/Tabs" method="_on_cyber_dive_tab_pressed"]
 [connection signal="pressed" from="CanvasLayer/Tabs/dictionaryTab" to="CanvasLayer/Tabs" method="_on_dictionary_tab_pressed"]
-[connection signal="pressed" from="CanvasLayer/apps/starMailApp" to="CanvasLayer/apps" method="_on_star_mail_pressed"]
-[connection signal="toggled" from="CanvasLayer/apps/starMailApp" to="CanvasLayer/apps" method="_on_star_mail_toggled"]
-[connection signal="pressed" from="CanvasLayer/apps/cyberDiveApp" to="CanvasLayer/apps" method="_on_cyber_dive_pressed"]
-[connection signal="pressed" from="CanvasLayer/apps/dictionaryApp" to="CanvasLayer/apps" method="_on_dictionary_pressed"]
+[connection signal="focus_entered" from="starMail" to="starMail" method="_on_focus_entered"]
+[connection signal="focus_entered" from="cyberShop" to="cyberShop" method="_on_focus_entered"]
+[connection signal="focus_entered" from="dictionary" to="dictionary" method="_on_focus_entered"]
