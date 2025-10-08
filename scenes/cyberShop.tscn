@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cx8k5hjvs7c7p"]
 
-[ext_resource type="Theme" uid="uid://cu8ckn8ivsyew" path="res://assets/windowTheme2.tres" id="1_8pc6c"]
+[ext_resource type="Theme" uid="uid://cu8ckn8ivsyew" path="res://assets/themes/windowTheme2.tres" id="1_8pc6c"]
 [ext_resource type="Script" uid="uid://yft8todwmj54" path="res://scripts/cyberShop.gd" id="2_ogqy6"]
 
 [node name="cyberShop" type="Window"]

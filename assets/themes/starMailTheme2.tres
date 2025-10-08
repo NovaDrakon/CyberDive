@@ -1,0 +1,54 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://c2tak2g4j8hdd"]
+
+[ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="1_1h7vv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v44tn"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_clsq6"]
+load_path = "res://.godot/imported/blueButton.png-080c20bbb7197076f6d371bed760db73.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ockre"]
+texture = SubResource("CompressedTexture2D_clsq6")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vl28j"]
+load_path = "res://.godot/imported/blueButton.png-080c20bbb7197076f6d371bed760db73.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ggic0"]
+texture = SubResource("CompressedTexture2D_vl28j")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rbjkg"]
+load_path = "res://.godot/imported/bluePressed.png-c476de6a0c6f10c61bd5196d223e4035.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_332cj"]
+texture = SubResource("CompressedTexture2D_rbjkg")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[resource]
+Button/colors/font_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/colors/font_focus_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/colors/font_hover_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/colors/font_hover_pressed_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/colors/font_pressed_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_1h7vv")
+Button/styles/focus = SubResource("StyleBoxEmpty_v44tn")
+Button/styles/hover = SubResource("StyleBoxTexture_ockre")
+Button/styles/normal = SubResource("StyleBoxTexture_ggic0")
+Button/styles/pressed = SubResource("StyleBoxTexture_332cj")

@@ -1,7 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgf3gja1rph21"]
+[gd_scene load_steps=17 format=3 uid="uid://dgf3gja1rph21"]
 
-[ext_resource type="Theme" uid="uid://d0ylre3gbcfdh" path="res://assets/windowTheme.tres" id="1_u6gb7"]
+[ext_resource type="Theme" uid="uid://d0ylre3gbcfdh" path="res://assets/themes/windowTheme.tres" id="1_u6gb7"]
 [ext_resource type="Script" uid="uid://b3bxpto7cu2q8" path="res://scripts/starMail.gd" id="2_6myck"]
+[ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/themes/startButton.tres" id="3_63bi6"]
+[ext_resource type="Theme" uid="uid://bkbxdtadqgm3v" path="res://assets/themes/starMailTheme.tres" id="3_omecr"]
+[ext_resource type="LabelSettings" uid="uid://cpt0d0nx2sye1" path="res://assets/fonts/emailLabel.tres" id="4_bjxje"]
+[ext_resource type="Texture2D" uid="uid://ig1pmttqjvag" path="res://assets/sprites/trashButton.png" id="4_n2hej"]
+[ext_resource type="Texture2D" uid="uid://hurh4w5gqk6x" path="res://assets/sprites/starPressed.png" id="5_06rbv"]
+[ext_resource type="Theme" uid="uid://c2tak2g4j8hdd" path="res://assets/themes/starMailTheme2.tres" id="5_qpmm6"]
+[ext_resource type="Texture2D" uid="uid://df48qf04wwvsi" path="res://assets/sprites/replyButton.png" id="6_wfn1d"]
+[ext_resource type="Script" uid="uid://ch5iw0c1ty663" path="res://scripts/emailList.gd" id="8_n2hej"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ajoh"]
 bg_color = Color(0.5921569, 0.6901961, 0.7607843, 1)
@@ -38,19 +46,78 @@ unresizable = true
 theme = ExtResource("1_u6gb7")
 script = ExtResource("2_6myck")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="topBarPanel" type="Panel" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -703.0
+offset_right = -4.0
+offset_bottom = -650.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_6myck")
+
+[node name="topBarPanelHighlight" type="Panel" parent="topBarPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bjxje")
+
+[node name="topBarPanelShadow" type="Panel" parent="topBarPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_omecr")
+
+[node name="topButtons" type="HBoxContainer" parent="topBarPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -19.0
+offset_right = 130.0
+offset_bottom = 19.0
+grow_vertical = 2
+
+[node name="trash" type="Button" parent="topBarPanel/topButtons"]
+layout_mode = 2
+theme = ExtResource("3_63bi6")
+button_mask = 0
+icon = ExtResource("4_n2hej")
+
+[node name="star" type="Button" parent="topBarPanel/topButtons"]
+layout_mode = 2
+theme = ExtResource("3_63bi6")
+toggle_mode = true
+button_pressed = true
+button_mask = 0
+icon = ExtResource("5_06rbv")
+
+[node name="reply" type="Button" parent="topBarPanel/topButtons"]
+layout_mode = 2
+theme = ExtResource("3_63bi6")
+button_mask = 0
+icon = ExtResource("6_wfn1d")
 
 [node name="sidePanel" type="Panel" parent="."]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = -705.0
-offset_right = -965.0
-offset_bottom = -4.0
+offset_left = 5.0
+offset_top = -647.0
+offset_right = -1097.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_6myck")
@@ -73,4 +140,218 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_omecr")
 
+[node name="sideButtons" type="VBoxContainer" parent="sidePanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.0
+offset_top = 11.0
+offset_right = 76.5
+offset_bottom = 167.0
+grow_horizontal = 2
+
+[node name="inbox" type="Button" parent="sidePanel/sideButtons"]
+layout_mode = 2
+theme = ExtResource("5_qpmm6")
+toggle_mode = true
+button_pressed = true
+button_mask = 0
+text = "Inbox"
+
+[node name="starred" type="Button" parent="sidePanel/sideButtons"]
+layout_mode = 2
+theme = ExtResource("5_qpmm6")
+button_mask = 0
+text = "Starred"
+
+[node name="sent" type="Button" parent="sidePanel/sideButtons"]
+layout_mode = 2
+theme = ExtResource("5_qpmm6")
+button_mask = 0
+text = "Sent"
+
+[node name="drafts" type="Button" parent="sidePanel/sideButtons"]
+layout_mode = 2
+theme = ExtResource("5_qpmm6")
+button_mask = 0
+text = "Drafts"
+
+[node name="trash" type="Button" parent="sidePanel/sideButtons"]
+layout_mode = 2
+theme = ExtResource("5_qpmm6")
+button_mask = 0
+text = "Trash"
+
+[node name="emailPanel" type="Panel" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 581.0
+offset_top = -647.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_6myck")
+
+[node name="emailPanelHighlight" type="Panel" parent="emailPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bjxje")
+
+[node name="emailPanelShadow" type="Panel" parent="emailPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_omecr")
+
+[node name="defaultMsg" type="Label" parent="emailPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.0
+offset_top = 31.0
+offset_right = 136.0
+offset_bottom = 55.0
+grow_horizontal = 2
+text = "No Email Selected"
+label_settings = ExtResource("4_bjxje")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="emailList" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = -0.00078125
+anchor_top = 0.013888889
+anchor_right = 0.9796875
+anchor_bottom = 1.0
+offset_left = 187.0
+offset_top = 64.0
+offset_right = -676.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+script = ExtResource("8_n2hej")
+metadata/_edit_use_anchors_ = true
+
+[node name="tutorialEmailButton" type="Button" parent="emailList"]
+layout_mode = 2
+theme = ExtResource("3_omecr")
+toggle_mode = true
+text = "/
+/"
+icon = ExtResource("5_06rbv")
+alignment = 0
+autowrap_mode = 2
+
+[node name="tutorialLabel" type="Label" parent="emailList/tutorialEmailButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -12.0
+offset_right = 64.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tutorial"
+label_settings = ExtResource("4_bjxje")
+
+[node name="easyEmailButton" type="Button" parent="emailList"]
+layout_mode = 2
+theme = ExtResource("3_omecr")
+toggle_mode = true
+text = "/
+/"
+icon = ExtResource("5_06rbv")
+alignment = 0
+autowrap_mode = 2
+
+[node name="easyLabel" type="Label" parent="emailList/easyEmailButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -12.0
+offset_right = 96.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Demo Level 1"
+label_settings = ExtResource("4_bjxje")
+
+[node name="mediumEmailButton" type="Button" parent="emailList"]
+layout_mode = 2
+theme = ExtResource("3_omecr")
+toggle_mode = true
+text = "/
+/"
+icon = ExtResource("5_06rbv")
+alignment = 0
+autowrap_mode = 2
+
+[node name="mediumLabel" type="Label" parent="emailList/mediumEmailButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -12.0
+offset_right = 96.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Demo Level 2"
+label_settings = ExtResource("4_bjxje")
+
+[node name="hardEmailButton" type="Button" parent="emailList"]
+layout_mode = 2
+theme = ExtResource("3_omecr")
+toggle_mode = true
+text = "/
+/"
+icon = ExtResource("5_06rbv")
+alignment = 0
+autowrap_mode = 2
+
+[node name="hardLabel" type="Label" parent="emailList/hardEmailButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -12.0
+offset_right = 96.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Demo Level 3"
+label_settings = ExtResource("4_bjxje")
+
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="emailList/tutorialEmailButton" to="emailList" method="_on_tutorial_email_button_pressed"]
+[connection signal="pressed" from="emailList/easyEmailButton" to="emailList" method="_on_easy_email_button_pressed"]
+[connection signal="pressed" from="emailList/mediumEmailButton" to="emailList" method="_on_medium_email_button_pressed"]
+[connection signal="pressed" from="emailList/hardEmailButton" to="emailList" method="_on_hard_email_button_pressed"]
