@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://brk4a6wwn25og"]
+
+[ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="1_0i8ao"]
+
+[resource]
+font = ExtResource("1_0i8ao")
+font_color = Color(0.023529412, 0.34117648, 0, 1)

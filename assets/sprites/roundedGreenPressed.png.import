@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1frsnk5kq4xc"
-path="res://.godot/imported/greenPressed.png-aea94a856171724cf557dec498c995cd.ctex"
+uid="uid://dydnxkefyt7jx"
+path="res://.godot/imported/roundedGreenPressed.png-df40a58883418dfe77cdb68576a8ce69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/greenPressed.png"
-dest_files=["res://.godot/imported/greenPressed.png-aea94a856171724cf557dec498c995cd.ctex"]
+source_file="res://assets/sprites/roundedGreenPressed.png"
+dest_files=["res://.godot/imported/roundedGreenPressed.png-df40a58883418dfe77cdb68576a8ce69.ctex"]
 
 [params]
 

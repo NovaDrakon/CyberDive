@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1frsnk5kq4xc"
-path="res://.godot/imported/greenPressed.png-aea94a856171724cf557dec498c995cd.ctex"
+uid="uid://c6i0g4rslvyhy"
+path="res://.godot/imported/annoyedTalking.png-4d7e288749dd10481719bbe3c4969651.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/greenPressed.png"
-dest_files=["res://.godot/imported/greenPressed.png-aea94a856171724cf557dec498c995cd.ctex"]
+source_file="res://assets/sprites/annoyedTalking.png"
+dest_files=["res://.godot/imported/annoyedTalking.png-4d7e288749dd10481719bbe3c4969651.ctex"]
 
 [params]
 
