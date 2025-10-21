@@ -1,13 +1,12 @@
-[gd_scene load_steps=35 format=3 uid="uid://cx8k5hjvs7c7p"]
+[gd_scene load_steps=34 format=3 uid="uid://cx8k5hjvs7c7p"]
 
-[ext_resource type="Theme" uid="uid://cu8ckn8ivsyew" path="res://assets/themes/windowTheme2.tres" id="1_8pc6c"]
+[ext_resource type="Theme" uid="uid://cu8ckn8ivsyew" path="res://assets/Themes/windowTheme2.tres" id="1_8pc6c"]
 [ext_resource type="Script" uid="uid://yft8todwmj54" path="res://scripts/cyberShop.gd" id="2_ogqy6"]
 [ext_resource type="Texture2D" uid="uid://buhuxpt3ctnj6" path="res://assets/sprites/menuPanel2.png" id="3_03ixa"]
 [ext_resource type="Texture2D" uid="uid://dydnxkefyt7jx" path="res://assets/sprites/roundedGreenPressed.png" id="5_3twt2"]
 [ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="5_werdp"]
 [ext_resource type="Texture2D" uid="uid://fbknsrd0mmvj" path="res://assets/sprites/bytesSmall.png" id="6_werdp"]
-[ext_resource type="Theme" uid="uid://dasaqfnt8xhfc" path="res://assets/themes/cyberShop.tres" id="7_3twt2"]
-[ext_resource type="LabelSettings" uid="uid://brk4a6wwn25og" path="res://assets/themes/cyberLabel2.tres" id="8_nvr21"]
+[ext_resource type="Theme" uid="uid://dasaqfnt8xhfc" path="res://assets/Themes/cyberShop.tres" id="7_3twt2"]
 [ext_resource type="Texture2D" uid="uid://5gaw52qtf6sk" path="res://assets/sprites/cyberShopBG.png" id="8_u56a3"]
 [ext_resource type="Texture2D" uid="uid://cnu5r1iqmoldp" path="res://assets/sprites/crtBackground.png" id="9_4vd5t"]
 [ext_resource type="Texture2D" uid="uid://cwshotvgdnlo8" path="res://assets/sprites/amusedTalking.png" id="9_25bhf"]
@@ -193,7 +192,7 @@ offset_right = 56.0
 offset_bottom = 37.0
 grow_horizontal = 2
 text = "Weapons"
-label_settings = ExtResource("8_nvr21")
+label_settings = ExtResource("14_4kpex")
 
 [node name="weapon1" type="Button" parent="backgroundPanel/weaponsPanel"]
 layout_mode = 1
@@ -270,7 +269,7 @@ offset_right = 88.0
 offset_bottom = 37.0
 grow_horizontal = 2
 text = "Code Spells"
-label_settings = ExtResource("8_nvr21")
+label_settings = ExtResource("14_4kpex")
 
 [node name="codeSpell1" type="Button" parent="backgroundPanel/codeSpellsPanel"]
 layout_mode = 1

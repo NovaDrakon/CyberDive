@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcslrfgvps8p5"]
+
+[ext_resource type="Theme" uid="uid://bkbxdtadqgm3v" path="res://assets/themes/starMailTheme.tres" id="1_vnsav"]
+[ext_resource type="Texture2D" uid="uid://buu4ht00sgfkq" path="res://assets/sprites/starSmall.png" id="2_rsao4"]
+[ext_resource type="Script" uid="uid://0bg823ts4gjs" path="res://scenes/emailButton.gd" id="3_vnsav"]
+
+[node name="emailButton" type="Button"]
+offset_right = 392.0
+offset_bottom = 56.0
+theme = ExtResource("1_vnsav")
+toggle_mode = true
+text = "X"
+icon = ExtResource("2_rsao4")
+autowrap_trim_flags = 192
+script = ExtResource("3_vnsav")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

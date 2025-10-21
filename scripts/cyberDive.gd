@@ -1,10 +1,16 @@
 extends Window
 
-@onready var cyberDiveTab: Button = $CanvasLayer/Tabs/cyberDiveTab
+@onready var starMailTab: Button = $"../CanvasLayer/tabs/starMailTab"
+@onready var cyberShopTab: Button = $"../CanvasLayer/tabs/cyberShopTab"
+@onready var dictionaryTab: Button = $"../CanvasLayer/tabs/dictionaryTab"
+@onready var cyberDiveTab: Button = $"../CanvasLayer/tabs/cyberDiveTab"
 
 func _on_close_requested() -> void:
 	self.hide()
 	cyberDiveTab.hide()
 
 func _on_focus_entered() -> void:
-	pass
+	starMailTab.set_pressed(false)
+	cyberShopTab.set_pressed(false)
+	cyberDiveTab.set_pressed(true)
+	dictionaryTab.set_pressed(false)
