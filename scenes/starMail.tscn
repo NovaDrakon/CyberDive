@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dgf3gja1rph21"]
+[gd_scene load_steps=17 format=3 uid="uid://dgf3gja1rph21"]
 
 [ext_resource type="Theme" uid="uid://d0ylre3gbcfdh" path="res://assets/themes/windowTheme.tres" id="1_u6gb7"]
 [ext_resource type="Script" uid="uid://b3bxpto7cu2q8" path="res://scripts/starMail.gd" id="2_6myck"]
@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://buu4ht00sgfkq" path="res://assets/sprites/starSmall.png" id="5_06rbv"]
 [ext_resource type="Theme" uid="uid://c2tak2g4j8hdd" path="res://assets/themes/starMailTheme2.tres" id="5_qpmm6"]
 [ext_resource type="Texture2D" uid="uid://df48qf04wwvsi" path="res://assets/sprites/replyButton.png" id="6_wfn1d"]
-[ext_resource type="Script" uid="uid://ch5iw0c1ty663" path="res://scripts/emailList.gd" id="8_n2hej"]
-[ext_resource type="PackedScene" uid="uid://dcslrfgvps8p5" path="res://scenes/emailButton.tscn" id="11_06rbv"]
+[ext_resource type="Script" uid="uid://buwesixai7kjl" path="res://scripts/emailList.gd" id="8_n2hej"]
+[ext_resource type="Texture2D" uid="uid://cfnp051yq1bi8" path="res://assets/sprites/blueButton.png" id="10_wfn1d"]
+[ext_resource type="ButtonGroup" uid="uid://cmthm7whp3wf2" path="res://other (temp name)/emailButton.tres" id="12_wfn1d"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfn1d"]
 texture = ExtResource("3_06rbv")
@@ -21,6 +22,16 @@ texture_margin_bottom = 1.0
 
 [sub_resource type="Theme" id="Theme_6myck"]
 Panel/styles/panel = SubResource("StyleBoxTexture_wfn1d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d7d2d"]
+texture = ExtResource("10_wfn1d")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_t8jjv"]
+Panel/styles/panel = SubResource("StyleBoxTexture_d7d2d")
 
 [node name="starMail" type="Window"]
 transparent_bg = true
@@ -162,6 +173,102 @@ label_settings = ExtResource("4_bjxje")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="msgPanel" type="Panel" parent="emailPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_t8jjv")
+
+[node name="emailMsg1" type="Label" parent="emailPanel/msgPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hello,
+
+I see that you dislike your job. I think I can help with that. "
+label_settings = ExtResource("4_bjxje")
+autowrap_mode = 3
+
+[node name="emailMsg2" type="Label" parent="emailPanel/msgPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Email 1"
+label_settings = ExtResource("4_bjxje")
+autowrap_mode = 3
+
+[node name="emailMsg3" type="Label" parent="emailPanel/msgPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Email 2"
+label_settings = ExtResource("4_bjxje")
+autowrap_mode = 3
+
+[node name="emailMsg4" type="Label" parent="emailPanel/msgPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Email 4"
+label_settings = ExtResource("4_bjxje")
+autowrap_mode = 3
+
+[node name="emailMsg5" type="Label" parent="emailPanel/msgPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Email 5"
+label_settings = ExtResource("4_bjxje")
+autowrap_mode = 3
+
 [node name="emailList" type="VBoxContainer" parent="."]
 anchors_preset = -1
 anchor_left = -0.00078125
@@ -177,26 +284,47 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
 script = ExtResource("8_n2hej")
+emailButtons = ExtResource("12_wfn1d")
 metadata/_edit_use_anchors_ = true
 
-[node name="email_0" parent="emailList" instance=ExtResource("11_06rbv")]
+[node name="email_0" type="Button" parent="emailList"]
 layout_mode = 2
+theme = ExtResource("5_qpmm6")
+toggle_mode = true
+button_group = ExtResource("12_wfn1d")
 text = "Tutorial"
+icon = ExtResource("5_06rbv")
 
-[node name="email_1" parent="emailList" instance=ExtResource("11_06rbv")]
+[node name="email_1" type="Button" parent="emailList"]
 layout_mode = 2
+theme = ExtResource("5_qpmm6")
+toggle_mode = true
+button_group = ExtResource("12_wfn1d")
 text = "Level 1"
+icon = ExtResource("5_06rbv")
 
-[node name="email_2" parent="emailList" instance=ExtResource("11_06rbv")]
+[node name="email_2" type="Button" parent="emailList"]
 layout_mode = 2
+theme = ExtResource("5_qpmm6")
+toggle_mode = true
+button_group = ExtResource("12_wfn1d")
 text = "Level 2"
+icon = ExtResource("5_06rbv")
 
-[node name="email_3" parent="emailList" instance=ExtResource("11_06rbv")]
+[node name="email_3" type="Button" parent="emailList"]
 layout_mode = 2
+theme = ExtResource("5_qpmm6")
+toggle_mode = true
+button_group = ExtResource("12_wfn1d")
 text = "Level 3"
+icon = ExtResource("5_06rbv")
 
-[node name="email_4" parent="emailList" instance=ExtResource("11_06rbv")]
+[node name="email_4" type="Button" parent="emailList"]
 layout_mode = 2
+theme = ExtResource("5_qpmm6")
+toggle_mode = true
+button_group = ExtResource("12_wfn1d")
 text = "Boss"
+icon = ExtResource("5_06rbv")
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]

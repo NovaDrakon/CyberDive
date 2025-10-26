@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c80p0u8oo4nck"
-path="res://.godot/imported/neutralTalking.png-76f6ee65d3135ee5bfd531a46335517d.ctex"
+uid="uid://b5266j1rp8kkk"
+path="res://.godot/imported/upgDisabled.png-6b6b2f1c16bc9131e798894de2d13dbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/neutralTalking.png"
-dest_files=["res://.godot/imported/neutralTalking.png-76f6ee65d3135ee5bfd531a46335517d.ctex"]
+source_file="res://assets/sprites/upgDisabled.png"
+dest_files=["res://.godot/imported/upgDisabled.png-6b6b2f1c16bc9131e798894de2d13dbc.ctex"]
 
 [params]
 

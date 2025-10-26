@@ -10,7 +10,7 @@ func _on_close_requested() -> void:
 	cyberDiveTab.hide()
 
 func _on_focus_entered() -> void:
-	starMailTab.set_pressed(false)
+	starMailTab.set_pressed(true)
 	cyberShopTab.set_pressed(false)
 	cyberDiveTab.set_pressed(true)
 	dictionaryTab.set_pressed(false)

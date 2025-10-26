@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dekg7nrbw3kbt"]
+[gd_scene load_steps=34 format=3 uid="uid://dekg7nrbw3kbt"]
 
 [ext_resource type="Texture2D" uid="uid://dfspedwjqaut2" path="res://assets/sprites/background.jpg" id="1_81rff"]
 [ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/themes/startButton.tres" id="2_81rff"]
@@ -13,10 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://bondd7aot77e4" path="res://assets/sprites/cyberDiveIcon.png" id="8_nikxi"]
 [ext_resource type="Texture2D" uid="uid://cvbhxdxldm58x" path="res://assets/sprites/dictionaryIcon.png" id="9_q2hki"]
 [ext_resource type="Theme" uid="uid://r3ga8l8x0yxw" path="res://assets/themes/appTab.tres" id="10_6r5gw"]
-[ext_resource type="PackedScene" uid="uid://dgf3gja1rph21" path="res://scenes/starMail.tscn" id="13_nd1jb"]
 [ext_resource type="Script" uid="uid://hoi5lkmubha5" path="res://scripts/apps.gd" id="14_0542q"]
 [ext_resource type="PackedScene" uid="uid://u61lviw2q2f6" path="res://scenes/dictionary.tscn" id="14_vxgxr"]
 [ext_resource type="PackedScene" uid="uid://cx8k5hjvs7c7p" path="res://scenes/cyberShop.tscn" id="15_6r5gw"]
+[ext_resource type="ButtonGroup" uid="uid://d16xlvxwt0fw0" path="res://other (temp name)/tabButtons.tres" id="15_iamu6"]
+[ext_resource type="PackedScene" uid="uid://dgf3gja1rph21" path="res://scenes/starMail.tscn" id="16_iamu6"]
 [ext_resource type="PackedScene" uid="uid://w2kvlj0mysnu" path="res://scenes/cyberDive.tscn" id="17_wbccy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbccy"]
@@ -212,7 +213,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_vcvwy")
 
-[node name="apps" type="VBoxContainer" parent="CanvasLayer"]
+[node name="apps" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
 offset_left = 30.0
 offset_top = 30.0
 offset_right = 88.0
@@ -223,26 +226,26 @@ size_flags_vertical = 4
 script = ExtResource("14_0542q")
 
 [node name="starMailApp" type="TextureButton" parent="CanvasLayer/apps"]
-layout_mode = 2
+layout_mode = 0
+offset_right = 58.0
+offset_bottom = 38.0
 texture_normal = ExtResource("6_gl26t")
 
-[node name="spacer2" type="Label" parent="CanvasLayer/apps"]
-layout_mode = 2
-text = "."
-label_settings = ExtResource("7_vcvwy")
-
 [node name="cyberShopApp" type="TextureButton" parent="CanvasLayer/apps"]
-layout_mode = 2
+layout_mode = 0
+offset_left = 6.0
+offset_top = 58.0
+offset_right = 52.0
+offset_bottom = 104.0
 size_flags_horizontal = 4
 texture_normal = ExtResource("8_nikxi")
 
-[node name="spacer3" type="Label" parent="CanvasLayer/apps"]
-layout_mode = 2
-text = "."
-label_settings = ExtResource("7_vcvwy")
-
 [node name="dictionaryApp" type="TextureButton" parent="CanvasLayer/apps"]
-layout_mode = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 124.0
+offset_right = 48.0
+offset_bottom = 170.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("9_q2hki")
@@ -271,6 +274,7 @@ visible = false
 layout_mode = 2
 theme = ExtResource("10_6r5gw")
 toggle_mode = true
+button_group = ExtResource("15_iamu6")
 text = "Star Mail"
 icon = ExtResource("6_gl26t")
 
@@ -279,6 +283,7 @@ visible = false
 layout_mode = 2
 theme = ExtResource("10_6r5gw")
 toggle_mode = true
+button_group = ExtResource("15_iamu6")
 text = "Cyber Shop"
 icon = ExtResource("8_nikxi")
 
@@ -286,6 +291,8 @@ icon = ExtResource("8_nikxi")
 visible = false
 layout_mode = 2
 theme = ExtResource("10_6r5gw")
+toggle_mode = true
+button_group = ExtResource("15_iamu6")
 text = "Cyber Dive"
 icon = ExtResource("8_nikxi")
 
@@ -294,10 +301,11 @@ visible = false
 layout_mode = 2
 theme = ExtResource("10_6r5gw")
 toggle_mode = true
+button_group = ExtResource("15_iamu6")
 text = "Dictionary"
 icon = ExtResource("9_q2hki")
 
-[node name="starMail" parent="." instance=ExtResource("13_nd1jb")]
+[node name="starMail" parent="." instance=ExtResource("16_iamu6")]
 visible = false
 
 [node name="cyberShop" parent="." instance=ExtResource("15_6r5gw")]
@@ -319,6 +327,5 @@ visible = false
 [connection signal="pressed" from="CanvasLayer/tabs/cyberShopTab" to="CanvasLayer/tabs" method="_on_cyber_shop_tab_pressed"]
 [connection signal="pressed" from="CanvasLayer/tabs/cyberDiveTab" to="CanvasLayer/tabs" method="_on_cyber_dive_tab_pressed"]
 [connection signal="pressed" from="CanvasLayer/tabs/dictionaryTab" to="CanvasLayer/tabs" method="_on_dictionary_tab_pressed"]
-[connection signal="focus_entered" from="starMail" to="starMail" method="_on_focus_entered"]
 [connection signal="focus_entered" from="cyberShop" to="cyberShop" method="_on_focus_entered"]
 [connection signal="focus_entered" from="dictionary" to="dictionary" method="_on_focus_entered"]
