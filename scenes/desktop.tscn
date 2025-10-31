@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://hoi5lkmubha5" path="res://scripts/apps.gd" id="14_0542q"]
 [ext_resource type="PackedScene" uid="uid://u61lviw2q2f6" path="res://scenes/dictionary.tscn" id="14_vxgxr"]
 [ext_resource type="PackedScene" uid="uid://cx8k5hjvs7c7p" path="res://scenes/cyberShop.tscn" id="15_6r5gw"]
-[ext_resource type="ButtonGroup" uid="uid://d16xlvxwt0fw0" path="res://other (temp name)/tabButtons.tres" id="15_iamu6"]
+[ext_resource type="ButtonGroup" uid="uid://d16xlvxwt0fw0" path="res://buttonGroups/tabButtonGroup.tres" id="15_iamu6"]
 [ext_resource type="PackedScene" uid="uid://dgf3gja1rph21" path="res://scenes/starMail.tscn" id="16_iamu6"]
 [ext_resource type="PackedScene" uid="uid://w2kvlj0mysnu" path="res://scenes/cyberDive.tscn" id="17_wbccy"]
 

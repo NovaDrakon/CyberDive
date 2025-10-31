@@ -1,10 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://samasj7wqd0w"]
+[gd_scene load_steps=26 format=3 uid="uid://samasj7wqd0w"]
 
 [ext_resource type="Texture2D" uid="uid://buhuxpt3ctnj6" path="res://assets/sprites/menuPanel2.png" id="1_roked"]
 [ext_resource type="Script" uid="uid://blk6gvmvcs14k" path="res://scripts/upgradePanel.gd" id="2_5e2wg"]
-[ext_resource type="LabelSettings" uid="uid://brx2w180ye8rk" path="res://assets/themes/cyberLabel3.tres" id="4_gyht6"]
-[ext_resource type="Theme" uid="uid://cxqa1qm414lbd" path="res://assets/themes/upgradeButtons.tres" id="4_nl55n"]
-[ext_resource type="Texture2D" uid="uid://buu4ht00sgfkq" path="res://assets/sprites/starSmall.png" id="5_nl55n"]
+[ext_resource type="LabelSettings" uid="uid://brk4a6wwn25og" path="res://assets/Themes/cyberLabel2.tres" id="3_nl55n"]
+[ext_resource type="Theme" uid="uid://cxqa1qm414lbd" path="res://assets/Themes/upgradeButtons.tres" id="4_nl55n"]
+[ext_resource type="Texture2D" uid="uid://71mr4yhqsiyj" path="res://assets/sprites/dualWield.png" id="5_aa2va"]
+[ext_resource type="Texture2D" uid="uid://b6oeade22ujck" path="res://assets/sprites/fasterSwing.png" id="6_yh36e"]
+[ext_resource type="Texture2D" uid="uid://c2wq4u44q8tej" path="res://assets/sprites/swordEnchant.png" id="7_d1y4u"]
+[ext_resource type="Texture2D" uid="uid://bpr6ynvn1x2qx" path="res://assets/sprites/sharpPoint.png" id="8_s3yro"]
+[ext_resource type="Texture2D" uid="uid://cpx21qmdxlhit" path="res://assets/sprites/quickDraw.png" id="9_rk1jv"]
+[ext_resource type="Texture2D" uid="uid://qthvxhkea6du" path="res://assets/sprites/bowEnchant.png" id="10_owcqc"]
+[ext_resource type="Texture2D" uid="uid://fqqja7p3ctl" path="res://assets/sprites/farReach.png" id="11_b6s30"]
+[ext_resource type="Texture2D" uid="uid://b1gb61wkdat2q" path="res://assets/sprites/crowdControl.png" id="12_g1v4o"]
+[ext_resource type="Texture2D" uid="uid://yvff143q5quq" path="res://assets/sprites/spearEnchant.png" id="13_s5j04"]
+[ext_resource type="Texture2D" uid="uid://baecklyxd1cv2" path="res://assets/sprites/strongShot.png" id="14_iydgh"]
+[ext_resource type="Texture2D" uid="uid://bo0aie3755yyl" path="res://assets/sprites/dualShot.png" id="15_0mdyl"]
+[ext_resource type="Texture2D" uid="uid://bp7kb08e1iaww" path="res://assets/sprites/tripleShot.png" id="16_qdlvs"]
+[ext_resource type="Texture2D" uid="uid://cy1xm711i85tw" path="res://assets/sprites/hotFire.png" id="17_lrsx1"]
+[ext_resource type="Texture2D" uid="uid://bkkenr2tmcqpg" path="res://assets/sprites/bigFire.png" id="18_j4q6b"]
+[ext_resource type="Texture2D" uid="uid://cbp02i3q745sr" path="res://assets/sprites/dualFlame.png" id="19_qisjb"]
+[ext_resource type="Texture2D" uid="uid://d0eaqedynqakf" path="res://assets/sprites/greaterHeal.png" id="20_rp1xh"]
+[ext_resource type="Texture2D" uid="uid://dnpy8qnhcj85a" path="res://assets/sprites/fastHeal.png" id="21_6cy0v"]
+[ext_resource type="Texture2D" uid="uid://cc6430kyymrhk" path="res://assets/sprites/fullHeal.png" id="22_bvy78"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4kpex"]
 texture = ExtResource("1_roked")
@@ -15,6 +32,20 @@ texture_margin_bottom = 1.0
 
 [sub_resource type="Theme" id="Theme_5e2wg"]
 Panel/styles/panel = SubResource("StyleBoxTexture_4kpex")
+
+[sub_resource type="GDScript" id="GDScript_nl55n"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="upgradePanel" type="Panel"]
 offset_right = 386.0
@@ -33,145 +64,146 @@ offset_right = 64.0
 offset_bottom = 32.0
 grow_horizontal = 2
 text = "Upgrades"
-label_settings = ExtResource("4_gyht6")
+label_settings = ExtResource("3_nl55n")
 
-[node name="weaponUpgLabel" type="Label" parent="."]
+[node name="weaponUpgradeLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -56.0
-offset_top = 53.0
+offset_top = 45.0
 offset_right = 56.0
-offset_bottom = 77.0
+offset_bottom = 69.0
 grow_horizontal = 2
 text = "Weapons"
-label_settings = ExtResource("4_gyht6")
+label_settings = ExtResource("3_nl55n")
+script = SubResource("GDScript_nl55n")
 
 [node name="dualWield" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -120.5
-offset_top = 90.0
-offset_right = -72.5
+offset_left = -124.5
+offset_top = 82.0
+offset_right = -68.5
 offset_bottom = 138.0
 grow_horizontal = 2
 theme = ExtResource("4_nl55n")
-icon = ExtResource("5_nl55n")
-
-[node name="strongerBow" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -32.5
-offset_top = 90.0
-offset_right = 15.5
-offset_bottom = 138.0
-grow_horizontal = 2
-theme = ExtResource("4_nl55n")
-icon = ExtResource("5_nl55n")
-
-[node name="greaterSword" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 55.5
-offset_top = 90.0
-offset_right = 103.5
-offset_bottom = 138.0
-grow_horizontal = 2
-theme = ExtResource("4_nl55n")
-icon = ExtResource("5_nl55n")
+icon = ExtResource("5_aa2va")
 
 [node name="fasterSwing" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -120.5
+offset_left = -124.5
 offset_top = 142.0
-offset_right = -72.5
-offset_bottom = 190.0
+offset_right = -68.5
+offset_bottom = 198.0
 grow_horizontal = 2
 theme = ExtResource("4_nl55n")
 disabled = true
-icon = ExtResource("5_nl55n")
-
-[node name="quickDraw" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -32.5
-offset_top = 142.0
-offset_right = 15.5
-offset_bottom = 190.0
-grow_horizontal = 2
-theme = ExtResource("4_nl55n")
-disabled = true
-icon = ExtResource("5_nl55n")
-
-[node name="fullSpeed" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 55.5
-offset_top = 142.0
-offset_right = 103.5
-offset_bottom = 190.0
-grow_horizontal = 2
-theme = ExtResource("4_nl55n")
-disabled = true
-icon = ExtResource("5_nl55n")
+icon = ExtResource("6_yh36e")
 
 [node name="swordEnchant" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -120.5
-offset_top = 194.0
-offset_right = -72.5
-offset_bottom = 242.0
+offset_left = -124.5
+offset_top = 202.0
+offset_right = -68.5
+offset_bottom = 258.0
 grow_horizontal = 2
 theme = ExtResource("4_nl55n")
 disabled = true
-icon = ExtResource("5_nl55n")
+icon = ExtResource("7_d1y4u")
+
+[node name="sharpPoint" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.5
+offset_top = 82.0
+offset_right = 19.5
+offset_bottom = 138.0
+grow_horizontal = 2
+theme = ExtResource("4_nl55n")
+icon = ExtResource("8_s3yro")
+
+[node name="quickDraw" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = 142.0
+offset_right = 19.0
+offset_bottom = 197.0
+grow_horizontal = 2
+theme = ExtResource("4_nl55n")
+disabled = true
+icon = ExtResource("9_rk1jv")
 
 [node name="bowEnchant" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -32.5
-offset_top = 194.0
-offset_right = 15.5
-offset_bottom = 242.0
+offset_left = -36.5
+offset_top = 202.0
+offset_right = 19.5
+offset_bottom = 258.0
 grow_horizontal = 2
 theme = ExtResource("4_nl55n")
 disabled = true
-icon = ExtResource("5_nl55n")
+icon = ExtResource("10_owcqc")
 
-[node name="greatEnchant" type="Button" parent="."]
+[node name="farReach" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 55.5
-offset_top = 194.0
-offset_right = 103.5
-offset_bottom = 242.0
+offset_left = 51.5
+offset_top = 82.0
+offset_right = 107.5
+offset_bottom = 138.0
+grow_horizontal = 2
+theme = ExtResource("4_nl55n")
+icon = ExtResource("11_b6s30")
+
+[node name="crowdControl" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 51.5
+offset_top = 142.0
+offset_right = 107.5
+offset_bottom = 198.0
 grow_horizontal = 2
 theme = ExtResource("4_nl55n")
 disabled = true
-icon = ExtResource("5_nl55n")
+icon = ExtResource("12_g1v4o")
 
-[node name="codeUpgLabel" type="Label" parent="."]
+[node name="spearEnchant" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 51.5
+offset_top = 202.0
+offset_right = 107.5
+offset_bottom = 258.0
+grow_horizontal = 2
+theme = ExtResource("4_nl55n")
+disabled = true
+icon = ExtResource("13_s5j04")
+
+[node name="codeUpgradeLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -182,7 +214,7 @@ offset_right = 88.0
 offset_bottom = 303.0
 grow_horizontal = 2
 text = "Code Spells"
-label_settings = ExtResource("4_gyht6")
+label_settings = ExtResource("3_nl55n")
 
 [node name="strongShot" type="Button" parent="."]
 layout_mode = 1
@@ -195,7 +227,35 @@ offset_right = -65.0
 offset_bottom = 364.0
 grow_horizontal = 2
 theme = ExtResource("4_nl55n")
-icon = ExtResource("5_nl55n")
+icon = ExtResource("14_iydgh")
+
+[node name="dualShot" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -117.0
+offset_top = 376.0
+offset_right = -61.0
+offset_bottom = 432.0
+grow_horizontal = 2
+theme = ExtResource("4_nl55n")
+disabled = true
+icon = ExtResource("15_0mdyl")
+
+[node name="tripleShot" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -117.0
+offset_top = 436.0
+offset_right = -61.0
+offset_bottom = 492.0
+grow_horizontal = 2
+theme = ExtResource("4_nl55n")
+disabled = true
+icon = ExtResource("16_qdlvs")
 
 [node name="hotFire" type="Button" parent="."]
 layout_mode = 1
@@ -208,7 +268,35 @@ offset_right = 23.0
 offset_bottom = 364.0
 grow_horizontal = 2
 theme = ExtResource("4_nl55n")
-icon = ExtResource("5_nl55n")
+icon = ExtResource("17_lrsx1")
+
+[node name="bigFire" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.0
+offset_top = 376.0
+offset_right = 27.0
+offset_bottom = 432.0
+grow_horizontal = 2
+theme = ExtResource("4_nl55n")
+disabled = true
+icon = ExtResource("18_j4q6b")
+
+[node name="dualFlame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.0
+offset_top = 436.0
+offset_right = 27.0
+offset_bottom = 492.0
+grow_horizontal = 2
+theme = ExtResource("4_nl55n")
+disabled = true
+icon = ExtResource("19_qisjb")
 
 [node name="greaterHeal" type="Button" parent="."]
 layout_mode = 1
@@ -221,107 +309,32 @@ offset_right = 111.0
 offset_bottom = 364.0
 grow_horizontal = 2
 theme = ExtResource("4_nl55n")
-icon = ExtResource("5_nl55n")
-
-[node name="dualShot" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -113.0
-offset_top = 368.0
-offset_right = -65.0
-offset_bottom = 416.0
-grow_horizontal = 2
-theme = ExtResource("4_nl55n")
-disabled = true
-icon = ExtResource("5_nl55n")
-
-[node name="bigFire" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -25.0
-offset_top = 368.0
-offset_right = 23.0
-offset_bottom = 416.0
-grow_horizontal = 2
-theme = ExtResource("4_nl55n")
-disabled = true
-icon = ExtResource("5_nl55n")
+icon = ExtResource("20_rp1xh")
 
 [node name="fastHeal" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 63.0
-offset_top = 368.0
-offset_right = 111.0
-offset_bottom = 416.0
+offset_left = 59.0
+offset_top = 376.0
+offset_right = 115.0
+offset_bottom = 432.0
 grow_horizontal = 2
 theme = ExtResource("4_nl55n")
 disabled = true
-icon = ExtResource("5_nl55n")
-
-[node name="tripleShot" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -113.0
-offset_top = 420.0
-offset_right = -65.0
-offset_bottom = 468.0
-grow_horizontal = 2
-theme = ExtResource("4_nl55n")
-disabled = true
-icon = ExtResource("5_nl55n")
-
-[node name="dualFlame" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -25.0
-offset_top = 420.0
-offset_right = 23.0
-offset_bottom = 468.0
-grow_horizontal = 2
-theme = ExtResource("4_nl55n")
-disabled = true
-icon = ExtResource("5_nl55n")
+icon = ExtResource("21_6cy0v")
 
 [node name="fullHeal" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 63.0
-offset_top = 420.0
-offset_right = 111.0
-offset_bottom = 468.0
+offset_left = 59.0
+offset_top = 436.0
+offset_right = 115.0
+offset_bottom = 492.0
 grow_horizontal = 2
 theme = ExtResource("4_nl55n")
 disabled = true
-icon = ExtResource("5_nl55n")
-
-[connection signal="pressed" from="dualWield" to="." method="_on_dual_wield_pressed"]
-[connection signal="pressed" from="strongerBow" to="." method="_on_stronger_bow_pressed"]
-[connection signal="pressed" from="greaterSword" to="." method="_on_greater_sword_pressed"]
-[connection signal="pressed" from="fasterSwing" to="." method="_on_faster_swing_pressed"]
-[connection signal="pressed" from="quickDraw" to="." method="_on_quick_draw_pressed"]
-[connection signal="pressed" from="fullSpeed" to="." method="_on_full_speed_pressed"]
-[connection signal="pressed" from="swordEnchant" to="." method="_on_sword_enchant_pressed"]
-[connection signal="pressed" from="bowEnchant" to="." method="_on_bow_enchant_pressed"]
-[connection signal="pressed" from="greatEnchant" to="." method="_on_great_enchant_pressed"]
-[connection signal="pressed" from="strongShot" to="." method="_on_strong_shot_pressed"]
-[connection signal="pressed" from="hotFire" to="." method="_on_hot_fire_pressed"]
-[connection signal="pressed" from="greaterHeal" to="." method="_on_greater_heal_pressed"]
-[connection signal="pressed" from="dualShot" to="." method="_on_dual_shot_pressed"]
-[connection signal="pressed" from="bigFire" to="." method="_on_big_fire_pressed"]
-[connection signal="pressed" from="fastHeal" to="." method="_on_fast_heal_pressed"]
-[connection signal="pressed" from="tripleShot" to="." method="_on_triple_shot_pressed"]
-[connection signal="pressed" from="dualFlame" to="." method="_on_dual_flame_pressed"]
-[connection signal="pressed" from="fullHeal" to="." method="_on_full_heal_pressed"]
+icon = ExtResource("22_bvy78")

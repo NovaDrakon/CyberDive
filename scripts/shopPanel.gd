@@ -1,7 +1,7 @@
 extends Panel
 
 @onready var sword: Button = $sword
-@onready var greatSword: Button = $greatSword
+@onready var spear: Button = $spear
 @onready var bow: Button = $bow
 @onready var byteShot: Button = $byteShot
 @onready var firewallWave: Button = $firewallWave
@@ -18,9 +18,9 @@ func _on_sword_pressed() -> void:
 	value = 10
 	checkBytes(value, sword)
 
-func _on_great_sword_pressed() -> void:
+func _on_spear_pressed() -> void:
 	value = 25
-	checkBytes(value, greatSword)
+	checkBytes(value, spear)
 
 func _on_bow_pressed() -> void:
 	value = 15

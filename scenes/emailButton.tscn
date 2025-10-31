@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://bkbxdtadqgm3v" path="res://assets/themes/starMailTheme.tres" id="1_vnsav"]
 [ext_resource type="Texture2D" uid="uid://buu4ht00sgfkq" path="res://assets/sprites/starSmall.png" id="2_rsao4"]
-[ext_resource type="ButtonGroup" uid="uid://cmthm7whp3wf2" path="res://other (temp name)/emailButton.tres" id="2_vris2"]
-[ext_resource type="Script" uid="uid://0bg823ts4gjs" path="res://scenes/emailButton.gd" id="3_vnsav"]
+[ext_resource type="ButtonGroup" uid="uid://cmthm7whp3wf2" path="res://buttonGroups/emailButtonGroup.tres" id="2_vris2"]
+[ext_resource type="Script" path="res://scenes/emailButton.gd" id="3_vnsav"]
 
 [node name="emailButton" type="Button"]
 offset_right = 392.0

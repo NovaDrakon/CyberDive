@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://df48qf04wwvsi" path="res://assets/sprites/replyButton.png" id="6_wfn1d"]
 [ext_resource type="Script" uid="uid://buwesixai7kjl" path="res://scripts/emailList.gd" id="8_n2hej"]
 [ext_resource type="Texture2D" uid="uid://cfnp051yq1bi8" path="res://assets/sprites/blueButton.png" id="10_wfn1d"]
-[ext_resource type="ButtonGroup" uid="uid://cmthm7whp3wf2" path="res://other (temp name)/emailButton.tres" id="12_wfn1d"]
+[ext_resource type="ButtonGroup" uid="uid://cmthm7whp3wf2" path="res://buttonGroups/emailButtonGroup.tres" id="12_wfn1d"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfn1d"]
 texture = ExtResource("3_06rbv")

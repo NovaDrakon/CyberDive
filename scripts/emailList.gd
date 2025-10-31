@@ -25,12 +25,12 @@ func _on_email_button_pressed(button):
 
 	match button.name:
 		"email_0":
-			emailMsg1.show()
+			messages[0].show()
 		"email_1":
-			emailMsg2.show()
+			messages[1].show()
 		"email_2":
-			emailMsg3.show()
+			messages[2].show()
 		"email_3":
-			emailMsg4.show()
+			messages[3].show()
 		"email_4":
-			emailMsg5.show()
+			messages[4].show()
