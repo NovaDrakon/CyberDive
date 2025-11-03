@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://cx8k5hjvs7c7p"]
 
-[ext_resource type="Theme" uid="uid://cu8ckn8ivsyew" path="res://assets/themes/windowTheme2.tres" id="1_8pc6c"]
+[ext_resource type="Theme" uid="uid://cu8ckn8ivsyew" path="res://assets/Themes/windowTheme2.tres" id="1_8pc6c"]
 [ext_resource type="Script" uid="uid://yft8todwmj54" path="res://scripts/cyberShop.gd" id="2_ogqy6"]
 [ext_resource type="Texture2D" uid="uid://dydnxkefyt7jx" path="res://assets/sprites/roundedGreenPressed.png" id="5_3twt2"]
 [ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="5_werdp"]
@@ -164,13 +164,13 @@ icon = ExtResource("6_1c252")
 
 [node name="shopPanel" parent="." instance=ExtResource("7_nvr21")]
 offset_left = 12.0
-offset_top = 277.0
+offset_top = 245.0
 offset_right = 398.0
 offset_bottom = 788.0
 
 [node name="upgradePanel" parent="." instance=ExtResource("8_25bhf")]
 offset_left = 404.0
-offset_top = 277.0
+offset_top = 245.0
 offset_right = 788.0
 offset_bottom = 788.0
 
@@ -181,15 +181,15 @@ anchor_right = 0.5
 offset_left = -193.59999
 offset_top = 29.0
 offset_right = 193.59998
-offset_bottom = 271.0
+offset_bottom = 239.0
 grow_horizontal = 2
 theme = SubResource("Theme_vc1t5")
 
 [node name="merchant" type="AnimatedSprite2D" parent="merchantPanel"]
 position = Vector2(194.00003, 116)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_341ru")
-animation = &"No Money"
+animation = &"Purchase Made"
 autoplay = "Idle"
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]

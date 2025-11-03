@@ -1,25 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://cw3yja5awo834"]
+[gd_scene load_steps=6 format=3 uid="uid://cw3yja5awo834"]
 
-[ext_resource type="Texture2D" uid="uid://buhuxpt3ctnj6" path="res://assets/sprites/menuPanel2.png" id="1_o8uve"]
+[ext_resource type="Theme" uid="uid://dvx6aopfhb5xb" path="res://assets/themes/upgradePanel.tres" id="1_o8uve"]
 [ext_resource type="Script" uid="uid://bvu7acluposw" path="res://scripts/shopPanel.gd" id="2_ij75g"]
-[ext_resource type="LabelSettings" uid="uid://brk4a6wwn25og" path="res://assets/themes/cyberLabel2.tres" id="3_o8uve"]
-[ext_resource type="Theme" uid="uid://dasaqfnt8xhfc" path="res://assets/themes/shopButtons.tres" id="4_g4fi2"]
+[ext_resource type="LabelSettings" uid="uid://brk4a6wwn25og" path="res://assets/Themes/cyberLabel2.tres" id="3_o8uve"]
+[ext_resource type="Theme" uid="uid://dasaqfnt8xhfc" path="res://assets/Themes/shopButtons.tres" id="4_g4fi2"]
 [ext_resource type="Texture2D" uid="uid://cub7gv0wraulj" path="res://assets/sprites/bytes.png" id="5_dqify"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tccfi"]
-texture = ExtResource("1_o8uve")
-texture_margin_left = 1.0
-texture_margin_top = 1.0
-texture_margin_right = 1.0
-texture_margin_bottom = 1.0
-
-[sub_resource type="Theme" id="Theme_e2hv5"]
-Panel/styles/panel = SubResource("StyleBoxTexture_tccfi")
 
 [node name="shopPanel" type="Panel"]
 offset_right = 386.0
-offset_bottom = 511.0
-theme = SubResource("Theme_e2hv5")
+offset_bottom = 543.0
+theme = ExtResource("1_o8uve")
 script = ExtResource("2_ij75g")
 
 [node name="shopLabel" type="Label" parent="."]
@@ -27,11 +17,11 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -32.0
-offset_top = 8.0
-offset_right = 32.0
-offset_bottom = 32.0
+offset_left = -64.0
+offset_top = 4.0
+offset_bottom = 28.0
 grow_horizontal = 2
+scale = Vector2(2, 2)
 text = "Shop"
 label_settings = ExtResource("3_o8uve")
 horizontal_alignment = 1
@@ -43,9 +33,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -56.0
-offset_top = 45.0
+offset_top = 61.0
 offset_right = 56.0
-offset_bottom = 69.0
+offset_bottom = 85.0
 grow_horizontal = 2
 text = "Weapons"
 label_settings = ExtResource("3_o8uve")
@@ -58,9 +48,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -90.0
-offset_top = 85.0
+offset_top = 101.0
 offset_right = 90.0
-offset_bottom = 120.0
+offset_bottom = 136.0
 grow_horizontal = 2
 tooltip_text = "A quick but low damage weapon best used in combination with code attacks."
 theme = ExtResource("4_g4fi2")
@@ -73,9 +63,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -74.0
-offset_top = 136.0
+offset_top = 152.0
 offset_right = 74.0
-offset_bottom = 172.0
+offset_bottom = 188.0
 grow_horizontal = 2
 tooltip_text = "Ranged weapon which can use special arrows for code attacks."
 theme = ExtResource("4_g4fi2")
@@ -88,9 +78,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -82.0
-offset_top = 188.0
+offset_top = 204.0
 offset_right = 82.0
-offset_bottom = 224.0
+offset_bottom = 240.0
 grow_horizontal = 2
 tooltip_text = "This long weapon keeps enemies at bay with its sharp blade."
 theme = ExtResource("4_g4fi2")
@@ -103,9 +93,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -88.0
-offset_top = 280.0
+offset_top = 304.0
 offset_right = 88.0
-offset_bottom = 304.0
+offset_bottom = 328.0
 grow_horizontal = 2
 text = "Code Spells"
 label_settings = ExtResource("3_o8uve")
@@ -118,9 +108,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -122.0
-offset_top = 320.0
+offset_top = 344.0
 offset_right = 122.0
-offset_bottom = 355.0
+offset_bottom = 379.0
 grow_horizontal = 2
 tooltip_text = "A ranged code attack with a short cooldown."
 theme = ExtResource("4_g4fi2")
@@ -133,9 +123,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -82.0
-offset_top = 372.0
+offset_top = 396.0
 offset_right = 82.0
-offset_bottom = 408.0
+offset_bottom = 432.0
 grow_horizontal = 2
 tooltip_text = "A healing spell."
 theme = ExtResource("4_g4fi2")
@@ -148,9 +138,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -154.0
-offset_top = 423.0
+offset_top = 447.0
 offset_right = 154.0
-offset_bottom = 459.0
+offset_bottom = 483.0
 grow_horizontal = 2
 tooltip_text = "Sends out a wave of fire towards enemies."
 theme = ExtResource("4_g4fi2")
