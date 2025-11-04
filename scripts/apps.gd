@@ -9,7 +9,6 @@ extends Control
 
 @onready var starMailTab: Button = $"../tabs/starMailTab"
 @onready var cyberShopTab: Button = $"../tabs/cyberShopTab"
-@onready var cyberDiveTab: Button = $"../tabs/cyberDiveTab"
 @onready var dictionaryTab: Button = $"../tabs/dictionaryTab"
 
 func _on_star_mail_app_pressed() -> void:

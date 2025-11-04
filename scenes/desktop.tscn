@@ -1,7 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://dekg7nrbw3kbt"]
+[gd_scene load_steps=33 format=3 uid="uid://dekg7nrbw3kbt"]
 
 [ext_resource type="Texture2D" uid="uid://dfspedwjqaut2" path="res://assets/sprites/background.jpg" id="1_81rff"]
-[ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/themes/startButton.tres" id="2_81rff"]
+[ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/Themes/startButton.tres" id="2_81rff"]
 [ext_resource type="Script" uid="uid://dxttxglm5t2nq" path="res://scripts/tabs.gd" id="2_q2hki"]
 [ext_resource type="Texture2D" uid="uid://o7kkb1u8mn67" path="res://assets/sprites/starlightLogo.png" id="3_dcrhm"]
 [ext_resource type="Texture2D" uid="uid://dx2wwml5yp6fg" path="res://assets/sprites/timeBG.png" id="4_gl26t"]
@@ -12,13 +12,12 @@
 [ext_resource type="LabelSettings" uid="uid://7mavfiqoggw0" path="res://assets/fonts/spacers.tres" id="7_vcvwy"]
 [ext_resource type="Texture2D" uid="uid://bondd7aot77e4" path="res://assets/sprites/cyberDiveIcon.png" id="8_nikxi"]
 [ext_resource type="Texture2D" uid="uid://cvbhxdxldm58x" path="res://assets/sprites/dictionaryIcon.png" id="9_q2hki"]
-[ext_resource type="Theme" uid="uid://r3ga8l8x0yxw" path="res://assets/themes/appTab.tres" id="10_6r5gw"]
+[ext_resource type="Theme" uid="uid://r3ga8l8x0yxw" path="res://assets/Themes/appTab.tres" id="10_6r5gw"]
 [ext_resource type="Script" uid="uid://hoi5lkmubha5" path="res://scripts/apps.gd" id="14_0542q"]
 [ext_resource type="PackedScene" uid="uid://u61lviw2q2f6" path="res://scenes/dictionary.tscn" id="14_vxgxr"]
 [ext_resource type="PackedScene" uid="uid://cx8k5hjvs7c7p" path="res://scenes/cyberShop.tscn" id="15_6r5gw"]
 [ext_resource type="ButtonGroup" uid="uid://d16xlvxwt0fw0" path="res://buttonGroups/tabButtonGroup.tres" id="15_iamu6"]
 [ext_resource type="PackedScene" uid="uid://dgf3gja1rph21" path="res://scenes/starMail.tscn" id="16_iamu6"]
-[ext_resource type="PackedScene" uid="uid://w2kvlj0mysnu" path="res://scenes/cyberDive.tscn" id="17_wbccy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbccy"]
 bg_color = Color(0.5921569, 0.6901961, 0.7607843, 1)
@@ -287,15 +286,6 @@ button_group = ExtResource("15_iamu6")
 text = "Cyber Shop"
 icon = ExtResource("8_nikxi")
 
-[node name="cyberDiveTab" type="Button" parent="CanvasLayer/tabs"]
-visible = false
-layout_mode = 2
-theme = ExtResource("10_6r5gw")
-toggle_mode = true
-button_group = ExtResource("15_iamu6")
-text = "Cyber Dive"
-icon = ExtResource("8_nikxi")
-
 [node name="dictionaryTab" type="Button" parent="CanvasLayer/tabs"]
 visible = false
 layout_mode = 2
@@ -311,9 +301,6 @@ visible = false
 [node name="cyberShop" parent="." instance=ExtResource("15_6r5gw")]
 visible = false
 
-[node name="cyberDive" parent="." instance=ExtResource("17_wbccy")]
-visible = false
-
 [node name="dictionary" parent="." instance=ExtResource("14_vxgxr")]
 visible = false
 
@@ -325,7 +312,6 @@ visible = false
 [connection signal="toggled" from="CanvasLayer/tabs/startButton" to="CanvasLayer/tabs" method="_on_start_button_toggled"]
 [connection signal="pressed" from="CanvasLayer/tabs/starMailTab" to="CanvasLayer/tabs" method="_on_star_mail_tab_pressed"]
 [connection signal="pressed" from="CanvasLayer/tabs/cyberShopTab" to="CanvasLayer/tabs" method="_on_cyber_shop_tab_pressed"]
-[connection signal="pressed" from="CanvasLayer/tabs/cyberDiveTab" to="CanvasLayer/tabs" method="_on_cyber_dive_tab_pressed"]
 [connection signal="pressed" from="CanvasLayer/tabs/dictionaryTab" to="CanvasLayer/tabs" method="_on_dictionary_tab_pressed"]
 [connection signal="focus_entered" from="cyberShop" to="cyberShop" method="_on_focus_entered"]
 [connection signal="focus_entered" from="dictionary" to="dictionary" method="_on_focus_entered"]

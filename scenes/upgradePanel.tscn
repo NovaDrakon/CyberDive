@@ -1,9 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://samasj7wqd0w"]
+[gd_scene load_steps=27 format=3 uid="uid://samasj7wqd0w"]
 
-[ext_resource type="Theme" uid="uid://dvx6aopfhb5xb" path="res://assets/themes/upgradePanel.tres" id="1_b6s30"]
-[ext_resource type="Script" uid="uid://dc2hob5cx4h1y" path="res://scripts/fasterSwing.gd" id="2_g1v4o"]
-[ext_resource type="LabelSettings" uid="uid://brk4a6wwn25og" path="res://assets/themes/cyberLabel2.tres" id="3_nl55n"]
-[ext_resource type="Theme" uid="uid://cxqa1qm414lbd" path="res://assets/themes/upgradeButtons.tres" id="4_nl55n"]
+[ext_resource type="Theme" uid="uid://dvx6aopfhb5xb" path="res://assets/Themes/upgradePanel.tres" id="1_b6s30"]
+[ext_resource type="Script" uid="uid://blk6gvmvcs14k" path="res://scripts/upgradePanel.gd" id="2_5e2wg"]
+[ext_resource type="LabelSettings" uid="uid://brk4a6wwn25og" path="res://assets/Themes/cyberLabel2.tres" id="3_nl55n"]
+[ext_resource type="Theme" uid="uid://cxqa1qm414lbd" path="res://assets/Themes/upgradeButtons.tres" id="4_nl55n"]
 [ext_resource type="Texture2D" uid="uid://71mr4yhqsiyj" path="res://assets/sprites/dualWield.png" id="5_aa2va"]
 [ext_resource type="Texture2D" uid="uid://b6oeade22ujck" path="res://assets/sprites/fasterSwing.png" id="6_yh36e"]
 [ext_resource type="Texture2D" uid="uid://c2wq4u44q8tej" path="res://assets/sprites/swordEnchant.png" id="7_d1y4u"]
@@ -22,12 +22,25 @@
 [ext_resource type="Texture2D" uid="uid://d0eaqedynqakf" path="res://assets/sprites/greaterHeal.png" id="20_rp1xh"]
 [ext_resource type="Texture2D" uid="uid://dnpy8qnhcj85a" path="res://assets/sprites/fastHeal.png" id="21_6cy0v"]
 [ext_resource type="Texture2D" uid="uid://cc6430kyymrhk" path="res://assets/sprites/fullHeal.png" id="22_bvy78"]
+[ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="23_g1v4o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5j04"]
+bg_color = Color(0.039215688, 0.039215688, 0.039215688, 0.5882353)
+
+[sub_resource type="Theme" id="Theme_iydgh"]
+Panel/styles/panel = SubResource("StyleBoxFlat_s5j04")
+
+[sub_resource type="LabelSettings" id="LabelSettings_0mdyl"]
+font = ExtResource("23_g1v4o")
+font_color = Color(0.54901963, 0.98039216, 0.54901963, 1)
+shadow_size = 4
+shadow_color = Color(0.078431375, 0.5882353, 0.078431375, 1)
 
 [node name="upgradePanel" type="Panel"]
 offset_right = 386.0
 offset_bottom = 543.0
 theme = ExtResource("1_b6s30")
-script = ExtResource("2_g1v4o")
+script = ExtResource("2_5e2wg")
 
 [node name="upgradeLabel" type="Label" parent="."]
 layout_mode = 1
@@ -60,10 +73,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -124.5
-offset_top = 98.0
-offset_right = -92.5
-offset_bottom = 130.0
+offset_left = -105.0
+offset_top = 97.0
+offset_right = -56.0
+offset_bottom = 146.0
 grow_horizontal = 2
 tooltip_text = "10 - Dual Wield"
 theme = ExtResource("4_nl55n")
@@ -74,10 +87,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -124.5
-offset_top = 166.0
-offset_right = -92.5
-offset_bottom = 198.0
+offset_left = -105.0
+offset_top = 165.0
+offset_right = -56.0
+offset_bottom = 214.0
 grow_horizontal = 2
 tooltip_text = "20 - Faster Swing"
 theme = ExtResource("4_nl55n")
@@ -89,10 +102,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -124.5
-offset_top = 234.0
-offset_right = -92.5
-offset_bottom = 266.0
+offset_left = -105.0
+offset_top = 233.0
+offset_right = -56.0
+offset_bottom = 282.0
 grow_horizontal = 2
 tooltip_text = "30 - Sword Enchant"
 theme = ExtResource("4_nl55n")
@@ -104,10 +117,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -36.5
-offset_top = 98.0
-offset_right = -4.5
-offset_bottom = 130.0
+offset_left = -24.5
+offset_top = 97.0
+offset_right = 24.5
+offset_bottom = 146.0
 grow_horizontal = 2
 tooltip_text = "10 - Sharp Point"
 theme = ExtResource("4_nl55n")
@@ -118,10 +131,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -36.0
-offset_top = 166.0
-offset_right = -5.0
-offset_bottom = 197.0
+offset_left = -24.0
+offset_top = 165.0
+offset_right = 25.0
+offset_bottom = 214.0
 grow_horizontal = 2
 tooltip_text = "20 - Quick Draw"
 theme = ExtResource("4_nl55n")
@@ -133,10 +146,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -36.5
-offset_top = 234.0
-offset_right = -4.5
-offset_bottom = 266.0
+offset_left = -24.5
+offset_top = 233.0
+offset_right = 24.5
+offset_bottom = 282.0
 grow_horizontal = 2
 tooltip_text = "30 - Bow Enchant"
 theme = ExtResource("4_nl55n")
@@ -148,10 +161,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 51.5
-offset_top = 98.0
-offset_right = 83.5
-offset_bottom = 130.0
+offset_left = 57.0
+offset_top = 97.0
+offset_right = 106.0
+offset_bottom = 146.0
 grow_horizontal = 2
 tooltip_text = "10 - Far Reach"
 theme = ExtResource("4_nl55n")
@@ -162,10 +175,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 51.5
-offset_top = 166.0
-offset_right = 83.5
-offset_bottom = 198.0
+offset_left = 57.0
+offset_top = 165.0
+offset_right = 106.0
+offset_bottom = 214.0
 grow_horizontal = 2
 tooltip_text = "20 - Crowd Control"
 theme = ExtResource("4_nl55n")
@@ -177,10 +190,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 51.5
-offset_top = 234.0
-offset_right = 83.5
-offset_bottom = 266.0
+offset_left = 57.0
+offset_top = 233.0
+offset_right = 106.0
+offset_bottom = 282.0
 grow_horizontal = 2
 tooltip_text = "30 - Spear Enchant"
 theme = ExtResource("4_nl55n")
@@ -205,10 +218,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -124.5
+offset_left = -104.5
 offset_top = 340.0
-offset_right = -77.5
-offset_bottom = 387.0
+offset_right = -55.5
+offset_bottom = 389.0
 grow_horizontal = 2
 tooltip_text = "15 - Strong Shot"
 theme = ExtResource("4_nl55n")
@@ -219,10 +232,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -125.0
+offset_left = -105.0
 offset_top = 408.0
-offset_right = -78.0
-offset_bottom = 455.0
+offset_right = -56.0
+offset_bottom = 457.0
 grow_horizontal = 2
 tooltip_text = "25 - Dual Shot"
 theme = ExtResource("4_nl55n")
@@ -234,10 +247,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -125.0
+offset_left = -105.0
 offset_top = 476.0
-offset_right = -78.0
-offset_bottom = 527.0
+offset_right = -56.0
+offset_bottom = 525.0
 grow_horizontal = 2
 tooltip_text = "35 - Triple Shot"
 theme = ExtResource("4_nl55n")
@@ -249,9 +262,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -37.0
-offset_top = 340.0
-offset_right = 11.0
+offset_left = -24.0
+offset_top = 339.0
+offset_right = 25.0
 offset_bottom = 388.0
 grow_horizontal = 2
 tooltip_text = "15 - Hot Fire"
@@ -263,10 +276,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -37.0
+offset_left = -24.0
 offset_top = 408.0
-offset_right = 11.0
-offset_bottom = 456.0
+offset_right = 25.0
+offset_bottom = 457.0
 grow_horizontal = 2
 tooltip_text = "25 - Big Fire"
 theme = ExtResource("4_nl55n")
@@ -275,14 +288,17 @@ icon = ExtResource("18_j4q6b")
 
 [node name="twinFlames" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -37.0
-offset_top = 476.0
-offset_right = 11.0
-offset_bottom = 524.0
+anchor_bottom = 1.0
+offset_left = -24.5
+offset_top = -66.0
+offset_right = 24.5
+offset_bottom = -17.0
 grow_horizontal = 2
+grow_vertical = 0
 tooltip_text = "35 - Twin Flames"
 theme = ExtResource("4_nl55n")
 disabled = true
@@ -293,10 +309,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 51.5
+offset_left = 57.5
 offset_top = 340.0
-offset_right = 98.5
-offset_bottom = 387.0
+offset_right = 106.5
+offset_bottom = 389.0
 grow_horizontal = 2
 tooltip_text = "15 - Greater Heal"
 theme = ExtResource("4_nl55n")
@@ -307,10 +323,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 52.0
-offset_top = 407.0
-offset_right = 99.0
-offset_bottom = 458.0
+offset_left = 57.0
+offset_top = 408.0
+offset_right = 106.0
+offset_bottom = 457.0
 grow_horizontal = 2
 tooltip_text = "25 - Faster Heal"
 theme = ExtResource("4_nl55n")
@@ -322,12 +338,40 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 51.0
+offset_left = 57.0
 offset_top = 477.0
-offset_right = 98.0
-offset_bottom = 524.0
+offset_right = 106.0
+offset_bottom = 526.0
 grow_horizontal = 2
 tooltip_text = "35 - Full Heal"
 theme = ExtResource("4_nl55n")
 disabled = true
 icon = ExtResource("22_bvy78")
+
+[node name="blockerPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_iydgh")
+
+[node name="blockerLabel" type="Label" parent="blockerPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.375
+offset_top = -25.5
+offset_right = 174.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Upgrades are not avalible in the demo."
+label_settings = SubResource("LabelSettings_0mdyl")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
