@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy1xm711i85tw"
-path="res://.godot/imported/hotFire.png-32d2df11fc7085030630714cdc69bd2b.ctex"
+uid="uid://cc6430kyymrhk"
+path="res://.godot/imported/fullHeal.png-f97b50efa6b15f818bfc901b6661f5e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/hotFire.png"
-dest_files=["res://.godot/imported/hotFire.png-32d2df11fc7085030630714cdc69bd2b.ctex"]
+source_file="res://assets/sprites/upgradeSprites/fullHeal.png"
+dest_files=["res://.godot/imported/fullHeal.png-f97b50efa6b15f818bfc901b6661f5e5.ctex"]
 
 [params]
 

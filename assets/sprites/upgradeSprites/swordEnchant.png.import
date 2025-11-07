@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2wq4u44q8tej"
-path="res://.godot/imported/swordEnchant.png-67fd06f413f34fc81a1b4cb0d63720cc.ctex"
+path="res://.godot/imported/swordEnchant.png-82004b64d9c1f25539a28dd6a6d206f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/swordEnchant.png"
-dest_files=["res://.godot/imported/swordEnchant.png-67fd06f413f34fc81a1b4cb0d63720cc.ctex"]
+source_file="res://assets/sprites/upgradeSprites/swordEnchant.png"
+dest_files=["res://.godot/imported/swordEnchant.png-82004b64d9c1f25539a28dd6a6d206f1.ctex"]
 
 [params]
 

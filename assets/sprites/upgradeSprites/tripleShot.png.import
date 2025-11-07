@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbp02i3q745sr"
-path="res://.godot/imported/dualFlame.png-e6ade15e6182ac99ea5ddfa78e34951f.ctex"
+uid="uid://bp7kb08e1iaww"
+path="res://.godot/imported/tripleShot.png-f2e2aba5c85660e37171e1931db31e8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dualFlame.png"
-dest_files=["res://.godot/imported/dualFlame.png-e6ade15e6182ac99ea5ddfa78e34951f.ctex"]
+source_file="res://assets/sprites/upgradeSprites/tripleShot.png"
+dest_files=["res://.godot/imported/tripleShot.png-f2e2aba5c85660e37171e1931db31e8f.ctex"]
 
 [params]
 

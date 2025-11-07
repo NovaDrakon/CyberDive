@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yvff143q5quq"
-path="res://.godot/imported/spearEnchant.png-b32323de25e267e1a73d5005d19d0d09.ctex"
+uid="uid://b1gb61wkdat2q"
+path="res://.godot/imported/crowdControl.png-24ccd207982dab89d825ce8ff829078d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/spearEnchant.png"
-dest_files=["res://.godot/imported/spearEnchant.png-b32323de25e267e1a73d5005d19d0d09.ctex"]
+source_file="res://assets/sprites/upgradeSprites/crowdControl.png"
+dest_files=["res://.godot/imported/crowdControl.png-24ccd207982dab89d825ce8ff829078d.ctex"]
 
 [params]
 

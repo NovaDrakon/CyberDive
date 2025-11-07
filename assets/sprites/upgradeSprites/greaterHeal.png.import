@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc6430kyymrhk"
-path="res://.godot/imported/fullHeal.png-2f0bf75c84bb762ca90a664a6f6a9477.ctex"
+uid="uid://d0eaqedynqakf"
+path="res://.godot/imported/greaterHeal.png-446ec929612df8967d25f003c34a232e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fullHeal.png"
-dest_files=["res://.godot/imported/fullHeal.png-2f0bf75c84bb762ca90a664a6f6a9477.ctex"]
+source_file="res://assets/sprites/upgradeSprites/greaterHeal.png"
+dest_files=["res://.godot/imported/greaterHeal.png-446ec929612df8967d25f003c34a232e.ctex"]
 
 [params]
 

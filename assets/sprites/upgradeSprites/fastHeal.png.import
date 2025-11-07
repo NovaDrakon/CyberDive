@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qthvxhkea6du"
-path="res://.godot/imported/bowEnchant.png-effff08d45c84c0bd830b56b00e8f251.ctex"
+uid="uid://dnpy8qnhcj85a"
+path="res://.godot/imported/fastHeal.png-3bdbe666bba59c6c703b6f66ae55b290.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/bowEnchant.png"
-dest_files=["res://.godot/imported/bowEnchant.png-effff08d45c84c0bd830b56b00e8f251.ctex"]
+source_file="res://assets/sprites/upgradeSprites/fastHeal.png"
+dest_files=["res://.godot/imported/fastHeal.png-3bdbe666bba59c6c703b6f66ae55b290.ctex"]
 
 [params]
 

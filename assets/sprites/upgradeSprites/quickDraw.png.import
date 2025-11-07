@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkkenr2tmcqpg"
-path="res://.godot/imported/bigFire.png-a1136384999873ca477f7c7fd6c37ba4.ctex"
+uid="uid://cpx21qmdxlhit"
+path="res://.godot/imported/quickDraw.png-d133cad510c42d5f3ddf9577c6bcdd12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/bigFire.png"
-dest_files=["res://.godot/imported/bigFire.png-a1136384999873ca477f7c7fd6c37ba4.ctex"]
+source_file="res://assets/sprites/upgradeSprites/quickDraw.png"
+dest_files=["res://.godot/imported/quickDraw.png-d133cad510c42d5f3ddf9577c6bcdd12.ctex"]
 
 [params]
 

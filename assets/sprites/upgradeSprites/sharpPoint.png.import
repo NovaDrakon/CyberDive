@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0eaqedynqakf"
-path="res://.godot/imported/greaterHeal.png-9ecfb6b732fcfa43677bee3e0f88a8da.ctex"
+uid="uid://bpr6ynvn1x2qx"
+path="res://.godot/imported/sharpPoint.png-82c7f444ac81dfe9960eb329a5672742.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/greaterHeal.png"
-dest_files=["res://.godot/imported/greaterHeal.png-9ecfb6b732fcfa43677bee3e0f88a8da.ctex"]
+source_file="res://assets/sprites/upgradeSprites/sharpPoint.png"
+dest_files=["res://.godot/imported/sharpPoint.png-82c7f444ac81dfe9960eb329a5672742.ctex"]
 
 [params]
 

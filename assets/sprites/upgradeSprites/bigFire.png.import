@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fqqja7p3ctl"
-path="res://.godot/imported/farReach.png-fc89b2b8670729157afe4c4bb080fa25.ctex"
+uid="uid://bkkenr2tmcqpg"
+path="res://.godot/imported/bigFire.png-68140e64b766204df714818e945ea3f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/farReach.png"
-dest_files=["res://.godot/imported/farReach.png-fc89b2b8670729157afe4c4bb080fa25.ctex"]
+source_file="res://assets/sprites/upgradeSprites/bigFire.png"
+dest_files=["res://.godot/imported/bigFire.png-68140e64b766204df714818e945ea3f3.ctex"]
 
 [params]
 

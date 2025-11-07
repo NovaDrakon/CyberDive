@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp7kb08e1iaww"
-path="res://.godot/imported/tripleShot.png-fea26884161a9021ee7afa3a314b40aa.ctex"
+uid="uid://qthvxhkea6du"
+path="res://.godot/imported/bowEnchant.png-8c590dcec9440c47ca0ac2a7449a5b34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tripleShot.png"
-dest_files=["res://.godot/imported/tripleShot.png-fea26884161a9021ee7afa3a314b40aa.ctex"]
+source_file="res://assets/sprites/upgradeSprites/bowEnchant.png"
+dest_files=["res://.godot/imported/bowEnchant.png-8c590dcec9440c47ca0ac2a7449a5b34.ctex"]
 
 [params]
 

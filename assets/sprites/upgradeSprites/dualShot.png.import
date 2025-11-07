@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://71mr4yhqsiyj"
-path="res://.godot/imported/dualWield.png-7ee2660c2a69b906ad60d738d052824a.ctex"
+uid="uid://bo0aie3755yyl"
+path="res://.godot/imported/dualShot.png-16023d27a03ac8cc5cd236cb634d2f4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dualWield.png"
-dest_files=["res://.godot/imported/dualWield.png-7ee2660c2a69b906ad60d738d052824a.ctex"]
+source_file="res://assets/sprites/upgradeSprites/dualShot.png"
+dest_files=["res://.godot/imported/dualShot.png-16023d27a03ac8cc5cd236cb634d2f4d.ctex"]
 
 [params]
 

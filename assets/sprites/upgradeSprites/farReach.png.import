@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpx21qmdxlhit"
-path="res://.godot/imported/quickDraw.png-3d11bff3d32a3cca3cf2fa4c45753fd6.ctex"
+uid="uid://fqqja7p3ctl"
+path="res://.godot/imported/farReach.png-9a91a7fb91f6bdbc57f6b4065cf5f756.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/quickDraw.png"
-dest_files=["res://.godot/imported/quickDraw.png-3d11bff3d32a3cca3cf2fa4c45753fd6.ctex"]
+source_file="res://assets/sprites/upgradeSprites/farReach.png"
+dest_files=["res://.godot/imported/farReach.png-9a91a7fb91f6bdbc57f6b4065cf5f756.ctex"]
 
 [params]
 

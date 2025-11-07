@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo0aie3755yyl"
-path="res://.godot/imported/dualShot.png-a619564f0777117d0b3762f454c61826.ctex"
+uid="uid://b6oeade22ujck"
+path="res://.godot/imported/fasterSwing.png-b089f7da482cb3a2e401e5ca650a68ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dualShot.png"
-dest_files=["res://.godot/imported/dualShot.png-a619564f0777117d0b3762f454c61826.ctex"]
+source_file="res://assets/sprites/upgradeSprites/fasterSwing.png"
+dest_files=["res://.godot/imported/fasterSwing.png-b089f7da482cb3a2e401e5ca650a68ef.ctex"]
 
 [params]
 

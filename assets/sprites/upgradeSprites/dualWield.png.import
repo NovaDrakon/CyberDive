@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnpy8qnhcj85a"
-path="res://.godot/imported/fastHeal.png-ac4f2339f8fc6e66e50a88403ecf0499.ctex"
+uid="uid://71mr4yhqsiyj"
+path="res://.godot/imported/dualWield.png-3e019ee5255d3cea1770e93a7d74bf8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fastHeal.png"
-dest_files=["res://.godot/imported/fastHeal.png-ac4f2339f8fc6e66e50a88403ecf0499.ctex"]
+source_file="res://assets/sprites/upgradeSprites/dualWield.png"
+dest_files=["res://.godot/imported/dualWield.png-3e019ee5255d3cea1770e93a7d74bf8c.ctex"]
 
 [params]
 
