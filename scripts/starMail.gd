@@ -12,3 +12,7 @@ func _on_focus_entered() -> void:
 	starMailTab.set_pressed(true)
 	cyberShopTab.set_pressed(false)
 	dictionaryTab.set_pressed(false)
+
+
+func _on_debug_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/debugLvl1.tscn")

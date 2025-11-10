@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuv8xcobw4bv3"
-path="res://.godot/imported/mcJump.png-b4622e0207e4b3bbcef071fe643cc4f5.ctex"
+uid="uid://cnhpa4rjm11iu"
+path="res://.godot/imported/placeHolder.png-b4fe0b434c7f0973d4b6594a9f278d21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characterSprites/mcJump.png"
-dest_files=["res://.godot/imported/mcJump.png-b4622e0207e4b3bbcef071fe643cc4f5.ctex"]
+source_file="res://assets/sprites/tilesets/placeHolder.png"
+dest_files=["res://.godot/imported/placeHolder.png-b4fe0b434c7f0973d4b6594a9f278d21.ctex"]
 
 [params]
 

@@ -505,3 +505,4 @@ text = "The Final Challenge"
 icon = ExtResource("5_06rbv")
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="sidePanel/debugButton" to="." method="_on_debug_button_pressed"]

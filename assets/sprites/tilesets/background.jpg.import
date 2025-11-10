@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuv8xcobw4bv3"
-path="res://.godot/imported/mcJump.png-b4622e0207e4b3bbcef071fe643cc4f5.ctex"
+uid="uid://c71sxggae08ur"
+path="res://.godot/imported/background.jpg-e51daddde4714a3ec432cc2d19706b5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characterSprites/mcJump.png"
-dest_files=["res://.godot/imported/mcJump.png-b4622e0207e4b3bbcef071fe643cc4f5.ctex"]
+source_file="res://assets/sprites/tilesets/background.jpg"
+dest_files=["res://.godot/imported/background.jpg-e51daddde4714a3ec432cc2d19706b5a.ctex"]
 
 [params]
 
