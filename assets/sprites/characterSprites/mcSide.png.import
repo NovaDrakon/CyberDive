@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj4kfu6nrkr1p"
-path="res://.godot/imported/mcTopLeftIdle.png-898dc31cea8e4115b594e9f71656e2f8.ctex"
+uid="uid://dv5f25x6n8iwm"
+path="res://.godot/imported/mcSide.png-5a0409b4df2a22132afda771bd231d7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characterSprites/mcTopLeftIdle.png"
-dest_files=["res://.godot/imported/mcTopLeftIdle.png-898dc31cea8e4115b594e9f71656e2f8.ctex"]
+source_file="res://assets/sprites/characterSprites/mcSide.png"
+dest_files=["res://.godot/imported/mcSide.png-5a0409b4df2a22132afda771bd231d7e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4jmp8qpfea26"
-path="res://.godot/imported/mcRight.png-10bea165e905823963f00872c2d09865.ctex"
+uid="uid://btr6kfcki6y5c"
+path="res://.godot/imported/mcIdle.png-cbf252cb9bb35271a15184c0d68fcb92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characterSprites/mcRight.png"
-dest_files=["res://.godot/imported/mcRight.png-10bea165e905823963f00872c2d09865.ctex"]
+source_file="res://assets/sprites/characterSprites/mcIdle.png"
+dest_files=["res://.godot/imported/mcIdle.png-cbf252cb9bb35271a15184c0d68fcb92.ctex"]
 
 [params]
 
