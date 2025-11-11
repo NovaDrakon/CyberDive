@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @onready var characterSprite: AnimatedSprite2D = $characterSprite
 
-var speed = 200
-var jump = -280
+var speed = 180
+var jump = -290
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("Left", "Right")
