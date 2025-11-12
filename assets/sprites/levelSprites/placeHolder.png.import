@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c71sxggae08ur"
-path="res://.godot/imported/background.jpg-e51daddde4714a3ec432cc2d19706b5a.ctex"
+uid="uid://cnhpa4rjm11iu"
+path="res://.godot/imported/placeHolder.png-4e0584a416e8d8d00ef882c81e07535e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilesets/background.jpg"
-dest_files=["res://.godot/imported/background.jpg-e51daddde4714a3ec432cc2d19706b5a.ctex"]
+source_file="res://assets/sprites/levelSprites/placeHolder.png"
+dest_files=["res://.godot/imported/placeHolder.png-4e0584a416e8d8d00ef882c81e07535e.ctex"]
 
 [params]
 

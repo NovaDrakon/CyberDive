@@ -1,26 +1,26 @@
 extends CharacterBody2D
 
-@onready var characterSprite: AnimatedSprite2D = $characterSprite
+@onready var animatedSprite2D: AnimatedSprite2D = $AnimatedSprite2D
 
-var speed = 180
-var jump = -290
+var speed = 200
+var jump = -295
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("Left", "Right")
 	
 	if direction > 0:
-		characterSprite.flip_h = false
+		animatedSprite2D.flip_h = false
 	elif  direction < 0:
-		characterSprite.flip_h = true
+		animatedSprite2D.flip_h = true
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		characterSprite.play("Jump")
+		animatedSprite2D.play("Jump")
 		velocity.y = jump
 		await get_tree().create_timer(0.65).timeout
-		characterSprite.play("Idle")
+		animatedSprite2D.play("Idle")
 
 	if direction:
 		velocity.x = direction * speed
