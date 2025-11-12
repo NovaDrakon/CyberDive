@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://dekg7nrbw3kbt"]
 
 [ext_resource type="Texture2D" uid="uid://dfspedwjqaut2" path="res://assets/sprites/background.jpg" id="1_81rff"]
-[ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/Themes/startButton.tres" id="2_81rff"]
+[ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/themes/startButton.tres" id="2_81rff"]
 [ext_resource type="Script" uid="uid://dxttxglm5t2nq" path="res://scripts/tabs.gd" id="2_q2hki"]
 [ext_resource type="Texture2D" uid="uid://o7kkb1u8mn67" path="res://assets/sprites/starlightLogo.png" id="3_dcrhm"]
 [ext_resource type="Texture2D" uid="uid://dx2wwml5yp6fg" path="res://assets/sprites/timeBG.png" id="4_gl26t"]
@@ -12,7 +12,7 @@
 [ext_resource type="LabelSettings" uid="uid://7mavfiqoggw0" path="res://assets/fonts/spacers.tres" id="7_vcvwy"]
 [ext_resource type="Texture2D" uid="uid://bondd7aot77e4" path="res://assets/sprites/cyberDiveIcon.png" id="8_nikxi"]
 [ext_resource type="Texture2D" uid="uid://cvbhxdxldm58x" path="res://assets/sprites/dictionaryIcon.png" id="9_q2hki"]
-[ext_resource type="Theme" uid="uid://r3ga8l8x0yxw" path="res://assets/Themes/appTab.tres" id="10_6r5gw"]
+[ext_resource type="Theme" uid="uid://r3ga8l8x0yxw" path="res://assets/themes/appTab.tres" id="10_6r5gw"]
 [ext_resource type="Script" uid="uid://hoi5lkmubha5" path="res://scripts/apps.gd" id="14_0542q"]
 [ext_resource type="PackedScene" uid="uid://u61lviw2q2f6" path="res://scenes/dictionary.tscn" id="14_vxgxr"]
 [ext_resource type="PackedScene" uid="uid://cx8k5hjvs7c7p" path="res://scenes/cyberShop.tscn" id="15_6r5gw"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cu46doc6h0v3o"]
+[gd_scene load_steps=13 format=3 uid="uid://cu46doc6h0v3o"]
 
 [ext_resource type="Script" uid="uid://dvuel6aqy1j28" path="res://scripts/flag.gd" id="2_32e5v"]
 [ext_resource type="Texture2D" uid="uid://c4dgflcu658mn" path="res://assets/sprites/levelSprites/flag.png" id="2_q38m2"]
@@ -67,6 +67,9 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32e5v"]
+size = Vector2(16, 16)
+
 [node name="flag" type="Area2D"]
 collision_layer = 2
 collision_mask = 4
@@ -75,6 +78,10 @@ script = ExtResource("2_32e5v")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_76ss4")
 animation = &"Wave"
+autoplay = "Wave"
 frame_progress = 0.77939034
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_32e5v")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
