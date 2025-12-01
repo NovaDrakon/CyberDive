@@ -200,7 +200,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="msgPanel" type="Panel" parent="emailPanel"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -292,7 +291,7 @@ This first \"level\" will introduce you to Malware. They are weak and easy to ta
 
 In the tutorial you learned how to use \"Byte Shot\". This will be you first spell.
 
-When you return, you can use the shop. There, you can buy weapons and spells. Upgrades will be available once you complete your \"trial\" period.
+My next email will have the download for the shop. There, you can buy weapons and spells. Upgrades will be available once you complete your \"trial\" period.
 
 Good Luck.
 
@@ -318,7 +317,6 @@ text = "lvl_1.exe"
 icon = ExtResource("12_fp8g5")
 
 [node name="emailMsg3" type="Label" parent="emailPanel/msgPanel"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -356,6 +354,23 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("13_fp8g5")
 text = "lvl_2.exe"
+icon = ExtResource("12_fp8g5")
+
+[node name="cyberShopDownload" type="Button" parent="emailPanel/msgPanel/emailMsg3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -124.0
+offset_right = 132.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("13_fp8g5")
+text = "cyberShop.exe"
 icon = ExtResource("12_fp8g5")
 
 [node name="emailMsg4" type="Label" parent="emailPanel/msgPanel"]

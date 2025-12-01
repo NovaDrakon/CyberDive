@@ -68,7 +68,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32e5v"]
-size = Vector2(16, 16)
+size = Vector2(14, 16)
 
 [node name="flag" type="Area2D"]
 collision_layer = 2
