@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dekg7nrbw3kbt"]
+[gd_scene load_steps=38 format=3 uid="uid://dekg7nrbw3kbt"]
 
 [ext_resource type="Texture2D" uid="uid://dfspedwjqaut2" path="res://assets/sprites/background.jpg" id="1_81rff"]
 [ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/themes/startButton.tres" id="2_81rff"]
@@ -6,11 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://o7kkb1u8mn67" path="res://assets/sprites/starlightLogo.png" id="3_dcrhm"]
 [ext_resource type="Texture2D" uid="uid://dx2wwml5yp6fg" path="res://assets/sprites/timeBG.png" id="4_gl26t"]
 [ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="5_gl26t"]
+[ext_resource type="Script" uid="uid://c02rxu0ch24oj" path="res://scripts/settingBox.gd" id="5_iamu6"]
 [ext_resource type="Script" uid="uid://df88glk2jnvjt" path="res://scripts/startMenu.gd" id="5_nd1jb"]
+[ext_resource type="LabelSettings" uid="uid://cpt0d0nx2sye1" path="res://assets/fonts/emailLabel.tres" id="6_1dbpt"]
 [ext_resource type="Texture2D" uid="uid://d0udavkyhxjp0" path="res://assets/sprites/starMailIcon.png" id="6_gl26t"]
+[ext_resource type="Theme" uid="uid://w3m4dxgji7wd" path="res://assets/Themes/slider.tres" id="6_v4dq8"]
 [ext_resource type="Script" uid="uid://barml4itm6ho5" path="res://scripts/time.gd" id="6_vcvwy"]
+[ext_resource type="Texture2D" uid="uid://m4lcs17xiri7" path="res://assets/sprites/unmuted.png" id="7_1dbpt"]
 [ext_resource type="LabelSettings" uid="uid://7mavfiqoggw0" path="res://assets/fonts/spacers.tres" id="7_vcvwy"]
 [ext_resource type="Texture2D" uid="uid://bondd7aot77e4" path="res://assets/sprites/cyberDiveIcon.png" id="8_nikxi"]
+[ext_resource type="Texture2D" uid="uid://8t5lx8yj7lbc" path="res://assets/sprites/muted.png" id="8_v08ca"]
 [ext_resource type="Texture2D" uid="uid://cvbhxdxldm58x" path="res://assets/sprites/dictionaryIcon.png" id="9_q2hki"]
 [ext_resource type="Theme" uid="uid://r3ga8l8x0yxw" path="res://assets/themes/appTab.tres" id="10_6r5gw"]
 [ext_resource type="Script" uid="uid://hoi5lkmubha5" path="res://scripts/apps.gd" id="14_0542q"]
@@ -172,6 +177,7 @@ offset_top = 38.0
 offset_right = 293.0
 offset_bottom = 92.0
 theme = ExtResource("2_81rff")
+toggle_mode = true
 text = "Settings"
 
 [node name="quitButton" type="Button" parent="CanvasLayer/taskbar/menuBox"]
@@ -183,6 +189,71 @@ offset_bottom = 150.0
 theme = ExtResource("2_81rff")
 text = "Quit
 "
+
+[node name="settingBox" type="Panel" parent="CanvasLayer/taskbar"]
+visible = false
+layout_mode = 0
+offset_left = 315.0
+offset_top = -287.0
+offset_right = 618.0
+offset_bottom = 9.0
+script = ExtResource("5_iamu6")
+
+[node name="settingHighlight" type="Panel" parent="CanvasLayer/taskbar/settingBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_nd1jb")
+
+[node name="settingShadow" type="Panel" parent="CanvasLayer/taskbar/settingBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vxgxr")
+
+[node name="volumeLabel" type="Label" parent="CanvasLayer/taskbar/settingBox"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 24.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+text = "Volume"
+label_settings = ExtResource("6_1dbpt")
+
+[node name="volumeSlider" type="HSlider" parent="CanvasLayer/taskbar/settingBox"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 243.0
+offset_bottom = 80.0
+theme = ExtResource("6_v4dq8")
+min_value = 10.0
+step = 10.0
+value = 100.0
+
+[node name="muteButton" type="TextureButton" parent="CanvasLayer/taskbar/settingBox"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -48.0
+offset_top = 48.0
+offset_right = -16.0
+offset_bottom = 80.0
+grow_horizontal = 0
+toggle_mode = true
+texture_normal = ExtResource("7_1dbpt")
+texture_pressed = ExtResource("8_v08ca")
 
 [node name="timePanel" type="Panel" parent="CanvasLayer/taskbar"]
 layout_mode = 1
@@ -304,8 +375,9 @@ visible = false
 [node name="dictionary" parent="." instance=ExtResource("14_vxgxr")]
 visible = false
 
-[connection signal="pressed" from="CanvasLayer/taskbar/menuBox/settingButton" to="CanvasLayer/taskbar/menuBox" method="_on_setting_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/taskbar/menuBox/settingButton" to="CanvasLayer/taskbar/menuBox" method="_on_setting_button_toggled"]
 [connection signal="pressed" from="CanvasLayer/taskbar/menuBox/quitButton" to="CanvasLayer/taskbar/menuBox" method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="CanvasLayer/taskbar/settingBox/volumeSlider" to="CanvasLayer/taskbar/settingBox" method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="CanvasLayer/apps/starMailApp" to="CanvasLayer/apps" method="_on_star_mail_app_pressed"]
 [connection signal="pressed" from="CanvasLayer/apps/cyberShopApp" to="CanvasLayer/apps" method="_on_cyber_shop_app_pressed"]
 [connection signal="pressed" from="CanvasLayer/apps/dictionaryApp" to="CanvasLayer/apps" method="_on_dictionary_app_pressed"]

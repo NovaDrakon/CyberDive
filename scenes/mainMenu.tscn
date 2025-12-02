@@ -52,31 +52,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -106.0
-offset_top = 6.0
+offset_top = 46.0
 offset_right = 106.0
-offset_bottom = 78.0
+offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_7nrmo")
 text = "Start"
 
-[node name="settingsButton" type="Button" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -167.5
-offset_top = 113.0
-offset_right = 167.5
-offset_bottom = 185.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("4_7nrmo")
-text = "Settings"
-
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_l7wge")
 
 [connection signal="pressed" from="CanvasLayer/startButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/settingsButton" to="." method="_on_settings_button_pressed"]

@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://w3m4dxgji7wd"]
+
+[ext_resource type="Texture2D" uid="uid://c5b1mmsolvbyq" path="res://assets/sprites/downloadButton.png" id="1_26ylt"]
+[ext_resource type="Texture2D" uid="uid://dcr1aoqhly6mq" path="res://assets/sprites/sliderStar.png" id="1_omive"]
+[ext_resource type="Texture2D" uid="uid://cotn18p65he53" path="res://assets/sprites/bluePressed.png" id="3_omive"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omive"]
+texture = ExtResource("1_26ylt")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_26ylt"]
+load_path = "res://.godot/imported/downloadButton.png-a54920dad887793d29d6f35e2f94e8ce.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwxop"]
+texture = SubResource("CompressedTexture2D_26ylt")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dujsr"]
+texture = ExtResource("3_omive")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 4.0
+expand_margin_top = 6.0
+expand_margin_right = 4.0
+expand_margin_bottom = 6.0
+
+[resource]
+HSlider/icons/grabber = ExtResource("1_omive")
+HSlider/icons/grabber_highlight = ExtResource("1_omive")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_omive")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_kwxop")
+HSlider/styles/slider = SubResource("StyleBoxTexture_dujsr")

@@ -1,6 +1,7 @@
 extends HBoxContainer
 
 @onready var menuBox: Panel = $"../taskbar/menuBox"
+@onready var settingButton: Button = $"../taskbar/menuBox/settingButton"
 @onready var startButton: Button = $startButton
 
 @onready var starMailTab: Button = $starMailTab
@@ -22,6 +23,7 @@ func _on_start_button_toggled(toggled_on: bool) -> void:
 			tab.set_pressed(false)
 	else:
 		menuBox.hide()
+		settingButton.set_pressed(false)
 
 #Tabs
 func _on_star_mail_tab_pressed() -> void:
