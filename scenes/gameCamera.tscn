@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpdb8lr5irun"]
+
+[ext_resource type="PackedScene" uid="uid://dedxs6ngodf2g" path="res://scenes/cyberDiveUI.tscn" id="1_m5ch1"]
+
+[node name="gameCamera" type="Camera2D"]
+zoom = Vector2(4, 4)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="CyberDiveUI" parent="." instance=ExtResource("1_m5ch1")]

@@ -200,6 +200,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="msgPanel" type="Panel" parent="emailPanel"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -317,6 +318,7 @@ text = "lvl_1.exe"
 icon = ExtResource("12_fp8g5")
 
 [node name="emailMsg3" type="Label" parent="emailPanel/msgPanel"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

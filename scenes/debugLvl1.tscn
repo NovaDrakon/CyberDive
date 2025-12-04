@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cnhpa4rjm11iu" path="res://assets/sprites/levelSprites/placeHolder.png" id="2_kg3ir"]
 [ext_resource type="Texture2D" uid="uid://bxjgoe6db6yoh" path="res://assets/sprites/levelSprites/initialTileset.png" id="3_6nt6a"]
 [ext_resource type="PackedScene" uid="uid://cu46doc6h0v3o" path="res://scenes/flag.tscn" id="5_8tr2q"]
-[ext_resource type="PackedScene" uid="uid://dedxs6ngodf2g" path="res://scenes/cyberDiveUI.tscn" id="6_p1sy5"]
+[ext_resource type="PackedScene" uid="uid://cpdb8lr5irun" path="res://scenes/gameCamera.tscn" id="6_p1sy5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nt6a"]
 texture = ExtResource("1_hbewk")
@@ -100,17 +100,11 @@ tile_set = SubResource("TileSet_th1wa")
 [node name="mainCharacter" parent="." instance=ExtResource("1_kg3ir")]
 position = Vector2(0, 32)
 
-[node name="Camera2D" type="Camera2D" parent="mainCharacter"]
-zoom = Vector2(4, 4)
+[node name="gameCamera" parent="mainCharacter" instance=ExtResource("6_p1sy5")]
 limit_left = -400
 limit_top = -256
 limit_right = 400
 limit_bottom = 272
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-
-[node name="CyberDiveUI" parent="mainCharacter/Camera2D" instance=ExtResource("6_p1sy5")]
 
 [node name="flag" parent="." instance=ExtResource("5_8tr2q")]
 position = Vector2(0, -184)

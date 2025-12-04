@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://df88glk2jnvjt" path="res://scripts/startMenu.gd" id="5_nd1jb"]
 [ext_resource type="LabelSettings" uid="uid://cpt0d0nx2sye1" path="res://assets/fonts/emailLabel.tres" id="6_1dbpt"]
 [ext_resource type="Texture2D" uid="uid://d0udavkyhxjp0" path="res://assets/sprites/starMailIcon.png" id="6_gl26t"]
-[ext_resource type="Theme" uid="uid://w3m4dxgji7wd" path="res://assets/Themes/slider.tres" id="6_v4dq8"]
+[ext_resource type="Theme" uid="uid://w3m4dxgji7wd" path="res://assets/themes/slider.tres" id="6_v4dq8"]
 [ext_resource type="Script" uid="uid://barml4itm6ho5" path="res://scripts/time.gd" id="6_vcvwy"]
 [ext_resource type="Texture2D" uid="uid://m4lcs17xiri7" path="res://assets/sprites/unmuted.png" id="7_1dbpt"]
 [ext_resource type="LabelSettings" uid="uid://7mavfiqoggw0" path="res://assets/fonts/spacers.tres" id="7_vcvwy"]
@@ -194,7 +194,7 @@ text = "Quit
 visible = false
 layout_mode = 0
 offset_left = 315.0
-offset_top = -287.0
+offset_top = -161.0
 offset_right = 618.0
 offset_bottom = 9.0
 script = ExtResource("5_iamu6")
@@ -217,39 +217,79 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_vxgxr")
 
-[node name="volumeLabel" type="Label" parent="CanvasLayer/taskbar/settingBox"]
+[node name="musicVolumeLabel" type="Label" parent="CanvasLayer/taskbar/settingBox"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -48.0
-offset_top = 24.0
-offset_right = 48.0
-offset_bottom = 48.0
+offset_left = -118.0
+offset_top = 20.0
+offset_right = 74.0
+offset_bottom = 44.0
 grow_horizontal = 2
-text = "Volume"
+text = "Music Volume"
 label_settings = ExtResource("6_1dbpt")
 
-[node name="volumeSlider" type="HSlider" parent="CanvasLayer/taskbar/settingBox"]
+[node name="musicVolumeSlider" type="HSlider" parent="CanvasLayer/taskbar/settingBox"]
 layout_mode = 1
 offset_left = 16.0
-offset_top = 48.0
+offset_top = 46.0
 offset_right = 243.0
-offset_bottom = 80.0
+offset_bottom = 78.0
 theme = ExtResource("6_v4dq8")
 min_value = 10.0
 step = 10.0
 value = 100.0
+scrollable = false
 
-[node name="muteButton" type="TextureButton" parent="CanvasLayer/taskbar/settingBox"]
+[node name="musicMuteButton" type="TextureButton" parent="CanvasLayer/taskbar/settingBox"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -48.0
-offset_top = 48.0
+offset_top = 46.0
 offset_right = -16.0
-offset_bottom = 80.0
+offset_bottom = 78.0
+grow_horizontal = 0
+toggle_mode = true
+texture_normal = ExtResource("7_1dbpt")
+texture_pressed = ExtResource("8_v08ca")
+
+[node name="sfxVolumeLabel" type="Label" parent="CanvasLayer/taskbar/settingBox"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -102.5
+offset_top = 92.0
+offset_right = 57.5
+offset_bottom = 116.0
+grow_horizontal = 2
+text = "SFX Volume"
+label_settings = ExtResource("6_1dbpt")
+
+[node name="sfxVolumeSlider" type="HSlider" parent="CanvasLayer/taskbar/settingBox"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 118.0
+offset_right = 243.0
+offset_bottom = 150.0
+theme = ExtResource("6_v4dq8")
+min_value = 10.0
+step = 10.0
+value = 100.0
+scrollable = false
+
+[node name="sfxMuteButton" type="TextureButton" parent="CanvasLayer/taskbar/settingBox"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -48.0
+offset_top = 118.0
+offset_right = -16.0
+offset_bottom = 150.0
 grow_horizontal = 0
 toggle_mode = true
 texture_normal = ExtResource("7_1dbpt")
@@ -377,7 +417,8 @@ visible = false
 
 [connection signal="toggled" from="CanvasLayer/taskbar/menuBox/settingButton" to="CanvasLayer/taskbar/menuBox" method="_on_setting_button_toggled"]
 [connection signal="pressed" from="CanvasLayer/taskbar/menuBox/quitButton" to="CanvasLayer/taskbar/menuBox" method="_on_quit_button_pressed"]
-[connection signal="value_changed" from="CanvasLayer/taskbar/settingBox/volumeSlider" to="CanvasLayer/taskbar/settingBox" method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/taskbar/settingBox/musicVolumeSlider" to="CanvasLayer/taskbar/settingBox" method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/taskbar/settingBox/sfxVolumeSlider" to="CanvasLayer/taskbar/settingBox" method="_on_sfx_volume_slider_value_changed"]
 [connection signal="pressed" from="CanvasLayer/apps/starMailApp" to="CanvasLayer/apps" method="_on_star_mail_app_pressed"]
 [connection signal="pressed" from="CanvasLayer/apps/cyberShopApp" to="CanvasLayer/apps" method="_on_cyber_shop_app_pressed"]
 [connection signal="pressed" from="CanvasLayer/apps/dictionaryApp" to="CanvasLayer/apps" method="_on_dictionary_app_pressed"]
