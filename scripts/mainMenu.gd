@@ -1,6 +1,6 @@
 extends Control
 
-@onready var click: AudioStreamPlayer2D = $click
+@onready var gameMusic: Node = $gameMusic
 
 func _on_start_button_pressed() -> void:
 	click.play()

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cos0j1i51mt3u"]
+
+[node name="gameSounds" type="Node"]
+
+[node name="mainLevelMusic" type="AudioStreamPlayer2D" parent="."]
+bus = &"Music"
+
+[node name="subLevelMusic" type="AudioStreamPlayer2D" parent="."]
+bus = &"Music"
+
+[node name="menuMusic" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
+bus = &"Music"
+
+[node name="bossMusic" type="AudioStreamPlayer2D" parent="."]
+bus = &"Music"
