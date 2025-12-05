@@ -21,6 +21,7 @@ func _on_email_button_pressed(button):
 	
 	var messages = [emailMsg0, emailMsg1, emailMsg2, emailMsg3, emailMsg4, emailMsg5]
 	
+	GameSounds.click.play()
 	for msg in messages:
 		msg.hide()
 

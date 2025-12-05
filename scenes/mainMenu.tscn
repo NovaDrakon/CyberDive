@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c75bpicmodos8"]
+[gd_scene load_steps=6 format=3 uid="uid://c75bpicmodos8"]
 
 [ext_resource type="Script" uid="uid://cicgcme4htqkd" path="res://scripts/mainMenu.gd" id="1_7nrmo"]
 [ext_resource type="Texture2D" uid="uid://cnu5r1iqmoldp" path="res://assets/sprites/crtBackground.png" id="1_qkhwq"]
-[ext_resource type="AudioStream" uid="uid://dn0bli7nincty" path="res://assets/audio/clickNoise.wav" id="2_l7wge"]
 [ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="3_7nrmo"]
 [ext_resource type="Theme" uid="uid://vnq3rfnwmmqa" path="res://assets/fonts/mainMenuButtons.tres" id="4_7nrmo"]
 
@@ -59,8 +58,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_7nrmo")
 text = "Start"
-
-[node name="click" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_l7wge")
 
 [connection signal="pressed" from="CanvasLayer/startButton" to="." method="_on_start_button_pressed"]

@@ -12,6 +12,7 @@ extends Control
 @onready var dictionaryTab: Button = $"../tabs/dictionaryTab"
 
 func _on_star_mail_app_pressed() -> void:
+	GameSounds.click.play()
 	starMail.show()
 	starMail.grab_focus()
 	starMailTab.set_pressed(true)
@@ -19,6 +20,7 @@ func _on_star_mail_app_pressed() -> void:
 	closeMenu()
 
 func _on_cyber_shop_app_pressed() -> void:
+	GameSounds.click.play()
 	cyberShop.show()
 	cyberShop.grab_focus()
 	cyberShopTab.set_pressed(true)
@@ -26,6 +28,7 @@ func _on_cyber_shop_app_pressed() -> void:
 	closeMenu()
 	
 func _on_dictionary_app_pressed() -> void:
+	GameSounds.click.play()
 	dictionary.show()
 	dictionary.grab_focus()
 	dictionaryTab.set_pressed(true)

@@ -15,27 +15,33 @@ var value: int
 
 #Weapons
 func _on_sword_pressed() -> void:
+	GameSounds.click.play()
 	value = 10
 	checkBytes(value, sword)
 
 func _on_spear_pressed() -> void:
+	GameSounds.click.play()
 	value = 25
 	checkBytes(value, spear)
 
 func _on_bow_pressed() -> void:
+	GameSounds.click.play()
 	value = 15
 	checkBytes(value, bow)
 
 #Code spells
 func _on_byte_shot_pressed() -> void:
+	GameSounds.click.play()
 	value = 10
 	checkBytes(value, byteShot)
 
 func _on_firewall_wave_pressed() -> void:
+	GameSounds.click.play()
 	value = 30
 	checkBytes(value, firewallWave)
 
 func _on_patch_pressed() -> void:
+	GameSounds.click.play()
 	value = 15
 	checkBytes(value, patch)
 

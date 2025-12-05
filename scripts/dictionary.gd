@@ -5,6 +5,7 @@ extends Window
 @onready var dictionaryTab: Button = $"../CanvasLayer/tabs/dictionaryTab"
 
 func _on_close_requested() -> void:
+	GameSounds.click.play()
 	self.hide()
 	dictionaryTab.hide()
 

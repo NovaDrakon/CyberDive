@@ -11,6 +11,7 @@ func _ready() -> void:
 	bytesAmount.text = str(bytes)
 
 func _on_close_requested() -> void:
+	GameSounds.click.play()
 	self.hide()
 	cyberShopTab.hide()
 
