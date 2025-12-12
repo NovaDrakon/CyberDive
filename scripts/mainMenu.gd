@@ -1,6 +1,8 @@
 extends Control
 
 func _ready() -> void:
+	AudioServer.set_bus_volume_db(1, 6)
+	AudioServer.set_bus_volume_db(2, 0)
 	GameSounds.menuMusic.play()
 
 func _on_start_button_pressed() -> void:

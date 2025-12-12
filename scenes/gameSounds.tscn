@@ -12,19 +12,22 @@ script = ExtResource("1_g3hpv")
 
 [node name="mainLevelMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_ennwh")
+volume_db = -6.0
 bus = &"Music"
 
 [node name="subLevelMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_g3hpv")
+volume_db = -6.0
 bus = &"Music"
 
 [node name="menuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_5enen")
-volume_db = -10.0
+volume_db = -9.0
 bus = &"Music"
 
 [node name="bossMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_urs2w")
+volume_db = -6.0
 bus = &"Music"
 
 [node name="click" type="AudioStreamPlayer" parent="."]
