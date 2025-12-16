@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpb68mlkcalon"]
+
+[ext_resource type="Script" uid="uid://ca33umqh6x11d" path="res://scripts/folder.gd" id="1_abgot"]
+[ext_resource type="Texture2D" uid="uid://2lylyqnb530l" path="res://assets/sprites/levelSprites/folder.png" id="2_mpvgd"]
+[ext_resource type="Texture2D" uid="uid://cqm0qrkys6jwv" path="res://assets/sprites/eButton.png" id="3_mpvgd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ioii"]
+size = Vector2(34, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78x4e"]
+atlas = ExtResource("3_mpvgd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0f8dc"]
+atlas = ExtResource("3_mpvgd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21ie1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78x4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0f8dc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
+
+[node name="folder" type="Area2D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_abgot")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mpvgd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6ioii")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -28)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_21ie1")
+autoplay = "default"
+frame_progress = 0.5014061
+
+[node name="Destination" type="Marker2D" parent="."]
+position = Vector2(-36, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

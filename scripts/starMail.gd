@@ -17,4 +17,8 @@ func _on_focus_entered() -> void:
 
 func _on_debug_button_pressed() -> void:
 	GameSounds.click.play()
-	get_tree().change_scene_to_file("res://scenes/debugLvl1.tscn")
+	get_tree().change_scene_to_file("res://scenes/debug1.tscn")
+
+func _on_debug_button_2_pressed() -> void:
+	GameSounds.click.play()
+	get_tree().change_scene_to_file("res://scenes/debug2.tscn")

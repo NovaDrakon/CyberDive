@@ -157,19 +157,32 @@ text = "Trash"
 
 [node name="debugButton" type="Button" parent="sidePanel"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -40.0
+offset_left = 16.0
 offset_top = -28.0
-offset_right = 40.0
+offset_right = 80.0
 offset_bottom = -8.0
-grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_xsih5")
-text = "Debug lvl"
+text = "Debug 1"
+
+[node name="debugButton2" type="Button" parent="sidePanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -28.0
+offset_right = -16.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_xsih5")
+text = "Debug 2"
 
 [node name="emailPanel" type="Panel" parent="."]
 anchors_preset = 12
@@ -523,3 +536,4 @@ icon = ExtResource("5_06rbv")
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="pressed" from="sidePanel/debugButton" to="." method="_on_debug_button_pressed"]
+[connection signal="pressed" from="sidePanel/debugButton2" to="." method="_on_debug_button_2_pressed"]
