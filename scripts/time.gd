@@ -5,23 +5,27 @@ var minute = 0
 var second = 0
 var hoursPast = 13
 
-var timeNum = "0:00"
-var timeLabel = "X"
+@export var time: Resource
+
+func _ready() -> void:
+	if time:
+		time.timeNum = "1:00"
+		time.timeLabel = "x"
 
 func _process(_delta) -> void:
 	hourChange()
 	
 	if minute < 10:
-		timeNum = str(hour) + ":0" + str(minute)
+		time.timeNum = str(hour) + ":0" + str(minute)
 	else:
-		timeNum = str(hour) + ":" + str(minute)
+		time.timeNum = str(hour) + ":" + str(minute)
 	
 	if hoursPast >= 0 && hoursPast < 12:
-		timeLabel = "AM"
+		time.timeLabel = "AM"
 	elif hoursPast >= 12 && hoursPast < 24:
-		timeLabel = "PM"
+		time.timeLabel = "PM"
 	
-	self.text = timeNum + " " + timeLabel
+	self.text = time.timeNum + " " + time.timeLabel
 
 func hourChange():
 	minuteChange()

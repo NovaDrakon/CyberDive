@@ -1,6 +1,7 @@
-[gd_scene load_steps=38 format=3 uid="uid://dekg7nrbw3kbt"]
+[gd_scene load_steps=39 format=3 uid="uid://dekg7nrbw3kbt"]
 
 [ext_resource type="Texture2D" uid="uid://dfspedwjqaut2" path="res://assets/sprites/background.jpg" id="1_81rff"]
+[ext_resource type="Script" uid="uid://dp3dweuqmg80f" path="res://scripts/desktop.gd" id="1_v08ca"]
 [ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/themes/startButton.tres" id="2_81rff"]
 [ext_resource type="Script" uid="uid://dxttxglm5t2nq" path="res://scripts/tabs.gd" id="2_q2hki"]
 [ext_resource type="Texture2D" uid="uid://o7kkb1u8mn67" path="res://assets/sprites/starlightLogo.png" id="3_dcrhm"]
@@ -89,6 +90,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v08ca")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -415,6 +417,7 @@ visible = false
 visible = false
 
 [connection signal="toggled" from="CanvasLayer/taskbar/menuBox/settingButton" to="CanvasLayer/taskbar/menuBox" method="_on_setting_button_toggled"]
+[connection signal="pressed" from="CanvasLayer/taskbar/menuBox/quitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/taskbar/menuBox/quitButton" to="CanvasLayer/taskbar/menuBox" method="_on_quit_button_pressed"]
 [connection signal="value_changed" from="CanvasLayer/taskbar/settingBox/musicVolumeSlider" to="CanvasLayer/taskbar/settingBox" method="_on_music_volume_slider_value_changed"]
 [connection signal="toggled" from="CanvasLayer/taskbar/settingBox/musicMuteButton" to="CanvasLayer/taskbar/settingBox" method="_on_music_mute_button_toggled"]
