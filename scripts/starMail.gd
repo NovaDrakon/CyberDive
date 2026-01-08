@@ -4,11 +4,17 @@ extends Window
 @onready var cyberShopTab: Button = $"../CanvasLayer/tabs/cyberShopTab"
 @onready var dictionaryTab: Button = $"../CanvasLayer/tabs/dictionaryTab"
 
+@export var window: WindowData
+
+func _ready() -> void:
+	if window:
+		window.mailOpen = false
 
 func _on_close_requested() -> void:
 	GameSounds.click.play()
 	self.hide()
 	starMailTab.hide()
+	window.mailOpen = false
 
 func _on_focus_entered() -> void:
 	starMailTab.set_pressed(true)

@@ -5,12 +5,7 @@ var minute = 0
 var second = 0
 var hoursPast = 13
 
-@export var time: Resource
-
-func _ready() -> void:
-	if time:
-		time.timeNum = "1:00"
-		time.timeLabel = "x"
+@export var time: DesktopData
 
 func _process(_delta) -> void:
 	hourChange()

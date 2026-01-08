@@ -3,13 +3,13 @@ extends Resource
 
 const savePath = "res://saveLoadSystem/saveGame.tres"
 
-@export var bytes := 0
+@export var time: Resource
+@export var windows: Resource
 
 func write_savegame() -> void:
 	ResourceSaver.save(self, savePath)
 
-static func save_exists() -> bool:
-	return ResourceLoader.exists(savePath)
-
 static func load_savegame() -> SaveGame:
-	return ResourceLoader.load(savePath, "", ResourceLoader.CACHE_MODE_IGNORE)
+	if ResourceLoader.exists(savePath):
+		return load(savePath)
+	return null

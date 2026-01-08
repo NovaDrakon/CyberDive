@@ -11,12 +11,15 @@ extends Control
 @onready var cyberShopTab: Button = $"../tabs/cyberShopTab"
 @onready var dictionaryTab: Button = $"../tabs/dictionaryTab"
 
+@export var windows: WindowData
+
 func _on_star_mail_app_pressed() -> void:
 	GameSounds.click.play()
 	starMail.show()
 	starMail.grab_focus()
 	starMailTab.set_pressed(true)
 	starMailTab.show()
+	windows.mailOpen = true
 	closeMenu()
 
 func _on_cyber_shop_app_pressed() -> void:
@@ -25,6 +28,7 @@ func _on_cyber_shop_app_pressed() -> void:
 	cyberShop.grab_focus()
 	cyberShopTab.set_pressed(true)
 	cyberShopTab.show()
+	windows.shopOpen = true
 	closeMenu()
 	
 func _on_dictionary_app_pressed() -> void:
@@ -33,6 +37,7 @@ func _on_dictionary_app_pressed() -> void:
 	dictionary.grab_focus()
 	dictionaryTab.set_pressed(true)
 	dictionaryTab.show()
+	windows.dictionOpen = true
 	closeMenu()
 
 func closeMenu():

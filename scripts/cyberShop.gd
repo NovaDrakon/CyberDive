@@ -5,15 +5,16 @@ extends Window
 @onready var dictionaryTab: Button = $"../CanvasLayer/tabs/dictionaryTab"
 @onready var bytesAmount: Button = $bytesAmount
 
-var bytes = 50
+@export var window: WindowData
 
 func _ready() -> void:
-	bytesAmount.text = str(bytes)
+	bytesAmount.text = str(window.bytes)
 
 func _on_close_requested() -> void:
 	GameSounds.click.play()
 	self.hide()
 	cyberShopTab.hide()
+	window.mailOpen = false
 
 func _on_focus_entered() -> void:
 	starMailTab.set_pressed(true)
