@@ -11,10 +11,8 @@ config_version=5
 [application]
 
 config/name="Cyber Dive"
-config/version="Version 3.0.2"
+config/version="Version 3.0.3"
 run/main_scene="res://scenes/mainMenu.tscn"
-config/use_custom_user_dir=true
-config/custom_user_dir_name="CyberDive"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://bondd7aot77e4"
 
@@ -25,6 +23,7 @@ buses/default_bus_layout="res://assets/audio/busLayout.tres"
 [autoload]
 
 GameSounds="*res://scenes/gameSounds.tscn"
+SaveSystem="*res://addons/save_system/save_system.gd"
 
 [display]
 
@@ -36,6 +35,10 @@ window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 mouse_cursor/custom_image="uid://cbn3k4svikqj2"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/save_system/plugin.cfg")
 
 [input]
 

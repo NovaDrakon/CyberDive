@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://ckvsptecxq50"]
+[gd_scene load_steps=6 format=4 uid="uid://ckvsptecxq50"]
 
 [ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelSetup.gd" id="1_5xqkv"]
 [ext_resource type="TileSet" uid="uid://dy41sncxh384h" path="res://assets/sprites/levelSprites/backgroundTiles.tres" id="2_lew8y"]
 [ext_resource type="TileSet" uid="uid://b5ktav7mtu05s" path="res://assets/sprites/levelSprites/foregroundTiles.tres" id="3_5xqkv"]
 [ext_resource type="PackedScene" uid="uid://d354hodrrybid" path="res://scenes/mainCharacter.tscn" id="5_g1jy2"]
-[ext_resource type="PackedScene" uid="uid://cpdb8lr5irun" path="res://scenes/gameCamera.tscn" id="6_ykyts"]
 [ext_resource type="PackedScene" uid="uid://cu46doc6h0v3o" path="res://scenes/flag.tscn" id="7_uhn2m"]
 
 [node name="debug1" type="Node2D"]
@@ -21,7 +20,7 @@ tile_set = ExtResource("3_5xqkv")
 [node name="mainCharacter" parent="." instance=ExtResource("5_g1jy2")]
 position = Vector2(0, 32)
 
-[node name="gameCamera" parent="mainCharacter" instance=ExtResource("6_ykyts")]
+[node name="gameCamera" parent="mainCharacter" index="2"]
 limit_left = -400
 limit_top = -256
 limit_right = 400
@@ -29,3 +28,5 @@ limit_bottom = 272
 
 [node name="flag" parent="." instance=ExtResource("7_uhn2m")]
 position = Vector2(0, -184)
+
+[editable path="mainCharacter"]

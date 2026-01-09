@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://j2e3a5yots8b"]
+
+[ext_resource type="Texture2D" uid="uid://cnu5r1iqmoldp" path="res://assets/sprites/crtBackground.png" id="1_d18mn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gyflt"]
+texture = ExtResource("1_d18mn")
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_gyflt")

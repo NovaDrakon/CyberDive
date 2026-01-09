@@ -1,12 +1,17 @@
 extends Label
 
-var hour = 1
-var minute = 0
-var second = 0
-var hoursPast = 13
+var filePath = "user://saveData.sav"
+
+var hour := 7
+var minute := 0
+var second := 0
+var hoursPast := 7
 
 var timeNum := ""
 var timeLabel := ""
+
+func _ready() -> void:
+	loadTime()
 
 func _process(_delta) -> void:
 	hourChange()
@@ -22,6 +27,7 @@ func _process(_delta) -> void:
 		timeLabel = "PM"
 	
 	self.text = timeNum + " " + timeLabel
+	saveTime()
 
 func hourChange():
 	minuteChange()
@@ -40,11 +46,24 @@ func minuteChange():
 	
 	if minute == 60:
 		minute = 0
-	elif second == 900:
+	elif second == 90: #Temp number for testing; is normally 900
 		minute += 1
 
 func secondChange():
-	if second == 900:
+	if second == 90: #Temp number for testing; is normally 900
 		second = 0
 	else:
 		second += 1
+
+func saveTime():
+	SaveSystem.set_var("hr", hour)
+	SaveSystem.set_var("min", minute)
+	SaveSystem.set_var("sec", second)
+	SaveSystem.set_var("timeMeridiem", timeLabel)
+	SaveSystem.save(filePath)
+
+func loadTime():
+	hour = SaveSystem.get_var("hr", hour)
+	minute = SaveSystem.get_var("min", minute)
+	second = SaveSystem.get_var("sec", second)
+	timeLabel = SaveSystem.get_var("timeMeridiem", timeLabel)
