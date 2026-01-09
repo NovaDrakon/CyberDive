@@ -5,22 +5,23 @@ var minute = 0
 var second = 0
 var hoursPast = 13
 
-@export var time: DesktopData
+var timeNum := ""
+var timeLabel := ""
 
 func _process(_delta) -> void:
 	hourChange()
 	
 	if minute < 10:
-		time.timeNum = str(hour) + ":0" + str(minute)
+		timeNum = str(hour) + ":0" + str(minute)
 	else:
-		time.timeNum = str(hour) + ":" + str(minute)
+		timeNum = str(hour) + ":" + str(minute)
 	
 	if hoursPast >= 0 && hoursPast < 12:
-		time.timeLabel = "AM"
+		timeLabel = "AM"
 	elif hoursPast >= 12 && hoursPast < 24:
-		time.timeLabel = "PM"
+		timeLabel = "PM"
 	
-	self.text = time.timeNum + " " + time.timeLabel
+	self.text = timeNum + " " + timeLabel
 
 func hourChange():
 	minuteChange()

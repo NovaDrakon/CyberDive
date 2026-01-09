@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 @onready var animatedSprite2D: AnimatedSprite2D = $AnimatedSprite2D
 
-var stats: CharacterData
+var speed: int = 200
+var jump: int = 150
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("Left", "Right")
@@ -17,12 +18,12 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		animatedSprite2D.play("Jump")
-		velocity.y = stats.jump
+		velocity.y = jump
 		await get_tree().create_timer(0.65).timeout
 		animatedSprite2D.play("Idle")
 
 	if direction:
-		velocity.x = direction * stats.speed
+		velocity.x = direction * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, stats.speed)
+		velocity.x = move_toward(velocity.x, 0, speed)
 	move_and_slide()

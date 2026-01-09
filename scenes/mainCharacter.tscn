@@ -105,7 +105,7 @@ animations = [{
 radius = 6.0
 height = 54.0
 
-[node name="mainCharacter" type="CharacterBody2D"]
+[node name="mainCharacter" type="CharacterBody2D" groups=["Persist"]]
 collision_layer = 4
 collision_mask = 11
 floor_constant_speed = true

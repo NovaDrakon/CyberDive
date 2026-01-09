@@ -82,7 +82,7 @@ font_size = 24
 font_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
 outline_color = Color(0.17508438, 0.29932195, 0.67671543, 1)
 
-[node name="Desktop" type="Control"]
+[node name="Desktop" type="Control" groups=["Persist"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
