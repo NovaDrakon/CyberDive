@@ -22,8 +22,9 @@ buses/default_bus_layout="res://assets/audio/busLayout.tres"
 
 [autoload]
 
-GameSounds="*res://scenes/gameSounds.tscn"
 SaveSystem="*res://addons/save_system/save_system.gd"
+GameSounds="*res://scenes/gameSounds.tscn"
+GlobalVars="*res://scripts/globalVars.gd"
 
 [display]
 

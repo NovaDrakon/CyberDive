@@ -5,7 +5,7 @@ var filePath = "user://saveData.sav"
 var hour := 7
 var minute := 0
 var second := 0
-var hoursPast := 7
+var hoursPast := 19
 
 var timeNum := ""
 var timeLabel := ""
@@ -21,9 +21,9 @@ func _process(_delta) -> void:
 	else:
 		timeNum = str(hour) + ":" + str(minute)
 	
-	if hoursPast >= 0 && hoursPast < 12:
+	if hoursPast > 0 && hoursPast < 12:
 		timeLabel = "AM"
-	elif hoursPast >= 12 && hoursPast < 24:
+	elif hoursPast > 11 && hoursPast < 23:
 		timeLabel = "PM"
 	
 	self.text = timeNum + " " + timeLabel
@@ -32,7 +32,7 @@ func _process(_delta) -> void:
 func hourChange():
 	minuteChange()
 	
-	if hoursPast == 25:
+	if hoursPast == 23:
 		hoursPast = 0
 	
 	if hour == 13:
@@ -46,11 +46,11 @@ func minuteChange():
 	
 	if minute == 60:
 		minute = 0
-	elif second == 90: #Temp number for testing; is normally 900
+	elif second == 450:
 		minute += 1
 
 func secondChange():
-	if second == 90: #Temp number for testing; is normally 900
+	if second == 450:
 		second = 0
 	else:
 		second += 1
