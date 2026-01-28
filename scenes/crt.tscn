@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyrx1o52rts00"]
+
+[ext_resource type="Shader" uid="uid://g57kkkbq7epb" path="res://assets/Themes/crt.gdshader" id="1_n4iqi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n4iqi"]
+shader = ExtResource("1_n4iqi")
+
+[sub_resource type="QuadMesh" id="QuadMesh_wnyem"]
+size = Vector2(1920, 1080)
+center_offset = Vector3(960, 540, 0)
+
+[node name="MeshInstance2D" type="MeshInstance2D"]
+material = SubResource("ShaderMaterial_n4iqi")
+mesh = SubResource("QuadMesh_wnyem")
