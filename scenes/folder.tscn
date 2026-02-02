@@ -51,5 +51,11 @@ frame_progress = 0.5014061
 [node name="Destination" type="Marker2D" parent="."]
 position = Vector2(-36, 0)
 
+[node name="topLeft" type="Marker2D" parent="."]
+position = Vector2(-91, -81)
+
+[node name="bottomRight" type="Marker2D" parent="."]
+position = Vector2(96, 59)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
