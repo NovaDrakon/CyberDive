@@ -5,8 +5,8 @@
 [ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/themes/levelBG.tres" id="2_o20k0"]
 [ext_resource type="TileSet" uid="uid://c1he15yukhmbh" path="res://assets/sprites/levelSprites/foregroundTiles.tres" id="3_v6icl"]
 [ext_resource type="PackedScene" uid="uid://d354hodrrybid" path="res://scenes/mainCharacter.tscn" id="4_8b61e"]
-[ext_resource type="PackedScene" uid="uid://cu46doc6h0v3o" path="res://scenes/flag.tscn" id="5_o20k0"]
-[ext_resource type="PackedScene" uid="uid://dpb68mlkcalon" path="res://scenes/folder.tscn" id="6_lybi1"]
+[ext_resource type="PackedScene" uid="uid://cu46doc6h0v3o" path="res://scenes/levelStuff/levelParts/flag.tscn" id="5_o20k0"]
+[ext_resource type="PackedScene" uid="uid://dpb68mlkcalon" path="res://scenes/levelStuff/levelParts/folder.tscn" id="6_lybi1"]
 
 [node name="debug2" type="Node2D"]
 script = ExtResource("1_g0l8g")

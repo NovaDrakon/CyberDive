@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkxr15a5csk4n"
-path="res://.godot/imported/trojanWalk.png-fa7d2eaac45f6d6b1daf59806788c15b.ctex"
+path="res://.godot/imported/trojanFloat.png-93d5aab3d2bf46876c732f5f2fbf1ba9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemySprites/trojanWalk.png"
-dest_files=["res://.godot/imported/trojanWalk.png-fa7d2eaac45f6d6b1daf59806788c15b.ctex"]
+source_file="res://assets/sprites/enemySprites/trojanFloat.png"
+dest_files=["res://.godot/imported/trojanFloat.png-93d5aab3d2bf46876c732f5f2fbf1ba9.ctex"]
 
 [params]
 
