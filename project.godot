@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Cyber Dive"
 config/version="Version 3.0.3"
-run/main_scene="res://scenes/mainMenu.tscn"
+run/main_scene="res://scenes/desktop/mainMenu.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://bondd7aot77e4"
 
@@ -23,8 +23,9 @@ buses/default_bus_layout="res://assets/audio/busLayout.tres"
 [autoload]
 
 SaveSystem="*res://addons/save_system/save_system.gd"
-GameSounds="*res://scenes/gameSounds.tscn"
-GlobalVars="*res://scripts/globalVars.gd"
+GameSounds="*res://scenes/desktop/gameSounds.tscn"
+GlobalVars="*res://scripts/levelParts/globalVars.gd"
+GlobalScripts="*res://scripts/levelParts/globalScripts.gd"
 
 [display]
 

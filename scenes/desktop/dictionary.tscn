@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://u61lviw2q2f6"]
+
+[ext_resource type="Theme" uid="uid://d0ylre3gbcfdh" path="res://assets/themes/windowTheme.tres" id="1_h0sft"]
+[ext_resource type="Script" uid="uid://bleb4biti1hgq" path="res://scripts/desktop/dictionary.gd" id="2_jp70j"]
+
+[node name="dictionary" type="Window"]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+oversampling_override = 1.0
+title = "Dictionary"
+initial_position = 1
+size = Vector2i(720, 800)
+unresizable = true
+theme = ExtResource("1_h0sft")
+script = ExtResource("2_jp70j")
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7tn5k3jlpsnp"]
+
+[ext_resource type="Script" uid="uid://k52o46brn8ug" path="res://scripts/levelParts/test_currency.gd" id="1_om3lj"]
+[ext_resource type="Texture2D" uid="uid://buu4ht00sgfkq" path="res://assets/sprites/starSmall.png" id="2_om3lj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_om3lj"]
+size = Vector2(20, 28)
+
+[node name="testCurrency" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_om3lj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_om3lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_om3lj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
