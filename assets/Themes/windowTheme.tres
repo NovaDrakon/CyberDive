@@ -23,7 +23,7 @@ expand_margin_top = 52.0
 
 [resource]
 Window/colors/title_color = Color(0.75590044, 0.8699113, 0.9962359, 1)
-Window/colors/title_outline_modulate = Color(0, 0, 0, 1)
+Window/colors/title_outline_modulate = Color(0.49803922, 0.65882355, 0.78039217, 1)
 Window/constants/close_h_offset = 50
 Window/constants/close_v_offset = 34
 Window/constants/resize_margin = 10

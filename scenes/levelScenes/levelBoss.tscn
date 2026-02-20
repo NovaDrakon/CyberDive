@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cywmet8tq7gu0"]
+
+[ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelParts/levelSetup.gd" id="1_wcyr1"]
+[ext_resource type="TileSet" uid="uid://c08bi8v8n42rw" path="res://assets/sprites/levelSprites/backgroundTiles.tres" id="2_ncafg"]
+[ext_resource type="TileSet" uid="uid://c1he15yukhmbh" path="res://assets/sprites/levelSprites/foregroundTiles.tres" id="3_uw66p"]
+
+[node name="levelBoss" type="Node2D"]
+script = ExtResource("1_wcyr1")
+
+[node name="Background" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_ncafg")
+
+[node name="Foreground" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3_uw66p")

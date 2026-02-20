@@ -54,7 +54,9 @@ unresizable = true
 theme = ExtResource("1_u6gb7")
 script = ExtResource("2_6myck")
 
-[node name="topBarPanel" type="Panel" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="topBarPanel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -67,7 +69,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_6myck")
 
-[node name="topButtons" type="HBoxContainer" parent="topBarPanel"]
+[node name="topButtons" type="HBoxContainer" parent="CanvasLayer/topBarPanel"]
 visible = false
 layout_mode = 1
 anchors_preset = 4
@@ -79,13 +81,13 @@ offset_right = 130.0
 offset_bottom = 19.0
 grow_vertical = 2
 
-[node name="trash" type="Button" parent="topBarPanel/topButtons"]
+[node name="trash" type="Button" parent="CanvasLayer/topBarPanel/topButtons"]
 layout_mode = 2
 theme = ExtResource("3_63bi6")
 button_mask = 0
 icon = ExtResource("4_n2hej")
 
-[node name="star" type="Button" parent="topBarPanel/topButtons"]
+[node name="star" type="Button" parent="CanvasLayer/topBarPanel/topButtons"]
 layout_mode = 2
 theme = ExtResource("3_63bi6")
 toggle_mode = true
@@ -93,13 +95,13 @@ button_pressed = true
 button_mask = 0
 icon = ExtResource("5_06rbv")
 
-[node name="reply" type="Button" parent="topBarPanel/topButtons"]
+[node name="reply" type="Button" parent="CanvasLayer/topBarPanel/topButtons"]
 layout_mode = 2
 theme = ExtResource("3_63bi6")
 button_mask = 0
 icon = ExtResource("6_wfn1d")
 
-[node name="sidePanel" type="Panel" parent="."]
+[node name="sidePanel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -112,7 +114,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_6myck")
 
-[node name="sideButtons" type="VBoxContainer" parent="sidePanel"]
+[node name="sideButtons" type="VBoxContainer" parent="CanvasLayer/sidePanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -123,7 +125,7 @@ offset_right = 76.5
 offset_bottom = 167.0
 grow_horizontal = 2
 
-[node name="inbox" type="Button" parent="sidePanel/sideButtons"]
+[node name="inbox" type="Button" parent="CanvasLayer/sidePanel/sideButtons"]
 layout_mode = 2
 theme = ExtResource("5_qpmm6")
 toggle_mode = true
@@ -131,31 +133,31 @@ button_pressed = true
 button_mask = 0
 text = "Inbox"
 
-[node name="starred" type="Button" parent="sidePanel/sideButtons"]
+[node name="starred" type="Button" parent="CanvasLayer/sidePanel/sideButtons"]
 layout_mode = 2
 theme = ExtResource("5_qpmm6")
 button_mask = 0
 text = "Starred"
 
-[node name="sent" type="Button" parent="sidePanel/sideButtons"]
+[node name="sent" type="Button" parent="CanvasLayer/sidePanel/sideButtons"]
 layout_mode = 2
 theme = ExtResource("5_qpmm6")
 button_mask = 0
 text = "Sent"
 
-[node name="drafts" type="Button" parent="sidePanel/sideButtons"]
+[node name="drafts" type="Button" parent="CanvasLayer/sidePanel/sideButtons"]
 layout_mode = 2
 theme = ExtResource("5_qpmm6")
 button_mask = 0
 text = "Drafts"
 
-[node name="trash" type="Button" parent="sidePanel/sideButtons"]
+[node name="trash" type="Button" parent="CanvasLayer/sidePanel/sideButtons"]
 layout_mode = 2
 theme = ExtResource("5_qpmm6")
 button_mask = 0
 text = "Trash"
 
-[node name="debugButton" type="Button" parent="sidePanel"]
+[node name="debugButton" type="Button" parent="CanvasLayer/sidePanel"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -168,7 +170,7 @@ grow_vertical = 0
 theme = SubResource("Theme_xsih5")
 text = "Debug 1"
 
-[node name="debugButton2" type="Button" parent="sidePanel"]
+[node name="debugButton2" type="Button" parent="CanvasLayer/sidePanel"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -184,7 +186,7 @@ grow_vertical = 0
 theme = SubResource("Theme_xsih5")
 text = "Debug 2"
 
-[node name="emailPanel" type="Panel" parent="."]
+[node name="emailPanel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -197,7 +199,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_6myck")
 
-[node name="defaultMsg" type="Label" parent="emailPanel"]
+[node name="defaultMsg" type="Label" parent="CanvasLayer/emailPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -212,7 +214,7 @@ label_settings = ExtResource("4_bjxje")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="msgPanel" type="Panel" parent="emailPanel"]
+[node name="msgPanel" type="Panel" parent="CanvasLayer/emailPanel"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -226,7 +228,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_t8jjv")
 
-[node name="emailMsg0" type="Label" parent="emailPanel/msgPanel"]
+[node name="emailMsg0" type="Label" parent="CanvasLayer/emailPanel/msgPanel"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -248,7 +250,7 @@ That’s why I built something, something that I think you'll like. You deserve 
 label_settings = ExtResource("4_bjxje")
 autowrap_mode = 3
 
-[node name="emailMsg1" type="Label" parent="emailPanel/msgPanel"]
+[node name="emailMsg1" type="Label" parent="CanvasLayer/emailPanel/msgPanel"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -270,7 +272,7 @@ I assure you, I have not malicious intent. I only wish to help you.
 label_settings = ExtResource("4_bjxje")
 autowrap_mode = 3
 
-[node name="tutorialButton" type="Button" parent="emailPanel/msgPanel/emailMsg1"]
+[node name="tutorialButton" type="Button" parent="CanvasLayer/emailPanel/msgPanel/emailMsg1"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -287,7 +289,7 @@ theme = ExtResource("13_fp8g5")
 text = "tutorial.exe"
 icon = ExtResource("12_fp8g5")
 
-[node name="emailMsg2" type="Label" parent="emailPanel/msgPanel"]
+[node name="emailMsg2" type="Label" parent="CanvasLayer/emailPanel/msgPanel"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -313,7 +315,7 @@ Good Luck.
 label_settings = ExtResource("4_bjxje")
 autowrap_mode = 3
 
-[node name="lvl1Button" type="Button" parent="emailPanel/msgPanel/emailMsg2"]
+[node name="lvl1Button" type="Button" parent="CanvasLayer/emailPanel/msgPanel/emailMsg2"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -330,7 +332,7 @@ theme = ExtResource("13_fp8g5")
 text = "lvl_1.exe"
 icon = ExtResource("12_fp8g5")
 
-[node name="emailMsg3" type="Label" parent="emailPanel/msgPanel"]
+[node name="emailMsg3" type="Label" parent="CanvasLayer/emailPanel/msgPanel"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -354,7 +356,7 @@ Good Luck.
 label_settings = ExtResource("4_bjxje")
 autowrap_mode = 3
 
-[node name="lvl2Button" type="Button" parent="emailPanel/msgPanel/emailMsg3"]
+[node name="lvl2Button" type="Button" parent="CanvasLayer/emailPanel/msgPanel/emailMsg3"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -371,7 +373,7 @@ theme = ExtResource("13_fp8g5")
 text = "lvl_2.exe"
 icon = ExtResource("12_fp8g5")
 
-[node name="cyberShopDownload" type="Button" parent="emailPanel/msgPanel/emailMsg3"]
+[node name="cyberShopDownload" type="Button" parent="CanvasLayer/emailPanel/msgPanel/emailMsg3"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -388,7 +390,7 @@ theme = ExtResource("13_fp8g5")
 text = "cyberShop.exe"
 icon = ExtResource("12_fp8g5")
 
-[node name="emailMsg4" type="Label" parent="emailPanel/msgPanel"]
+[node name="emailMsg4" type="Label" parent="CanvasLayer/emailPanel/msgPanel"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -412,7 +414,7 @@ Good Luck.
 label_settings = ExtResource("4_bjxje")
 autowrap_mode = 3
 
-[node name="lvl3Button" type="Button" parent="emailPanel/msgPanel/emailMsg4"]
+[node name="lvl3Button" type="Button" parent="CanvasLayer/emailPanel/msgPanel/emailMsg4"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -429,7 +431,7 @@ theme = ExtResource("13_fp8g5")
 text = "lvl_3.exe"
 icon = ExtResource("12_fp8g5")
 
-[node name="emailMsg5" type="Label" parent="emailPanel/msgPanel"]
+[node name="emailMsg5" type="Label" parent="CanvasLayer/emailPanel/msgPanel"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -451,7 +453,7 @@ Good Luck.
 label_settings = ExtResource("4_bjxje")
 autowrap_mode = 3
 
-[node name="bossButton" type="Button" parent="emailPanel/msgPanel/emailMsg5"]
+[node name="bossButton" type="Button" parent="CanvasLayer/emailPanel/msgPanel/emailMsg5"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -468,7 +470,7 @@ theme = ExtResource("13_fp8g5")
 text = "boss_lvl.exe"
 icon = ExtResource("12_fp8g5")
 
-[node name="emailList" type="VBoxContainer" parent="."]
+[node name="emailList" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = -0.00078125
 anchor_top = 0.013888889
@@ -486,7 +488,7 @@ script = ExtResource("8_n2hej")
 emailButtons = ExtResource("12_wfn1d")
 metadata/_edit_use_anchors_ = true
 
-[node name="email_0" type="Button" parent="emailList"]
+[node name="email_0" type="Button" parent="CanvasLayer/emailList"]
 layout_mode = 2
 theme = ExtResource("5_qpmm6")
 toggle_mode = true
@@ -494,7 +496,7 @@ button_group = ExtResource("12_wfn1d")
 text = "You Deserve Better"
 icon = ExtResource("5_06rbv")
 
-[node name="email_1" type="Button" parent="emailList"]
+[node name="email_1" type="Button" parent="CanvasLayer/emailList"]
 layout_mode = 2
 theme = ExtResource("5_qpmm6")
 toggle_mode = true
@@ -502,7 +504,7 @@ button_group = ExtResource("12_wfn1d")
 text = "Learning the Basics"
 icon = ExtResource("5_06rbv")
 
-[node name="email_2" type="Button" parent="emailList"]
+[node name="email_2" type="Button" parent="CanvasLayer/emailList"]
 layout_mode = 2
 theme = ExtResource("5_qpmm6")
 toggle_mode = true
@@ -510,7 +512,7 @@ button_group = ExtResource("12_wfn1d")
 text = "Malware 101"
 icon = ExtResource("5_06rbv")
 
-[node name="email_3" type="Button" parent="emailList"]
+[node name="email_3" type="Button" parent="CanvasLayer/emailList"]
 layout_mode = 2
 theme = ExtResource("5_qpmm6")
 toggle_mode = true
@@ -518,7 +520,7 @@ button_group = ExtResource("12_wfn1d")
 text = "Trojans & Ransoms"
 icon = ExtResource("5_06rbv")
 
-[node name="email_4" type="Button" parent="emailList"]
+[node name="email_4" type="Button" parent="CanvasLayer/emailList"]
 layout_mode = 2
 theme = ExtResource("5_qpmm6")
 toggle_mode = true
@@ -526,7 +528,7 @@ button_group = ExtResource("12_wfn1d")
 text = "Worms & Locks"
 icon = ExtResource("5_06rbv")
 
-[node name="email_5" type="Button" parent="emailList"]
+[node name="email_5" type="Button" parent="CanvasLayer/emailList"]
 layout_mode = 2
 theme = ExtResource("5_qpmm6")
 toggle_mode = true
@@ -536,10 +538,10 @@ icon = ExtResource("5_06rbv")
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
-[connection signal="pressed" from="sidePanel/debugButton" to="." method="_on_debug_button_pressed"]
-[connection signal="pressed" from="sidePanel/debugButton2" to="." method="_on_debug_button_2_pressed"]
-[connection signal="pressed" from="emailPanel/msgPanel/emailMsg1/tutorialButton" to="." method="_on_tutorial_button_pressed"]
-[connection signal="pressed" from="emailPanel/msgPanel/emailMsg2/lvl1Button" to="." method="_on_lvl_1_button_pressed"]
-[connection signal="pressed" from="emailPanel/msgPanel/emailMsg3/lvl2Button" to="." method="_on_lvl_2_button_pressed"]
-[connection signal="pressed" from="emailPanel/msgPanel/emailMsg4/lvl3Button" to="." method="_on_lvl_3_button_pressed"]
-[connection signal="pressed" from="emailPanel/msgPanel/emailMsg5/bossButton" to="." method="_on_boss_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/sidePanel/debugButton" to="." method="_on_debug_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/sidePanel/debugButton2" to="." method="_on_debug_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/emailPanel/msgPanel/emailMsg1/tutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/emailPanel/msgPanel/emailMsg2/lvl1Button" to="." method="_on_lvl_1_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/emailPanel/msgPanel/emailMsg3/lvl2Button" to="." method="_on_lvl_2_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/emailPanel/msgPanel/emailMsg4/lvl3Button" to="." method="_on_lvl_3_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/emailPanel/msgPanel/emailMsg5/bossButton" to="." method="_on_boss_button_pressed"]
