@@ -1,0 +1,156 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw3yja5awo834"]
+
+[ext_resource type="Theme" uid="uid://dvx6aopfhb5xb" path="res://assets/themes/upgradePanel.tres" id="1_o8uve"]
+[ext_resource type="Script" uid="uid://bvu7acluposw" path="res://scripts/desktop/shopPanel.gd" id="2_ij75g"]
+[ext_resource type="LabelSettings" uid="uid://brk4a6wwn25og" path="res://assets/fonts/cyberLabel2.tres" id="3_o8uve"]
+[ext_resource type="Theme" uid="uid://dasaqfnt8xhfc" path="res://assets/themes/shopButtons.tres" id="4_g4fi2"]
+[ext_resource type="Texture2D" uid="uid://cub7gv0wraulj" path="res://assets/sprites/bytes.png" id="5_dqify"]
+
+[node name="shopPanel" type="Panel"]
+offset_right = 386.0
+offset_bottom = 543.0
+theme = ExtResource("1_o8uve")
+script = ExtResource("2_ij75g")
+
+[node name="shopLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 4.0
+offset_bottom = 28.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+text = "Shop"
+label_settings = ExtResource("3_o8uve")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="weaponsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_top = 61.0
+offset_right = 56.0
+offset_bottom = 85.0
+grow_horizontal = 2
+text = "Weapons"
+label_settings = ExtResource("3_o8uve")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sword" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 101.0
+offset_right = 90.0
+offset_bottom = 136.0
+grow_horizontal = 2
+tooltip_text = "A quick but low damage weapon best used in combination with code attacks."
+theme = ExtResource("4_g4fi2")
+text = "10  Sword"
+icon = ExtResource("5_dqify")
+
+[node name="bow" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.0
+offset_top = 152.0
+offset_right = 74.0
+offset_bottom = 188.0
+grow_horizontal = 2
+tooltip_text = "Ranged weapon which can use special arrows for code attacks."
+theme = ExtResource("4_g4fi2")
+text = "15  Bow"
+icon = ExtResource("5_dqify")
+
+[node name="spear" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.0
+offset_top = 204.0
+offset_right = 82.0
+offset_bottom = 240.0
+grow_horizontal = 2
+tooltip_text = "This long weapon keeps enemies at bay with its sharp blade."
+theme = ExtResource("4_g4fi2")
+text = "25 Spear"
+icon = ExtResource("5_dqify")
+
+[node name="codeSpellsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_top = 304.0
+offset_right = 88.0
+offset_bottom = 328.0
+grow_horizontal = 2
+text = "Code Spells"
+label_settings = ExtResource("3_o8uve")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="byteShot" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -122.0
+offset_top = 344.0
+offset_right = 122.0
+offset_bottom = 379.0
+grow_horizontal = 2
+tooltip_text = "A ranged code attack with a short cooldown."
+theme = ExtResource("4_g4fi2")
+disabled = true
+text = "10  Byte Shot"
+icon = ExtResource("5_dqify")
+
+[node name="patch" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.0
+offset_top = 396.0
+offset_right = 82.0
+offset_bottom = 432.0
+grow_horizontal = 2
+tooltip_text = "A healing spell."
+theme = ExtResource("4_g4fi2")
+text = "15 Patch"
+icon = ExtResource("5_dqify")
+
+[node name="firewallWave" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.0
+offset_top = 447.0
+offset_right = 154.0
+offset_bottom = 483.0
+grow_horizontal = 2
+tooltip_text = "Sends out a wave of fire towards enemies."
+theme = ExtResource("4_g4fi2")
+text = "30  Firewall Wave"
+icon = ExtResource("5_dqify")
+
+[connection signal="pressed" from="sword" to="." method="_on_sword_pressed"]
+[connection signal="pressed" from="bow" to="." method="_on_bow_pressed"]
+[connection signal="pressed" from="spear" to="." method="_on_spear_pressed"]
+[connection signal="pressed" from="byteShot" to="." method="_on_byte_shot_pressed"]
+[connection signal="pressed" from="patch" to="." method="_on_patch_pressed"]
+[connection signal="pressed" from="firewallWave" to="." method="_on_firewall_wave_pressed"]
