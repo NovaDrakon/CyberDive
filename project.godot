@@ -88,6 +88,7 @@ Interact={
 2d_render/layer_4="Enemies"
 2d_render/layer_6="Windows"
 2d_render/layer_7="UI Interfaces"
+2d_render/layer_9="Level Edges "
 2d_physics/layer_1="Levels"
 2d_physics/layer_2="Interactables"
 2d_physics/layer_3="Player"

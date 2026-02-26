@@ -125,5 +125,3 @@ position = Vector2(0, -28)
 shape = SubResource("CapsuleShape2D_trh3t")
 
 [node name="gameCamera" parent="." instance=ExtResource("4_gff5m")]
-limit_left = -600
-limit_right = 600

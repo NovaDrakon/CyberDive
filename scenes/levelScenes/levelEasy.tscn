@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelParts/levelSetup.gd" id="1_ub7yk"]
 [ext_resource type="TileSet" uid="uid://c08bi8v8n42rw" path="res://assets/sprites/levelSprites/backgroundTiles.tres" id="2_mwgql"]
-[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/themes/levelBG.tres" id="2_yme5q"]
+[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/Themes/levelBG.tres" id="2_yme5q"]
 [ext_resource type="TileSet" uid="uid://c1he15yukhmbh" path="res://assets/sprites/levelSprites/foregroundTiles.tres" id="3_k1raf"]
 [ext_resource type="PackedScene" uid="uid://cu46doc6h0v3o" path="res://scenes/levelParts/flag.tscn" id="5_hr1uh"]
 [ext_resource type="PackedScene" uid="uid://dpb68mlkcalon" path="res://scenes/levelParts/folder.tscn" id="6_43xm0"]
@@ -137,14 +137,11 @@ position = Vector2(984, 587)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone"]
 shape = SubResource("RectangleShape2D_k1q4k")
 
-[node name="Text" type="Node" parent="."]
-
 [node name="mainCharacter" parent="." instance=ExtResource("8_k4qyh")]
 position = Vector2(40, 78)
 
 [node name="gameCamera" parent="mainCharacter" index="2"]
 limit_left = 0
-limit_top = 0
 limit_right = 479
 limit_bottom = 239
 

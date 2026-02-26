@@ -1,10 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://b25awan36tifh"]
+[gd_scene load_steps=24 format=3 uid="uid://b25awan36tifh"]
 
 [ext_resource type="Script" uid="uid://cbtlv3uw0ry2q" path="res://scripts/desktop/loadingScreen.gd" id="1_jl4l0"]
 [ext_resource type="Texture2D" uid="uid://cnu5r1iqmoldp" path="res://assets/sprites/crtBackground.png" id="1_yufpw"]
 [ext_resource type="Texture2D" uid="uid://dnbvh2aqifm88" path="res://assets/sprites/loadingBar.png" id="2_0nm63"]
 [ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="3_l8g8h"]
-[ext_resource type="PackedScene" uid="uid://cyrx1o52rts00" path="res://scenes/levelParts/crt.tscn" id="5_u1o4r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m1b5n"]
 font = ExtResource("3_l8g8h")
@@ -179,5 +178,3 @@ animation = &"Loading"
 autoplay = "Loading"
 frame = 16
 frame_progress = 1.0
-
-[node name="crt" parent="CanvasLayer" instance=ExtResource("5_u1o4r")]

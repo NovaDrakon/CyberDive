@@ -1,14 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu1tprvtkbr3l"]
+[gd_scene load_steps=5 format=3 uid="uid://bu1tprvtkbr3l"]
 
 [ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelParts/levelSetup.gd" id="1_30svh"]
+[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/Themes/levelBG.tres" id="2_6w52n"]
 [ext_resource type="TileSet" uid="uid://c08bi8v8n42rw" path="res://assets/sprites/levelSprites/backgroundTiles.tres" id="2_ujorj"]
 [ext_resource type="TileSet" uid="uid://c1he15yukhmbh" path="res://assets/sprites/levelSprites/foregroundTiles.tres" id="3_h63bk"]
 
 [node name="levelHard" type="Node2D"]
 script = ExtResource("1_30svh")
 
+[node name="bg" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("2_6w52n")
+
 [node name="Background" type="TileMapLayer" parent="."]
 tile_set = ExtResource("2_ujorj")
 
 [node name="Foreground" type="TileMapLayer" parent="."]
 tile_set = ExtResource("3_h63bk")
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Dangers" type="Node" parent="."]
