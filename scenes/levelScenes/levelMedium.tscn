@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=4 uid="uid://bf3m86kavord"]
 
 [ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelParts/levelSetup.gd" id="1_sxhef"]
-[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/Themes/levelBG.tres" id="2_js2ss"]
+[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/themes/levelBG.tres" id="2_js2ss"]
 [ext_resource type="TileSet" uid="uid://c08bi8v8n42rw" path="res://assets/sprites/levelSprites/backgroundTiles.tres" id="2_kark2"]
 [ext_resource type="TileSet" uid="uid://c1he15yukhmbh" path="res://assets/sprites/levelSprites/foregroundTiles.tres" id="3_cq4xx"]
 [ext_resource type="PackedScene" uid="uid://vu7tnwvaogi1" path="res://scenes/levelParts/movingPlatform.tscn" id="4_mls8s"]
@@ -217,6 +217,9 @@ position = Vector2(1056, 112)
 
 [node name="folder" parent="Doors" instance=ExtResource("6_m211s")]
 position = Vector2(559, 91)
+
+[node name="CollisionShape2D" parent="Doors/folder" index="1"]
+position = Vector2(0, 0.5)
 
 [node name="Destination" parent="Doors/folder" index="3"]
 position = Vector2(-463, 304)

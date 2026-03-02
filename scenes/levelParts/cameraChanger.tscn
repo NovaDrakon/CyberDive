@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvgf3bv1mu8pl"]
+
+[ext_resource type="Script" uid="uid://bikvfg70xqpnm" path="res://scripts/levelParts/cameraChanger.gd" id="1_0wlgv"]
+
+[node name="cameraChanger" type="Area2D"]
+collision_mask = 4
+script = ExtResource("1_0wlgv")
+
+[node name="topLeft" type="Marker2D" parent="."]
+position = Vector2(-23, -70)
+
+[node name="bottomRight" type="Marker2D" parent="."]
+position = Vector2(15, 78)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

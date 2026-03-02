@@ -1,13 +1,17 @@
-[gd_scene load_steps=10 format=4 uid="uid://b54eb4hick28n"]
+[gd_scene load_steps=12 format=4 uid="uid://b54eb4hick28n"]
 
 [ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelParts/levelSetup.gd" id="1_ub7yk"]
 [ext_resource type="TileSet" uid="uid://c08bi8v8n42rw" path="res://assets/sprites/levelSprites/backgroundTiles.tres" id="2_mwgql"]
-[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/Themes/levelBG.tres" id="2_yme5q"]
+[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/themes/levelBG.tres" id="2_yme5q"]
 [ext_resource type="TileSet" uid="uid://c1he15yukhmbh" path="res://assets/sprites/levelSprites/foregroundTiles.tres" id="3_k1raf"]
 [ext_resource type="PackedScene" uid="uid://cu46doc6h0v3o" path="res://scenes/levelParts/flag.tscn" id="5_hr1uh"]
 [ext_resource type="PackedScene" uid="uid://dpb68mlkcalon" path="res://scenes/levelParts/folder.tscn" id="6_43xm0"]
+[ext_resource type="PackedScene" uid="uid://bvgf3bv1mu8pl" path="res://scenes/levelParts/cameraChanger.tscn" id="7_43xm0"]
 [ext_resource type="PackedScene" uid="uid://ds767hhcmqump" path="res://scenes/levelParts/deathZone.tscn" id="7_r3n8n"]
 [ext_resource type="PackedScene" uid="uid://d354hodrrybid" path="res://scenes/levelParts/mainCharacter.tscn" id="8_k4qyh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3n8n"]
+size = Vector2(192, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1q4k"]
 size = Vector2(816, 11)
@@ -43,7 +47,7 @@ position = Vector2(-288, 192)
 position = Vector2(-431, 133)
 
 [node name="bottomRight" parent="Doors/folder" index="5"]
-position = Vector2(17, 597)
+position = Vector2(-207, 389)
 
 [node name="folder2" parent="Doors" instance=ExtResource("6_43xm0")]
 position = Vector2(175, 347)
@@ -76,7 +80,7 @@ position = Vector2(641, 251)
 position = Vector2(-266, 400)
 
 [node name="topLeft" parent="Doors/folder4" index="4"]
-position = Vector2(-641, 37)
+position = Vector2(-641, 293)
 
 [node name="bottomRight" parent="Doors/folder4" index="5"]
 position = Vector2(-193, 501)
@@ -129,6 +133,18 @@ position = Vector2(-673, 213)
 [node name="bottomRight" parent="Doors/folder8" index="5"]
 position = Vector2(175, 485)
 
+[node name="cameraChanger" parent="Doors" instance=ExtResource("7_43xm0")]
+position = Vector2(112, 516)
+
+[node name="topLeft" parent="Doors/cameraChanger" index="0"]
+position = Vector2(-112, 28)
+
+[node name="bottomRight" parent="Doors/cameraChanger" index="1"]
+position = Vector2(336, 236)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/cameraChanger"]
+shape = SubResource("RectangleShape2D_r3n8n")
+
 [node name="Dangers" type="Node" parent="."]
 
 [node name="deathZone" parent="Dangers" instance=ExtResource("7_r3n8n")]
@@ -141,7 +157,6 @@ shape = SubResource("RectangleShape2D_k1q4k")
 position = Vector2(40, 78)
 
 [node name="gameCamera" parent="mainCharacter" index="2"]
-limit_left = 0
 limit_right = 479
 limit_bottom = 239
 
@@ -153,4 +168,5 @@ limit_bottom = 239
 [editable path="Doors/folder6"]
 [editable path="Doors/folder7"]
 [editable path="Doors/folder8"]
+[editable path="Doors/cameraChanger"]
 [editable path="mainCharacter"]

@@ -53,13 +53,17 @@ func _on_tutorial_button_pressed() -> void:
 	get_tree().change_scene_to_file.call_deferred("res://scenes/levelScenes/levelTutorial.tscn")
 
 func _on_lvl_1_button_pressed() -> void:
-	pass
+	GameSounds.click.play()
+	get_tree().change_scene_to_file.call_deferred("res://scenes/levelScenes/levelEasy.tscn")
 
 func _on_lvl_2_button_pressed() -> void:
-	pass
+	GameSounds.click.play()
+	get_tree().change_scene_to_file.call_deferred("res://scenes/levelScenes/levelMedium.tscn")
 
 func _on_lvl_3_button_pressed() -> void:
-	pass
+	GameSounds.click.play()
+	get_tree().change_scene_to_file.call_deferred("res://scenes/levelScenes/levelHard.tscn")
 
 func _on_boss_button_pressed() -> void:
-	pass
+	GameSounds.click.play()
+	get_tree().change_scene_to_file.call_deferred("res://scenes/levelScenes/levelBoss.tscn")
