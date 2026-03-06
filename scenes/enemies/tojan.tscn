@@ -173,7 +173,3 @@ frame_progress = 1.0
 visible = false
 position = Vector2(-12, 0)
 texture = ExtResource("6_6nsd3")
-
-[node name="endCast" type="RayCast2D" parent="."]
-position = Vector2(-18, 0)
-target_position = Vector2(0, 22)

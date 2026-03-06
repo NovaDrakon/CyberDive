@@ -271,7 +271,3 @@ animation = &"Up"
 autoplay = "Idle"
 frame = 5
 frame_progress = 1.0
-
-[node name="endCast" type="RayCast2D" parent="."]
-position = Vector2(-18, 2)
-target_position = Vector2(0, 16)

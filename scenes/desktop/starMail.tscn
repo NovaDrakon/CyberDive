@@ -1,20 +1,20 @@
 [gd_scene load_steps=22 format=3 uid="uid://dgf3gja1rph21"]
 
-[ext_resource type="Theme" uid="uid://d0ylre3gbcfdh" path="res://assets/themes/windowTheme.tres" id="1_u6gb7"]
+[ext_resource type="Theme" uid="uid://d0ylre3gbcfdh" path="res://assets/Themes/windowTheme.tres" id="1_u6gb7"]
 [ext_resource type="Script" uid="uid://b3bxpto7cu2q8" path="res://scripts/desktop/starMail.gd" id="2_6myck"]
 [ext_resource type="Texture2D" uid="uid://dlfn3rtt3g8i" path="res://assets/sprites/menuPanel.png" id="3_06rbv"]
-[ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/themes/startButton.tres" id="3_63bi6"]
+[ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/Themes/startButton.tres" id="3_63bi6"]
 [ext_resource type="LabelSettings" uid="uid://cpt0d0nx2sye1" path="res://assets/fonts/emailLabel.tres" id="4_bjxje"]
 [ext_resource type="Texture2D" uid="uid://ig1pmttqjvag" path="res://assets/sprites/trashButton.png" id="4_n2hej"]
 [ext_resource type="Texture2D" uid="uid://buu4ht00sgfkq" path="res://assets/sprites/starSmall.png" id="5_06rbv"]
-[ext_resource type="Theme" uid="uid://c2tak2g4j8hdd" path="res://assets/themes/starMailTheme2.tres" id="5_qpmm6"]
+[ext_resource type="Theme" uid="uid://c2tak2g4j8hdd" path="res://assets/Themes/starMailTheme2.tres" id="5_qpmm6"]
 [ext_resource type="Texture2D" uid="uid://df48qf04wwvsi" path="res://assets/sprites/replyButton.png" id="6_wfn1d"]
 [ext_resource type="Script" uid="uid://buwesixai7kjl" path="res://scripts/desktop/emailList.gd" id="8_n2hej"]
 [ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="9_k6x0s"]
 [ext_resource type="Texture2D" uid="uid://cfnp051yq1bi8" path="res://assets/sprites/blueButton.png" id="10_wfn1d"]
 [ext_resource type="Texture2D" uid="uid://bondd7aot77e4" path="res://assets/sprites/cyberDiveIcon.png" id="12_fp8g5"]
 [ext_resource type="ButtonGroup" uid="uid://cmthm7whp3wf2" path="res://buttonGroups/emailButtonGroup.tres" id="12_wfn1d"]
-[ext_resource type="Theme" uid="uid://bkbxdtadqgm3v" path="res://assets/themes/starMailTheme.tres" id="13_fp8g5"]
+[ext_resource type="Theme" uid="uid://bkbxdtadqgm3v" path="res://assets/Themes/starMailTheme.tres" id="13_fp8g5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfn1d"]
 texture = ExtResource("3_06rbv")
@@ -159,6 +159,7 @@ button_mask = 0
 text = "Trash"
 
 [node name="debugButton" type="Button" parent="CanvasLayer/sidePanel"]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -172,6 +173,7 @@ theme = SubResource("Theme_xsih5")
 text = "Debug 1"
 
 [node name="debugButton2" type="Button" parent="CanvasLayer/sidePanel"]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
