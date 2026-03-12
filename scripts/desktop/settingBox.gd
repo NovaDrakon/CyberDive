@@ -10,13 +10,13 @@ func _ready() -> void:
 	loadAudio()
 
 func _on_music_volume_slider_value_changed(value: float) -> void:
-	musicVal = value
-	AudioServer.set_bus_volume_db(1, musicVal)
+	value = musicVal
+	AudioServer.set_bus_volume_db(1, value)
 	saveAudio()
 
 func _on_sfx_volume_slider_value_changed(value: float) -> void:
-	sfxVal = value
-	AudioServer.set_bus_volume_db(2, sfxVal)
+	value = sfxVal
+	AudioServer.set_bus_volume_db(2, value)
 	saveAudio()
 
 func _on_music_mute_button_toggled(toggled_on: bool) -> void:
@@ -24,16 +24,20 @@ func _on_music_mute_button_toggled(toggled_on: bool) -> void:
 	
 	if toggled_on:
 		AudioServer.set_bus_mute(1, true)
+		saveAudio()
 	else:
 		AudioServer.set_bus_mute(1, false)
+		saveAudio()
 
 func _on_sfx_mute_button_toggled(toggled_on: bool) -> void:
 	GameSounds.click.play()
 	
 	if toggled_on:
 		AudioServer.set_bus_mute(2, true)
+		saveAudio()
 	else:
 		AudioServer.set_bus_mute(2, false)
+		saveAudio()
 
 func saveAudio():
 	SaveSystem.set_var("music", musicVal)

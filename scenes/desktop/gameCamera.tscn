@@ -347,4 +347,5 @@ sprite_frames = SubResource("SpriteFrames_ur5q2")
 frame = 20
 
 [node name="crt" parent="CanvasLayer" instance=ExtResource("1_oo0jo")]
+visible = false
 position = Vector2(-1.5258789e-05, 0)

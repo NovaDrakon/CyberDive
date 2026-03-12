@@ -159,6 +159,7 @@ button_mask = 0
 text = "Trash"
 
 [node name="debugButton" type="Button" parent="CanvasLayer/sidePanel"]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -172,6 +173,7 @@ theme = SubResource("Theme_xsih5")
 text = "Debug 1"
 
 [node name="debugButton2" type="Button" parent="CanvasLayer/sidePanel"]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

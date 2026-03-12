@@ -1,6 +1,5 @@
 extends Node
 
-
 var filePath := "user://mainSaveData.sav"
 var filePath2 := "user://enemySaveData.sav"
 

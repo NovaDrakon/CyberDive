@@ -180,7 +180,3 @@ sprite_frames = SubResource("SpriteFrames_nn8l1")
 animation = &"Swipe"
 frame = 3
 frame_progress = 1.0
-
-[node name="endCast" type="RayCast2D" parent="."]
-position = Vector2(-14, 4)
-target_position = Vector2(0, 14)

@@ -1,7 +1,5 @@
 extends Label
 
-var filePath = "user://saveData.sav"
-
 var hour := 7
 var minute := 0
 var second := 0
@@ -60,7 +58,7 @@ func saveTime():
 	SaveSystem.set_var("min", minute)
 	SaveSystem.set_var("sec", second)
 	SaveSystem.set_var("timeMeridiem", timeLabel)
-	SaveSystem.save(filePath)
+	SaveSystem.save(GlobalVars.filePath)
 
 func loadTime():
 	hour = SaveSystem.get_var("hr", hour)
