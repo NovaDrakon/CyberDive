@@ -287,129 +287,132 @@ position = Vector2(504, 221)
 shape = SubResource("RectangleShape2D_nkhjh")
 
 [node name="folder" parent="Doors" instance=ExtResource("8_5hi38")]
-position = Vector2(625, 411)
+position = Vector2(617, 411)
 
 [node name="Destination" parent="Doors/folder" index="3"]
-position = Vector2(-544, 288)
+position = Vector2(-536, 288)
 
 [node name="topLeft" parent="Doors/folder" index="4"]
-position = Vector2(-625, 69)
+position = Vector2(-617, 69)
 
 [node name="bottomRight" parent="Doors/folder" index="5"]
-position = Vector2(159, 325)
+position = Vector2(167, 325)
 
 [node name="folder2" parent="Doors" instance=ExtResource("8_5hi38")]
-position = Vector2(49, 699)
+position = Vector2(41, 699)
 
 [node name="Destination" parent="Doors/folder2" index="3"]
-position = Vector2(608, -288)
+position = Vector2(616, -288)
 
 [node name="topLeft" parent="Doors/folder2" index="4"]
-position = Vector2(463, -523)
+position = Vector2(471, -523)
 
 [node name="bottomRight" parent="Doors/folder2" index="5"]
-position = Vector2(943, -251)
+position = Vector2(951, -251)
 
 [node name="folder3" parent="Doors" instance=ExtResource("8_5hi38")]
-position = Vector2(735, 619)
+position = Vector2(743, 619)
 
 [node name="Destination" parent="Doors/folder3" index="3"]
-position = Vector2(-654, 384)
+position = Vector2(-662, 384)
 
 [node name="topLeft" parent="Doors/folder3" index="4"]
-position = Vector2(-735, 165)
+position = Vector2(-743, 165)
 
 [node name="bottomRight" parent="Doors/folder3" index="5"]
-position = Vector2(-334, 549)
+position = Vector2(-342, 549)
 
 [node name="folder4" parent="Doors" instance=ExtResource("8_5hi38")]
-position = Vector2(49, 1003)
+position = Vector2(41, 1003)
 
 [node name="Destination" parent="Doors/folder4" index="3"]
-position = Vector2(654, -384)
+position = Vector2(662, -384)
 
 [node name="topLeft" parent="Doors/folder4" index="4"]
-position = Vector2(-49, -523)
+position = Vector2(-41, -523)
 
 [node name="bottomRight" parent="Doors/folder4" index="5"]
-position = Vector2(735, -267)
+position = Vector2(743, -267)
 
 [node name="folder5" parent="Doors" instance=ExtResource("8_5hi38")]
-position = Vector2(783, 1211)
+position = Vector2(791, 1211)
 
 [node name="Destination" parent="Doors/folder5" index="3"]
-position = Vector2(178, 64)
+position = Vector2(170, 64)
 
 [node name="topLeft" parent="Doors/folder5" index="4"]
-position = Vector2(97, -187)
+position = Vector2(89, -187)
 
 [node name="bottomRight" parent="Doors/folder5" index="5"]
-position = Vector2(497, 101)
+position = Vector2(489, 101)
 
 [node name="folder6" parent="Doors" instance=ExtResource("8_5hi38")]
-position = Vector2(929, 1275)
+position = Vector2(921, 1275)
 
 [node name="Destination" parent="Doors/folder6" index="3"]
-position = Vector2(-178, -64)
+position = Vector2(-170, -64)
 
 [node name="topLeft" parent="Doors/folder6" index="4"]
-position = Vector2(-673, -155)
+position = Vector2(-665, -155)
 
 [node name="bottomRight" parent="Doors/folder6" index="5"]
-position = Vector2(-97, 37)
+position = Vector2(-89, 37)
 
 [node name="folder7" parent="Doors" instance=ExtResource("8_5hi38")]
-position = Vector2(1231, 1179)
+position = Vector2(1239, 1179)
 
 [node name="Destination" parent="Doors/folder7" index="3"]
-position = Vector2(178, -80)
+position = Vector2(170, -80)
 
 [node name="topLeft" parent="Doors/folder7" index="4"]
-position = Vector2(97, -139)
+position = Vector2(89, -139)
 
 [node name="bottomRight" parent="Doors/folder7" index="5"]
-position = Vector2(769, 117)
+position = Vector2(761, 117)
 
 [node name="folder8" parent="Doors" instance=ExtResource("8_5hi38")]
-position = Vector2(1377, 1099)
+position = Vector2(1369, 1099)
 
 [node name="Destination" parent="Doors/folder8" index="3"]
-position = Vector2(-178, 80)
+position = Vector2(-170, 80)
 
 [node name="topLeft" parent="Doors/folder8" index="4"]
-position = Vector2(-497, -75)
+position = Vector2(-489, -75)
 
 [node name="bottomRight" parent="Doors/folder8" index="5"]
-position = Vector2(-97, 213)
+position = Vector2(-89, 213)
 
 [node name="folder9" parent="Doors" instance=ExtResource("8_5hi38")]
-position = Vector2(929, 1083)
+position = Vector2(921, 1083)
 
 [node name="Destination" parent="Doors/folder9" index="3"]
-position = Vector2(144, -224)
+position = Vector2(152, -224)
 
 [node name="topLeft" parent="Doors/folder9" index="4"]
-position = Vector2(63, -571)
+position = Vector2(71, -571)
 
 [node name="bottomRight" parent="Doors/folder9" index="5"]
-position = Vector2(399, -187)
+position = Vector2(407, -187)
 
 [node name="folder10" parent="Doors" instance=ExtResource("8_5hi38")]
-position = Vector2(1041, 859)
+position = Vector2(1033, 859)
 
 [node name="Destination" parent="Doors/folder10" index="3"]
-position = Vector2(-80, 224)
+position = Vector2(-72, 224)
 
 [node name="topLeft" parent="Doors/folder10" index="4"]
-position = Vector2(-161, 165)
+position = Vector2(-153, 165)
 
 [node name="bottomRight" parent="Doors/folder10" index="5"]
-position = Vector2(239, 453)
+position = Vector2(247, 453)
 
 [node name="Dangers" type="Node" parent="."]
 
 [node name="deathZone" parent="Dangers" instance=ExtResource("10_nkhjh")]
 position = Vector2(417, 724)
+
+[node name="Destination" parent="Dangers/deathZone" index="1"]
+position = Vector2(-336, -25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone"]
 position = Vector2(-1, 0)
@@ -417,6 +420,9 @@ shape = SubResource("RectangleShape2D_cv30n")
 
 [node name="deathZone2" parent="Dangers" instance=ExtResource("10_nkhjh")]
 position = Vector2(544, 1300)
+
+[node name="Destination" parent="Dangers/deathZone2" index="1"]
+position = Vector2(-255, -105)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone2"]
 shape = SubResource("RectangleShape2D_d1pon")
@@ -442,4 +448,6 @@ limit_bottom = 272
 [editable path="Doors/folder8"]
 [editable path="Doors/folder9"]
 [editable path="Doors/folder10"]
+[editable path="Dangers/deathZone"]
+[editable path="Dangers/deathZone2"]
 [editable path="mainCharacter"]

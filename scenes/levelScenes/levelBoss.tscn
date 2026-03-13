@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=4 uid="uid://cywmet8tq7gu0"]
 
 [ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelParts/levelSetup.gd" id="1_wcyr1"]
-[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/Themes/levelBG.tres" id="2_k45hu"]
+[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/themes/levelBG.tres" id="2_k45hu"]
 [ext_resource type="TileSet" uid="uid://c08bi8v8n42rw" path="res://assets/sprites/levelSprites/backgroundTiles.tres" id="2_ncafg"]
 [ext_resource type="TileSet" uid="uid://c1he15yukhmbh" path="res://assets/sprites/levelSprites/foregroundTiles.tres" id="3_uw66p"]
 [ext_resource type="PackedScene" uid="uid://vu7tnwvaogi1" path="res://scenes/levelParts/movingPlatform.tscn" id="5_6up8x"]
@@ -240,21 +240,6 @@ tracks/0/keys = {
 "values": [Vector2(1464, 664), Vector2(1544, 664)]
 }
 
-[sub_resource type="Animation" id="Animation_snib0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("door:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1543, 664)]
-}
-
 [sub_resource type="Animation" id="Animation_5c5hk"]
 resource_name = "Open"
 length = 2.0
@@ -269,6 +254,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1543, 664), Vector2(1464, 664)]
+}
+
+[sub_resource type="Animation" id="Animation_snib0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1543, 664)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5vfh1"]
@@ -551,11 +551,17 @@ shape = SubResource("RectangleShape2D_t7olf")
 [node name="deathZone" parent="Dangers" instance=ExtResource("10_5vfh1")]
 position = Vector2(200, 596)
 
+[node name="Destination" parent="Dangers/deathZone" index="1"]
+position = Vector2(-160, -544)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone"]
 shape = SubResource("RectangleShape2D_xv21s")
 
 [node name="deathZone2" parent="Dangers" instance=ExtResource("10_5vfh1")]
 position = Vector2(1088, 468)
+
+[node name="Destination" parent="Dangers/deathZone2" index="1"]
+position = Vector2(-208, -301)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone2"]
 shape = SubResource("RectangleShape2D_7sasd")
@@ -563,11 +569,17 @@ shape = SubResource("RectangleShape2D_7sasd")
 [node name="deathZone3" parent="Dangers" instance=ExtResource("10_5vfh1")]
 position = Vector2(1088, 884)
 
+[node name="Destination" parent="Dangers/deathZone3" index="1"]
+position = Vector2(103, -233)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone3"]
 shape = SubResource("RectangleShape2D_bsr0d")
 
 [node name="deathZone4" parent="Dangers" instance=ExtResource("10_5vfh1")]
 position = Vector2(1608, 932)
+
+[node name="Destination" parent="Dangers/deathZone4" index="1"]
+position = Vector2(-184, -132)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone4"]
 shape = SubResource("RectangleShape2D_htkuv")
@@ -595,4 +607,8 @@ limit_bottom = 608
 [editable path="Doors/cameraChanger2"]
 [editable path="Doors/cameraChanger3"]
 [editable path="Doors/cameraChanger4"]
+[editable path="Dangers/deathZone"]
+[editable path="Dangers/deathZone2"]
+[editable path="Dangers/deathZone3"]
+[editable path="Dangers/deathZone4"]
 [editable path="mainCharacter"]
