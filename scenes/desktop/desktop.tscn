@@ -239,7 +239,6 @@ offset_bottom = 78.0
 theme = ExtResource("6_v4dq8")
 min_value = -6.0
 max_value = 6.0
-value = 6.0
 scrollable = false
 
 [node name="musicMuteButton" type="TextureButton" parent="CanvasLayer/taskbar/settingBox"]
