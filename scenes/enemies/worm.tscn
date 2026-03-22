@@ -1,11 +1,14 @@
-[gd_scene load_steps=38 format=3 uid="uid://c6j4fownlis6a"]
+[gd_scene load_steps=42 format=3 uid="uid://c6j4fownlis6a"]
 
+[ext_resource type="Script" uid="uid://cw1jy5wpgvv0f" path="res://scripts/enemies/worm.gd" id="1_1xq0g"]
 [ext_resource type="Texture2D" uid="uid://dsd7ed0xeqase" path="res://assets/sprites/enemySprites/wormAttack.png" id="1_jmnwm"]
 [ext_resource type="Texture2D" uid="uid://iihin1xq2asg" path="res://assets/sprites/enemySprites/wormIdle.png" id="1_ljgxs"]
 [ext_resource type="Texture2D" uid="uid://dydeycvemk6rl" path="res://assets/sprites/enemySprites/wormDown.png" id="2_ayncb"]
 [ext_resource type="Texture2D" uid="uid://ghy1kvvwepcl" path="res://assets/sprites/enemySprites/wormHurt.png" id="3_6sr0l"]
 [ext_resource type="Texture2D" uid="uid://bqn6lnnio5arl" path="res://assets/sprites/enemySprites/wormSlither.png" id="5_w744w"]
 [ext_resource type="Texture2D" uid="uid://y4bexceqsqf2" path="res://assets/sprites/enemySprites/wormUp.png" id="6_juwyw"]
+[ext_resource type="Script" uid="uid://biop0ilecxtla" path="res://scripts/states/stateMachine.gd" id="8_akbxx"]
+[ext_resource type="Script" uid="uid://cqfslxycb2pna" path="res://scripts/states/enemyWalk.gd" id="9_jx8wq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sr0l"]
 atlas = ExtResource("1_jmnwm")
@@ -262,12 +265,44 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Worm" type="Area2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jx8wq"]
+height = 32.0
 
-[node name="wormSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -1)
+[node name="Worm" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 8
+script = ExtResource("1_1xq0g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, -32)
 sprite_frames = SubResource("SpriteFrames_m3eqf")
-animation = &"Up"
+animation = &"Idle"
 autoplay = "Idle"
-frame = 5
-frame_progress = 1.0
+centered = false
+
+[node name="sideRay" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(1, 18)
+rotation = 1.5707964
+target_position = Vector2(2.3841858e-07, 7)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="downRay" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(2, 25)
+target_position = Vector2(0, 8)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="characterBody" type="CollisionShape2D" parent="."]
+light_mask = 8
+position = Vector2(0, -10)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_jx8wq")
+
+[node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("initalState")]
+script = ExtResource("8_akbxx")
+initalState = NodePath("Walk")
+
+[node name="Walk" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("9_jx8wq")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cqfslxycb2pna"

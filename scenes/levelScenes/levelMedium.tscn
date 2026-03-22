@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bf3m86kavord"]
+[gd_scene load_steps=20 format=4 uid="uid://bf3m86kavord"]
 
 [ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelParts/levelSetup.gd" id="1_sxhef"]
 [ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/Themes/levelBG.tres" id="2_js2ss"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://d354hodrrybid" path="res://scenes/levelParts/mainCharacter.tscn" id="5_us3ul"]
 [ext_resource type="PackedScene" uid="uid://dpb68mlkcalon" path="res://scenes/levelParts/folder.tscn" id="6_m211s"]
 [ext_resource type="PackedScene" uid="uid://ds767hhcmqump" path="res://scenes/levelParts/deathZone.tscn" id="6_wufih"]
+[ext_resource type="PackedScene" uid="uid://dcwj0g56tkgh5" path="res://scenes/enemies/malware.tscn" id="9_vt2xs"]
+[ext_resource type="PackedScene" uid="uid://ck0vrctxifvos" path="res://scenes/enemies/ransomware.tscn" id="10_55wnm"]
 
 [sub_resource type="Animation" id="Animation_m211s"]
 resource_name = "Move"
@@ -319,20 +321,31 @@ position = Vector2(-89, 245)
 [node name="deathZone" parent="Dangers" instance=ExtResource("6_wufih")]
 position = Vector2(400, 260)
 
-[node name="Destination" parent="Dangers/deathZone" index="1"]
-position = Vector2(-376, -31)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone"]
 shape = SubResource("RectangleShape2D_vt2xs")
 
 [node name="deathZone2" parent="Dangers" instance=ExtResource("6_wufih")]
 position = Vector2(968, 324)
 
-[node name="Destination" parent="Dangers/deathZone2" index="1"]
-position = Vector2(-167, -233)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone2"]
 shape = SubResource("RectangleShape2D_i0hvq")
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Malware" parent="Enemies" instance=ExtResource("9_vt2xs")]
+position = Vector2(797, 601)
+
+[node name="Malware2" parent="Enemies" instance=ExtResource("9_vt2xs")]
+position = Vector2(940, 604)
+
+[node name="Malware3" parent="Enemies" instance=ExtResource("9_vt2xs")]
+position = Vector2(1498, 238)
+
+[node name="Ransomware" parent="Enemies" instance=ExtResource("10_55wnm")]
+position = Vector2(281, 79)
+
+[node name="Ransomware2" parent="Enemies" instance=ExtResource("10_55wnm")]
+position = Vector2(972, 281)
 
 [node name="mainCharacter" parent="." instance=ExtResource("5_us3ul")]
 position = Vector2(24, 257)

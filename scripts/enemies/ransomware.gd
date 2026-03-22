@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name MalwareEnemy
+class_name RansomwareEnemy
 
 @onready var animatedSprite2D: AnimatedSprite2D = $AnimatedSprite2D
 const gravity := 950

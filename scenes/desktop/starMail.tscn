@@ -1,20 +1,20 @@
 [gd_scene load_steps=22 format=3 uid="uid://dgf3gja1rph21"]
 
-[ext_resource type="Theme" uid="uid://d0ylre3gbcfdh" path="res://assets/themes/windowTheme.tres" id="1_u6gb7"]
+[ext_resource type="Theme" uid="uid://d0ylre3gbcfdh" path="res://assets/Themes/windowTheme.tres" id="1_u6gb7"]
 [ext_resource type="Script" uid="uid://b3bxpto7cu2q8" path="res://scripts/desktop/starMail.gd" id="2_6myck"]
 [ext_resource type="Texture2D" uid="uid://dlfn3rtt3g8i" path="res://assets/sprites/menuPanel.png" id="3_06rbv"]
-[ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/themes/startButton.tres" id="3_63bi6"]
+[ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/Themes/startButton.tres" id="3_63bi6"]
 [ext_resource type="LabelSettings" uid="uid://cpt0d0nx2sye1" path="res://assets/fonts/emailLabel.tres" id="4_bjxje"]
 [ext_resource type="Texture2D" uid="uid://ig1pmttqjvag" path="res://assets/sprites/trashButton.png" id="4_n2hej"]
 [ext_resource type="Texture2D" uid="uid://buu4ht00sgfkq" path="res://assets/sprites/starSmall.png" id="5_06rbv"]
-[ext_resource type="Theme" uid="uid://c2tak2g4j8hdd" path="res://assets/themes/starMailTheme2.tres" id="5_qpmm6"]
+[ext_resource type="Theme" uid="uid://c2tak2g4j8hdd" path="res://assets/Themes/starMailTheme2.tres" id="5_qpmm6"]
 [ext_resource type="Texture2D" uid="uid://df48qf04wwvsi" path="res://assets/sprites/replyButton.png" id="6_wfn1d"]
 [ext_resource type="Script" uid="uid://buwesixai7kjl" path="res://scripts/desktop/emailList.gd" id="8_n2hej"]
 [ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="9_k6x0s"]
 [ext_resource type="Texture2D" uid="uid://cfnp051yq1bi8" path="res://assets/sprites/blueButton.png" id="10_wfn1d"]
 [ext_resource type="Texture2D" uid="uid://bondd7aot77e4" path="res://assets/sprites/cyberDiveIcon.png" id="12_fp8g5"]
 [ext_resource type="ButtonGroup" uid="uid://cmthm7whp3wf2" path="res://buttonGroups/emailButtonGroup.tres" id="12_wfn1d"]
-[ext_resource type="Theme" uid="uid://bkbxdtadqgm3v" path="res://assets/themes/starMailTheme.tres" id="13_fp8g5"]
+[ext_resource type="Theme" uid="uid://bkbxdtadqgm3v" path="res://assets/Themes/starMailTheme.tres" id="13_fp8g5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfn1d"]
 texture = ExtResource("3_06rbv")
@@ -218,7 +218,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="msgPanel" type="Panel" parent="CanvasLayer/emailPanel"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -269,7 +268,7 @@ text = "If you're reading this, that means you have likely read my last message,
 
 I made a VM for you to practice in. Attached is the tutorial of my app. It will teach you the basics.
 
-I assure you, I have not malicious intent. I only wish to help you.
+I assure you, I don't have any malicious intent. I only wish to help you.
 
 - Cy"
 label_settings = ExtResource("4_bjxje")
@@ -306,11 +305,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "You completed the tutorial, good.
 
-This first \"level\" will introduce you to Malware. They are weak and easy to take down, perfect for training.
+This first \"level\" will introduce you to Malware. They are weak and easy to take down, perfect for training. I have given you access to your first weapon, a sword.
 
-In the tutorial you learned how to use \"Byte Shot\". This will be you first spell.
-
-My next email will have the download for the shop. There, you can buy weapons and spells. Upgrades will be available once you complete your \"trial\" period.
+My next email will have the download for the shop. There, you can buy other weapons and spells. Upgrades will be available once you complete your \"trial\" period.
 
 Good Luck.
 
@@ -347,11 +344,7 @@ offset_right = -8.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Remember the Tojan Horse? Of Odyssus' trick? Now it's time to see if you can succeed where the Trojans failed.
-
-This level will also introduce you to a pesky thief, Ransomware. Carefully to not get hit, it has quick hands and will not return what is yours until it's defeated.
-
-The shop will have new items when you return.
+text = "Time to introduce you to a pesky thief, Ransomware. Carefully to not get hit, it has quick hands and will not return what is yours until it's defeated.
 
 Good Luck.
 
@@ -405,11 +398,7 @@ offset_right = -8.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Time you introduce you to the most annoying enemy: Worms. They burrow fast and won't die easily. Make sure to cut every segment down, they won't leave you alone until then.
-
-I think you also ready to get through locked doors. Look out for the password. My program makes them easy to read but you'll stll need to solve their riddles.
-
-All of the shop items will be available when you return.
+text = "Remember the Tojan Horse? Of Odyssus' trick? Now it's time to see if you can succeed where the Trojans failed.
 
 Good Luck.
 
@@ -435,7 +424,6 @@ text = "lvl_3.exe"
 icon = ExtResource("12_fp8g5")
 
 [node name="emailMsg5" type="Label" parent="CanvasLayer/emailPanel/msgPanel"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -448,7 +436,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "You have done very well so far. Good job.
 
-I think you are ready for the hardest level of the trial. It is the longest level and the most difficult. You will encounter every enemy you've faces until now. Be prepared to face the boss at the end of the level and do not underestimate it.
+I think you are ready for the hardest level of the trial. It is the longest level and the most difficult. You will encounter every enemy you've faced until now, including a new one: the worm. Be prepared to face the boss at the end of the level and do not underestimate it.
 
 Good Luck.
 

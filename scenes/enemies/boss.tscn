@@ -11,7 +11,3 @@ sprite_frames = SubResource("SpriteFrames_m3eqf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_maj5x")
-
-[node name="endCast" type="RayCast2D" parent="."]
-position = Vector2(16, -10)
-target_position = Vector2(0, 26)

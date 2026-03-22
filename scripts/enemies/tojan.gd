@@ -1,21 +1,18 @@
 extends CharacterBody2D
-class_name MalwareEnemy
+class_name TrojanEnemy
 
 @onready var animatedSprite2D: AnimatedSprite2D = $AnimatedSprite2D
-const gravity := 950
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	move_and_slide()
 	
 	if velocity.length() > 0:
-		animatedSprite2D.play("Walk")
+		animatedSprite2D.play("Float")
 	else:
-		animatedSprite2D.play("Idle")
+		animatedSprite2D.play("Float")
 	
 	if velocity.x > 0:
 		animatedSprite2D.flip_h = true
 	else:
 		animatedSprite2D.flip_h = false
 	
-	if not is_on_floor():
-		velocity.y += gravity * delta

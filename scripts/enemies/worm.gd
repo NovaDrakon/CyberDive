@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name MalwareEnemy
+class_name WormEnemy
 
 @onready var animatedSprite2D: AnimatedSprite2D = $AnimatedSprite2D
 const gravity := 950
@@ -8,7 +8,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if velocity.length() > 0:
-		animatedSprite2D.play("Walk")
+		animatedSprite2D.play("Slither")
 	else:
 		animatedSprite2D.play("Idle")
 	

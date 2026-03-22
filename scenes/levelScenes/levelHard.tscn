@@ -1,7 +1,7 @@
-[gd_scene load_steps=23 format=4 uid="uid://bu1tprvtkbr3l"]
+[gd_scene load_steps=26 format=4 uid="uid://bu1tprvtkbr3l"]
 
 [ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelParts/levelSetup.gd" id="1_30svh"]
-[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/themes/levelBG.tres" id="2_6w52n"]
+[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/Themes/levelBG.tres" id="2_6w52n"]
 [ext_resource type="TileSet" uid="uid://c08bi8v8n42rw" path="res://assets/sprites/levelSprites/backgroundTiles.tres" id="2_ujorj"]
 [ext_resource type="TileSet" uid="uid://c1he15yukhmbh" path="res://assets/sprites/levelSprites/foregroundTiles.tres" id="3_h63bk"]
 [ext_resource type="PackedScene" uid="uid://vu7tnwvaogi1" path="res://scenes/levelParts/movingPlatform.tscn" id="5_06v6u"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://d354hodrrybid" path="res://scenes/levelParts/mainCharacter.tscn" id="8_fi5nf"]
 [ext_resource type="PackedScene" uid="uid://cu46doc6h0v3o" path="res://scenes/levelParts/flag.tscn" id="10_a2gm5"]
 [ext_resource type="PackedScene" uid="uid://ds767hhcmqump" path="res://scenes/levelParts/deathZone.tscn" id="10_nkhjh"]
+[ext_resource type="PackedScene" uid="uid://f503nw6sbhv5" path="res://scenes/enemies/tojan.tscn" id="11_cv30n"]
+[ext_resource type="PackedScene" uid="uid://dcwj0g56tkgh5" path="res://scenes/enemies/malware.tscn" id="12_328xa"]
+[ext_resource type="PackedScene" uid="uid://ck0vrctxifvos" path="res://scenes/enemies/ransomware.tscn" id="13_cow6o"]
 
 [sub_resource type="Animation" id="Animation_5i84r"]
 resource_name = "Move"
@@ -411,9 +414,6 @@ position = Vector2(247, 453)
 [node name="deathZone" parent="Dangers" instance=ExtResource("10_nkhjh")]
 position = Vector2(417, 724)
 
-[node name="Destination" parent="Dangers/deathZone" index="1"]
-position = Vector2(-336, -25)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone"]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_cv30n")
@@ -421,11 +421,40 @@ shape = SubResource("RectangleShape2D_cv30n")
 [node name="deathZone2" parent="Dangers" instance=ExtResource("10_nkhjh")]
 position = Vector2(544, 1300)
 
-[node name="Destination" parent="Dangers/deathZone2" index="1"]
-position = Vector2(-255, -105)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone2"]
 shape = SubResource("RectangleShape2D_d1pon")
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Trojan" parent="Enemies" instance=ExtResource("11_cv30n")]
+position = Vector2(473, 92)
+
+[node name="Trojan2" parent="Enemies" instance=ExtResource("11_cv30n")]
+position = Vector2(1160, 571)
+
+[node name="Trojan3" parent="Enemies" instance=ExtResource("11_cv30n")]
+position = Vector2(1239, 1083)
+
+[node name="Trojan4" parent="Enemies" instance=ExtResource("11_cv30n")]
+position = Vector2(921, 1179)
+
+[node name="Malware" parent="Enemies" instance=ExtResource("12_328xa")]
+position = Vector2(921, 365)
+
+[node name="Malware2" parent="Enemies" instance=ExtResource("12_328xa")]
+position = Vector2(64, 843)
+
+[node name="Malware3" parent="Enemies" instance=ExtResource("12_328xa")]
+position = Vector2(1784, 1196)
+
+[node name="Malware4" parent="Enemies" instance=ExtResource("12_328xa")]
+position = Vector2(145, 75)
+
+[node name="Ransomware" parent="Enemies" instance=ExtResource("13_cow6o")]
+position = Vector2(480, 673)
+
+[node name="Ransomware2" parent="Enemies" instance=ExtResource("13_cow6o")]
+position = Vector2(1172, 671)
 
 [node name="mainCharacter" parent="." instance=ExtResource("8_fi5nf")]
 position = Vector2(30, 257)
