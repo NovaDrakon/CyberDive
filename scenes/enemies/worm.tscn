@@ -279,24 +279,22 @@ animation = &"Idle"
 autoplay = "Idle"
 centered = false
 
-[node name="sideRay" type="RayCast2D" parent="AnimatedSprite2D"]
-position = Vector2(1, 18)
-rotation = 1.5707964
-target_position = Vector2(2.3841858e-07, 7)
-collide_with_areas = true
-collide_with_bodies = false
-
-[node name="downRay" type="RayCast2D" parent="AnimatedSprite2D"]
-position = Vector2(2, 25)
-target_position = Vector2(0, 8)
-collide_with_areas = true
-collide_with_bodies = false
-
 [node name="characterBody" type="CollisionShape2D" parent="."]
 light_mask = 8
 position = Vector2(0, -10)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_jx8wq")
+
+[node name="sideRay" type="RayCast2D" parent="."]
+position = Vector2(-1.9073486e-06, -13)
+rotation = 1.5707964
+scale = Vector2(0.5199973, 1.6800025)
+target_position = Vector2(1.9073486e-06, 10.119031)
+
+[node name="downRay" type="RayCast2D" parent="."]
+position = Vector2(-9.536743e-07, -5.999998)
+scale = Vector2(0.6, 0.85)
+target_position = Vector2(-18.33333, 7.4999976)
 
 [node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("initalState")]
 script = ExtResource("8_akbxx")

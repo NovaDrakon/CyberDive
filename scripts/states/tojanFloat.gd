@@ -1,10 +1,9 @@
 extends State
-class_name Walk
+class_name Float
 
 @export var enemy: CharacterBody2D
 @export var moveSpeed := 60.0
 @onready var sideRay: RayCast2D = $"../../sideRay"
-@onready var downRay: RayCast2D = $"../../downRay"
 
 var moveDirection = -1
 var wanderTime: float
@@ -23,13 +22,12 @@ func Update(delta: float):
 
 func PhysicsUpdate(_delta: float):
 	if enemy:
-		if not downRay.is_colliding() or sideRay.is_colliding():
+		if sideRay.is_colliding():
 			if moveDirection == 1:
 				moveDirection = -1
 				sideRay.set_rotation_degrees(90)
 			else:
 				moveDirection = 1
 				sideRay.set_rotation_degrees(270)
-			downRay.scale.x = -downRay.scale.x
 		
-		enemy.velocity.x = moveSpeed * moveDirection
+		enemy.velocity.x = moveSpeed * moveDirection * 0

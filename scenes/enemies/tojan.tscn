@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://f503nw6sbhv5"]
+[gd_scene load_steps=32 format=3 uid="uid://f503nw6sbhv5"]
 
 [ext_resource type="Texture2D" uid="uid://icso7tf1kjii" path="res://assets/sprites/enemySprites/trojanAttack.png" id="1_dt3ol"]
 [ext_resource type="Script" uid="uid://ddqymrn4ia6u1" path="res://scripts/enemies/tojan.gd" id="1_qhphk"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bkxr15a5csk4n" path="res://assets/sprites/enemySprites/trojanFloat.png" id="3_lm6sk"]
 [ext_resource type="Texture2D" uid="uid://bpb3rocx5rfw0" path="res://assets/sprites/enemySprites/trojanHurt.png" id="4_r7jmy"]
 [ext_resource type="Texture2D" uid="uid://cvcui16v7cn6e" path="res://assets/sprites/enemySprites/trojan.png" id="5_115yu"]
+[ext_resource type="Texture2D" uid="uid://cqm0qrkys6jwv" path="res://assets/sprites/eButton.png" id="7_4dpwr"]
 [ext_resource type="Script" uid="uid://biop0ilecxtla" path="res://scripts/states/stateMachine.gd" id="7_cooye"]
+[ext_resource type="Script" uid="uid://c87qy5ru12bts" path="res://scripts/states/tojanFloat.gd" id="8_primo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0u5t"]
 atlas = ExtResource("1_dt3ol")
@@ -161,6 +163,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_78x4e"]
+atlas = ExtResource("7_4dpwr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0f8dc"]
+atlas = ExtResource("7_4dpwr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xid2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78x4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0f8dc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhphk"]
 size = Vector2(30, 24)
 
@@ -170,13 +194,41 @@ script = ExtResource("1_qhphk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m3eqf")
-animation = &"Attack"
+animation = &"Inactive"
 autoplay = "Inactive"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -23)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7xid2")
+autoplay = "default"
+frame = 1
+frame_progress = 0.97818285
 
 [node name="characterBody" type="CollisionShape2D" parent="."]
 light_mask = 8
 shape = SubResource("RectangleShape2D_qhphk")
 
+[node name="sideRay" type="RayCast2D" parent="."]
+position = Vector2(-1.1368684e-13, 6)
+rotation = 1.5707964
+scale = Vector2(0.5199973, 1.6800025)
+target_position = Vector2(1.5130943e-06, 10.71427)
+
+[node name="folderRayL" type="RayCast2D" parent="."]
+target_position = Vector2(-20, 0)
+collision_mask = 2
+
+[node name="folderRayR" type="RayCast2D" parent="."]
+target_position = Vector2(20, 0)
+collision_mask = 2
+
 [node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("initalState")]
 script = ExtResource("7_cooye")
-initalState = NodePath("")
+initalState = NodePath("Float")
+
+[node name="Float" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("8_primo")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://c87qy5ru12bts"
