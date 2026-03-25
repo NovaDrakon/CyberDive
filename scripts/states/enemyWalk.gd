@@ -31,5 +31,5 @@ func PhysicsUpdate(_delta: float):
 				moveDirection = 1
 				sideRay.set_rotation_degrees(270)
 			downRay.scale.x = -downRay.scale.x
-		
+			
 		enemy.velocity.x = moveSpeed * moveDirection

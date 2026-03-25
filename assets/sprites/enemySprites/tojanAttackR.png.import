@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://icso7tf1kjii"
-path="res://.godot/imported/trojanAttack.png-76c8aa81b730329ffed4b04ecffc0781.ctex"
+uid="uid://dgkw5mdl0g217"
+path="res://.godot/imported/tojanAttackR.png-bf94c7effbda9c659b334b99a0f6a35c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemySprites/trojanAttack.png"
-dest_files=["res://.godot/imported/trojanAttack.png-76c8aa81b730329ffed4b04ecffc0781.ctex"]
+source_file="res://assets/sprites/enemySprites/tojanAttackR.png"
+dest_files=["res://.godot/imported/tojanAttackR.png-bf94c7effbda9c659b334b99a0f6a35c.ctex"]
 
 [params]
 

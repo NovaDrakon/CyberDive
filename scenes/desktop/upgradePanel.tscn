@@ -1,9 +1,9 @@
 [gd_scene load_steps=27 format=3 uid="uid://samasj7wqd0w"]
 
-[ext_resource type="Theme" uid="uid://dvx6aopfhb5xb" path="res://assets/themes/upgradePanel.tres" id="1_b6s30"]
+[ext_resource type="Theme" uid="uid://dvx6aopfhb5xb" path="res://assets/Themes/upgradePanel.tres" id="1_b6s30"]
 [ext_resource type="Script" uid="uid://blk6gvmvcs14k" path="res://scripts/desktop/upgradePanel.gd" id="2_5e2wg"]
 [ext_resource type="LabelSettings" uid="uid://brk4a6wwn25og" path="res://assets/fonts/cyberLabel2.tres" id="3_nl55n"]
-[ext_resource type="Theme" uid="uid://cxqa1qm414lbd" path="res://assets/themes/upgradeButtons.tres" id="4_nl55n"]
+[ext_resource type="Theme" uid="uid://cxqa1qm414lbd" path="res://assets/Themes/upgradeButtons.tres" id="4_nl55n"]
 [ext_resource type="Texture2D" uid="uid://71mr4yhqsiyj" path="res://assets/sprites/upgradeSprites/dualWield.png" id="5_aa2va"]
 [ext_resource type="Texture2D" uid="uid://b6oeade22ujck" path="res://assets/sprites/upgradeSprites/fasterSwing.png" id="6_yh36e"]
 [ext_resource type="Texture2D" uid="uid://c2wq4u44q8tej" path="res://assets/sprites/upgradeSprites/swordEnchant.png" id="7_d1y4u"]

@@ -293,8 +293,8 @@ target_position = Vector2(1.9073486e-06, 10.119031)
 
 [node name="downRay" type="RayCast2D" parent="."]
 position = Vector2(-9.536743e-07, -5.999998)
-scale = Vector2(0.6, 0.85)
-target_position = Vector2(-18.33333, 7.4999976)
+scale = Vector2(0.6, 0.40999874)
+target_position = Vector2(-19.999998, 17.07322)
 
 [node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("initalState")]
 script = ExtResource("8_akbxx")

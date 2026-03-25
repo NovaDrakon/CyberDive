@@ -160,8 +160,8 @@ target_position = Vector2(0, 7.738084)
 
 [node name="downRay" type="RayCast2D" parent="."]
 position = Vector2(0, -6)
-scale = Vector2(0.7, 0.9)
-target_position = Vector2(-15.909091, 7)
+scale = Vector2(0.7, 0.45999876)
+target_position = Vector2(-12.857143, 15.217433)
 
 [node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("initalState")]
 script = ExtResource("7_bseht")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m426mxv3ilxj"
-path="res://.godot/imported/trojanBullet.png-dc8b53f3506f7cde62308148bc6dcb51.ctex"
+uid="uid://lv6134xcfao1"
+path="res://.godot/imported/trojanAttackL.png-529368b3acff5bf31e78c10c3ca8ccb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemySprites/trojanBullet.png"
-dest_files=["res://.godot/imported/trojanBullet.png-dc8b53f3506f7cde62308148bc6dcb51.ctex"]
+source_file="res://assets/sprites/enemySprites/trojanAttackL.png"
+dest_files=["res://.godot/imported/trojanAttackL.png-529368b3acff5bf31e78c10c3ca8ccb4.ctex"]
 
 [params]
 
