@@ -3,13 +3,14 @@ class_name Float
 
 @export var enemy: CharacterBody2D
 @export var moveSpeed := 60.0
+
 @onready var sideRay: RayCast2D = $"../../sideRay"
 
 var moveDirection = -1
 var wanderTime: float
 
 func walk():
-	wanderTime = 1.5
+	wanderTime = randf_range(0, 1.5)
 
 func Enter():
 	walk()

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d3k3i1bvnbqal" path="res://assets/sprites/enemySprites/ransomJump.png" id="3_re2bu"]
 [ext_resource type="Texture2D" uid="uid://cw6uta1raqg6" path="res://assets/sprites/enemySprites/ransomWalk.png" id="4_htico"]
 [ext_resource type="Script" uid="uid://biop0ilecxtla" path="res://scripts/states/stateMachine.gd" id="7_bseht"]
-[ext_resource type="Script" uid="uid://cqfslxycb2pna" path="res://scripts/states/enemyWalk.gd" id="8_syv6i"]
+[ext_resource type="Script" uid="uid://coxugmfipamq8" path="res://scripts/states/ransomWalkJump.gd" id="7_syv6i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6wbt"]
 atlas = ExtResource("1_u6wbt")
@@ -165,9 +165,9 @@ target_position = Vector2(-12.857143, 15.217433)
 
 [node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("initalState")]
 script = ExtResource("7_bseht")
-initalState = NodePath("Walk")
+initalState = NodePath("WalkJump")
 
-[node name="Walk" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("8_syv6i")
+[node name="WalkJump" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("7_syv6i")
 enemy = NodePath("../..")
-metadata/_custom_type_script = "uid://cqfslxycb2pna"
+metadata/_custom_type_script = "uid://coxugmfipamq8"

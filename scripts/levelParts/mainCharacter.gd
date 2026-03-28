@@ -2,13 +2,13 @@ extends CharacterBody2D
 
 @onready var animatedSprite2D: AnimatedSprite2D = $AnimatedSprite2D
 
-const speed := 180
-const jump := -300
-const gravity := 950
-const accelertation := 900
-const friction := 1000
+var speed := 180
+var jump := -300
+var gravity := 950
+var accelertation := 900
+var friction := 1000
 
-const coyoteTime := 0.1
+var coyoteTime := 0.1
 var coyoteTimer := 0.0
 
 func handle_animation(direction: float) -> void:

@@ -2,6 +2,7 @@ extends State
 class_name Awaken
 
 @export var enemy: CharacterBody2D
+
 @onready var animatedSprite2D: AnimatedSprite2D = $"../../AnimatedSprite2D"
 @onready var folderRayL: RayCast2D = $"../../folderRayL"
 @onready var folderRayR: RayCast2D = $"../../folderRayR"

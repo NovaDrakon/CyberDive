@@ -17,5 +17,8 @@ func _physics_process(delta):
 	else:
 		animatedSprite2D.flip_h = false
 	
+	if velocity.y > 0:
+		animatedSprite2D.play("Jump")
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
