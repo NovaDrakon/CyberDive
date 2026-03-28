@@ -46,6 +46,7 @@ enabled=PackedStringArray("res://addons/save_system/plugin.cfg")
 
 Player=""
 Enemy=""
+"Moving Platform"=""
 
 [input]
 
@@ -98,6 +99,7 @@ Interact={
 2d_physics/layer_2="Interactables"
 2d_physics/layer_3="Player"
 2d_physics/layer_4="Enemies"
+2d_physics/layer_5="Platform"
 
 [rendering]
 

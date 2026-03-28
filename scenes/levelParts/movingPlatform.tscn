@@ -5,7 +5,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_at7s6"]
 size = Vector2(64, 8)
 
-[node name="movingPlatform" type="AnimatableBody2D"]
+[node name="movingPlatform" type="AnimatableBody2D" groups=["Moving Platform"]]
+collision_layer = 17
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 8)

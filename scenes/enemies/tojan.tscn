@@ -283,13 +283,16 @@ scale = Vector2(0.5199973, 1.6800025)
 target_position = Vector2(1.5130943e-06, 10.71427)
 
 [node name="folderRayL" type="RayCast2D" parent="."]
-target_position = Vector2(-25, 0)
+position = Vector2(3, 0)
+target_position = Vector2(-28, 0)
 collision_mask = 4
 hit_from_inside = true
 
 [node name="folderRayR" type="RayCast2D" parent="."]
-target_position = Vector2(25, 0)
-collision_mask = 2
+position = Vector2(-3, 0)
+rotation = 3.1415927
+target_position = Vector2(-28, 2.4478377e-06)
+collision_mask = 4
 hit_from_inside = true
 
 [node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("initalState")]

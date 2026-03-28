@@ -152,7 +152,7 @@ position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_syv6i")
 
 [node name="sideRay" type="RayCast2D" parent="."]
-position = Vector2(-9.536743e-07, -14)
+position = Vector2(2.842171e-14, -5)
 rotation = 1.5707964
 scale = Vector2(0.600002, 1.6800025)
 target_position = Vector2(0, 7.738084)

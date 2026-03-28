@@ -2,7 +2,7 @@ extends State
 class_name WalkJump
 
 @export var enemy: CharacterBody2D
-@export var moveSpeed := 80.0
+@export var moveSpeed := 70.0
 
 @onready var sideRay: RayCast2D = $"../../sideRay"
 @onready var downRay: RayCast2D = $"../../downRay"
@@ -10,7 +10,7 @@ class_name WalkJump
 var moveDirection = -1
 var walkTime: float
 var jumpChance: float
-var jump := -300
+var jump := -350
 var bounces := 0
 
 func walk():
@@ -29,13 +29,13 @@ func PhysicsUpdate(_delta: float):
 	if enemy:
 		if not downRay.is_colliding():
 			jumpChance = randi_range(0, 1)
-			if enemy.is_on_floor() and bounces == 3:
+			if enemy.is_on_floor() and bounces == 2:
 				enemy.velocity.y = jump
 				bounces = 0
-			elif enemy.is_on_floor() and jumpChance == 0:
-				flipDirection()
 			elif enemy.is_on_floor() and jumpChance == 1:
 				enemy.velocity.y = jump
+			elif enemy.is_on_floor() and jumpChance == 0:
+				flipDirection()
 			
 		if sideRay.is_colliding():
 			flipDirection()

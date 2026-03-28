@@ -329,7 +329,6 @@ position_smoothing_speed = 10.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="statBar" type="Sprite2D" parent="CanvasLayer"]
-visible = false
 position = Vector2(208.00002, 63.999996)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_8yp8v")
@@ -347,5 +346,4 @@ sprite_frames = SubResource("SpriteFrames_ur5q2")
 frame = 20
 
 [node name="crt" parent="CanvasLayer" instance=ExtResource("1_oo0jo")]
-visible = false
 position = Vector2(-1.5258789e-05, 0)
