@@ -29,7 +29,7 @@ extends Node
 
 
 # The default file path of your save data. You can freely modify this.
-const default_file_path : String = "user://saveData.sav"
+const default_file_path : String = "user://mainSaveData.sav"
 const encryption_key : String = "x9mynhm3ricd"
 const use_encryption : bool = false
 # Typecasting the keys manually may increase loading times, so if you feel like

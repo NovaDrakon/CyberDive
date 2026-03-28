@@ -2,22 +2,22 @@ extends State
 class_name Float
 
 @export var enemy: CharacterBody2D
-@export var moveSpeed := 60.0
+@export var moveSpeed := 50.0
 
 @onready var sideRay: RayCast2D = $"../../sideRay"
 
 var moveDirection = -1
-var wanderTime: float
+var floatTime: float
 
 func walk():
-	wanderTime = randf_range(0, 1.5)
+	floatTime = 1
 
 func Enter():
 	walk()
 
 func Update(delta: float):
-	if wanderTime > 0:
-		wanderTime -= delta
+	if floatTime > 0:
+		floatTime -= delta
 	else:
 		walk()
 

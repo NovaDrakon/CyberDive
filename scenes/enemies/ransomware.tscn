@@ -141,11 +141,10 @@ collision_layer = 8
 script = ExtResource("1_g4yo4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-16, -32)
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_m3eqf")
 animation = &"Idle"
 autoplay = "Idle"
-centered = false
 
 [node name="characterBody" type="CollisionShape2D" parent="."]
 light_mask = 8
