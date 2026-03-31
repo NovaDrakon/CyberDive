@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animatedSprite2D: AnimatedSprite2D = $AnimatedSprite2D
 
 var speed := 180
-var jump := -300
+var jump := -310
 var gravity := 950
 var accelertation := 900
 var friction := 1000
@@ -49,3 +49,13 @@ func _physics_process(delta: float):
 	
 	handle_animation(direction)
 	move_and_slide()
+
+func saveHealthMana():
+	SaveSystem.set_var("health", GlobalVars.health)
+	SaveSystem.set_var("mana", GlobalVars.mana)
+	SaveSystem.save(GlobalVars.filePath)
+
+func loadHealthMana():
+	GlobalVars.health = SaveSystem.get_var("health", GlobalVars.health)
+	GlobalVars.mana = SaveSystem.get_var("mana", GlobalVars.mana)
+	

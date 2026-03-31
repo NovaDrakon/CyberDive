@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelParts/levelSetup.gd" id="1_ub7yk"]
 [ext_resource type="TileSet" uid="uid://c08bi8v8n42rw" path="res://assets/sprites/levelSprites/backgroundTiles.tres" id="2_mwgql"]
-[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/themes/levelBG.tres" id="2_yme5q"]
+[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/Themes/levelBG.tres" id="2_yme5q"]
 [ext_resource type="TileSet" uid="uid://c1he15yukhmbh" path="res://assets/sprites/levelSprites/foregroundTiles.tres" id="3_k1raf"]
 [ext_resource type="PackedScene" uid="uid://cu46doc6h0v3o" path="res://scenes/levelParts/flag.tscn" id="5_hr1uh"]
 [ext_resource type="PackedScene" uid="uid://dpb68mlkcalon" path="res://scenes/levelParts/folder.tscn" id="6_43xm0"]
@@ -150,6 +150,9 @@ shape = SubResource("RectangleShape2D_r3n8n")
 
 [node name="deathZone" parent="Dangers" instance=ExtResource("7_r3n8n")]
 position = Vector2(984, 596)
+
+[node name="Timer" parent="Dangers/deathZone" index="0"]
+wait_time = 0.45
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone"]
 shape = SubResource("RectangleShape2D_k1q4k")

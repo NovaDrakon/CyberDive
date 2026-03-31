@@ -74,6 +74,7 @@ position = Vector2(-32, -193)
 position = Vector2(-73, -242)
 
 [node name="mainCharacter" parent="." instance=ExtResource("4_8b61e")]
+z_index = 1
 position = Vector2(-375, -84)
 
 [node name="gameCamera" parent="mainCharacter" index="2"]

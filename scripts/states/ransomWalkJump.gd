@@ -27,6 +27,11 @@ func Update(delta: float):
 
 func PhysicsUpdate(_delta: float):
 	if enemy:
+		if enemy.position.y > 0:
+			jump = 0
+		else:
+			jump = -300
+		
 		if not downRay.is_colliding():
 			jumpChance = randi_range(0, 1)
 			if enemy.is_on_floor() and bounces == 2:

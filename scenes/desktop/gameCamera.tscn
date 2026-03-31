@@ -1,10 +1,11 @@
-[gd_scene load_steps=50 format=3 uid="uid://cpdb8lr5irun"]
+[gd_scene load_steps=51 format=3 uid="uid://cpdb8lr5irun"]
 
 [ext_resource type="Texture2D" uid="uid://daph2hklhuim3" path="res://assets/sprites/levelSprites/statBar.png" id="1_8yp8v"]
 [ext_resource type="PackedScene" uid="uid://cyrx1o52rts00" path="res://scenes/levelParts/crt.tscn" id="1_oo0jo"]
-[ext_resource type="Script" uid="uid://byqttwi8wa5m1" path="res://scripts/levelParts/statBar.gd" id="2_oo0jo"]
 [ext_resource type="Texture2D" uid="uid://cqvdmkk782o63" path="res://assets/sprites/levelSprites/healthBar.png" id="3_s5vgj"]
+[ext_resource type="Script" uid="uid://k5wa3hd7j7xh" path="res://scripts/levelParts/healthBar.gd" id="4_ddwp7"]
 [ext_resource type="Texture2D" uid="uid://ds4uf1fbjfj5l" path="res://assets/sprites/levelSprites/manaBar.png" id="4_vya8c"]
+[ext_resource type="Script" uid="uid://bckmfrb8jjxk3" path="res://scripts/levelParts/manaBar.gd" id="5_ddwp7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e68q7"]
 atlas = ExtResource("3_s5vgj")
@@ -324,26 +325,29 @@ limit_right = 1000
 limit_bottom = 600
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 10.0
+position_smoothing_speed = 15.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="statBar" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 position = Vector2(208.00002, 63.999996)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_8yp8v")
-script = ExtResource("2_oo0jo")
 
 [node name="healthBar" type="AnimatedSprite2D" parent="CanvasLayer/statBar"]
 position = Vector2(25, -6)
 sprite_frames = SubResource("SpriteFrames_ylra0")
 animation = &"Health"
-frame = 20
+frame = 13
+script = ExtResource("4_ddwp7")
 
 [node name="manaBar" type="AnimatedSprite2D" parent="CanvasLayer/statBar"]
 position = Vector2(25, 16)
 sprite_frames = SubResource("SpriteFrames_ur5q2")
-frame = 20
+frame = 4
+script = ExtResource("5_ddwp7")
 
 [node name="crt" parent="CanvasLayer" instance=ExtResource("1_oo0jo")]
+visible = false
 position = Vector2(-1.5258789e-05, 0)

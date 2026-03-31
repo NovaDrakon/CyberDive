@@ -25,7 +25,7 @@ func Update(_delta: float):
 			inRange = false
 			folderRayL.set_enabled(false)
 			folderRayR.set_enabled(false)
-			await get_tree().create_timer(0.8).timeout
+			await get_tree().create_timer(0.75).timeout
 			Transitioned.emit(self, "Float")
 
 func PhysicsUpdate(_delta: float):

@@ -276,12 +276,6 @@ frame_progress = 0.97818285
 light_mask = 8
 shape = SubResource("RectangleShape2D_qhphk")
 
-[node name="sideRay" type="RayCast2D" parent="."]
-position = Vector2(-1.1368684e-13, 6)
-rotation = 1.5707964
-scale = Vector2(0.5199973, 1.6800025)
-target_position = Vector2(1.5130943e-06, 10.71427)
-
 [node name="folderRayL" type="RayCast2D" parent="."]
 position = Vector2(3, 0)
 target_position = Vector2(-28, 0)
