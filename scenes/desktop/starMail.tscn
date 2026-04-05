@@ -305,7 +305,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "You completed the tutorial, good.
 
-This first \"level\" will give you more practice against Malware and navigating through levels.
+This first \"level\" will give you more practice against Malware and navigating through levels. You will now start gaining a currency called 'bytes' at the end of each level that you can use in the shop.
 
 My next email will have the download for the shop. There, you can buy other weapons and spells. Upgrades will be available once you complete your \"trial\" period.
 
@@ -537,5 +537,6 @@ icon = ExtResource("5_06rbv")
 [connection signal="pressed" from="CanvasLayer/emailPanel/msgPanel/emailMsg1/tutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/emailPanel/msgPanel/emailMsg2/lvl1Button" to="." method="_on_lvl_1_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/emailPanel/msgPanel/emailMsg3/lvl2Button" to="." method="_on_lvl_2_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/emailPanel/msgPanel/emailMsg3/cyberShopDownload" to="CanvasLayer/emailList" method="_on_cyber_shop_download_pressed"]
 [connection signal="pressed" from="CanvasLayer/emailPanel/msgPanel/emailMsg4/lvl3Button" to="." method="_on_lvl_3_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/emailPanel/msgPanel/emailMsg5/bossButton" to="." method="_on_boss_button_pressed"]

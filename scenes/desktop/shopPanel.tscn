@@ -52,7 +52,9 @@ offset_top = 101.0
 offset_right = 90.0
 offset_bottom = 136.0
 grow_horizontal = 2
-tooltip_text = "A quick but low damage weapon best used in combination with code attacks."
+tooltip_text = "Dmg: 5
+Speed: 20
+Range: 10"
 theme = ExtResource("4_g4fi2")
 disabled = true
 text = "10  Sword"
@@ -68,7 +70,9 @@ offset_top = 152.0
 offset_right = 74.0
 offset_bottom = 188.0
 grow_horizontal = 2
-tooltip_text = "Ranged weapon which can use special arrows for code attacks."
+tooltip_text = "Dmg: 8
+Speed: 10
+Range: 50"
 theme = ExtResource("4_g4fi2")
 text = "15  Bow"
 icon = ExtResource("5_dqify")
@@ -83,7 +87,9 @@ offset_top = 204.0
 offset_right = 82.0
 offset_bottom = 240.0
 grow_horizontal = 2
-tooltip_text = "This long weapon keeps enemies at bay with its sharp blade."
+tooltip_text = "Dmg: 10
+Speed: 18
+Range: 15"
 theme = ExtResource("4_g4fi2")
 text = "25 Spear"
 icon = ExtResource("5_dqify")
@@ -113,7 +119,9 @@ offset_top = 344.0
 offset_right = 122.0
 offset_bottom = 379.0
 grow_horizontal = 2
-tooltip_text = "A ranged code attack with a short cooldown."
+tooltip_text = "Dmg: 12
+Speed: 15
+Range: 60"
 theme = ExtResource("4_g4fi2")
 text = "10  Byte Shot"
 icon = ExtResource("5_dqify")
@@ -128,7 +136,9 @@ offset_top = 396.0
 offset_right = 82.0
 offset_bottom = 432.0
 grow_horizontal = 2
-tooltip_text = "A healing spell."
+tooltip_text = "Heal: 15
+Speed: 10
+Range: Self"
 theme = ExtResource("4_g4fi2")
 text = "15 Patch"
 icon = ExtResource("5_dqify")
@@ -143,7 +153,9 @@ offset_top = 447.0
 offset_right = 154.0
 offset_bottom = 483.0
 grow_horizontal = 2
-tooltip_text = "Sends out a wave of fire towards enemies."
+tooltip_text = "Dmg: 20
+Speed: 15
+Range: 20"
 theme = ExtResource("4_g4fi2")
 text = "30  Firewall Wave"
 icon = ExtResource("5_dqify")

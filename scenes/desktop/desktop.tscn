@@ -1,5 +1,6 @@
-[gd_scene load_steps=38 format=3 uid="uid://dekg7nrbw3kbt"]
+[gd_scene load_steps=39 format=3 uid="uid://dekg7nrbw3kbt"]
 
+[ext_resource type="Script" uid="uid://c4koxep8ny4u1" path="res://scripts/desktop/desktop.gd" id="1_8gp1d"]
 [ext_resource type="Texture2D" uid="uid://dfspedwjqaut2" path="res://assets/sprites/background.jpg" id="1_81rff"]
 [ext_resource type="Theme" uid="uid://dy3caveppfer4" path="res://assets/Themes/startButton.tres" id="2_81rff"]
 [ext_resource type="Script" uid="uid://dxttxglm5t2nq" path="res://scripts/desktop/tabs.gd" id="2_q2hki"]
@@ -89,6 +90,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8gp1d")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
