@@ -115,13 +115,12 @@ script = ExtResource("1_0n537")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(0, -32)
+position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_oh4mb")
 animation = &"Idle"
 autoplay = "Idle"
 
 [node name="characterBody" type="CollisionShape2D" parent="."]
-position = Vector2(0, -28)
 shape = SubResource("CapsuleShape2D_trh3t")
 
 [node name="gameCamera" parent="." instance=ExtResource("4_gff5m")]

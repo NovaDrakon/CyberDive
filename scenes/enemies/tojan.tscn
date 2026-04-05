@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://f503nw6sbhv5"]
+[gd_scene load_steps=44 format=3 uid="uid://f503nw6sbhv5"]
 
 [ext_resource type="Script" uid="uid://ddqymrn4ia6u1" path="res://scripts/enemies/tojan.gd" id="1_qhphk"]
 [ext_resource type="Texture2D" uid="uid://cip73bogolgio" path="res://assets/sprites/enemySprites/trojanAwaken.png" id="2_6nsd3"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://2lylyqnb530l" path="res://assets/sprites/levelSprites/folder.png" id="8_j4rf5"]
 [ext_resource type="Script" uid="uid://c87qy5ru12bts" path="res://scripts/states/tojanFloat.gd" id="8_primo"]
 [ext_resource type="Script" uid="uid://bh3uldwpxlmyo" path="res://scripts/states/trojanAwaken.gd" id="12_j4rf5"]
+[ext_resource type="Script" uid="uid://dar5t7cq5oqnt" path="res://scripts/states/trojanChase.gd" id="13_xbiy7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fogd2"]
 atlas = ExtResource("2_ontp0")
@@ -302,3 +303,9 @@ metadata/_custom_type_script = "uid://c87qy5ru12bts"
 script = ExtResource("12_j4rf5")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://bh3uldwpxlmyo"
+
+[node name="Chase" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("13_xbiy7")
+enemy = NodePath("../..")
+moveSpeed = 50.0
+metadata/_custom_type_script = "uid://dar5t7cq5oqnt"

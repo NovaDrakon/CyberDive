@@ -605,7 +605,7 @@ position = Vector2(962, 719)
 
 [node name="mainCharacter" parent="." instance=ExtResource("13_7sasd")]
 z_index = 1
-position = Vector2(41, 77)
+position = Vector2(47, 48)
 
 [node name="gameCamera" parent="mainCharacter" index="2"]
 limit_right = 400

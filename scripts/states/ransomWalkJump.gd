@@ -12,8 +12,10 @@ var walkTime: float
 var jumpChance: float
 var jump := -350
 var bounces := 0
+var player: CharacterBody2D
 
 func walk():
+	player = get_tree().get_first_node_in_group("Player")
 	walkTime = 1
 
 func Enter():
@@ -46,6 +48,11 @@ func PhysicsUpdate(_delta: float):
 			flipDirection()
 			
 		enemy.velocity.x = moveSpeed * moveDirection
+	
+	var direction_x = player.global_position.x - enemy.global_position.x
+	
+	if abs(direction_x) < 90 and enemy.is_on_floor():
+		Transitioned.emit(self, "Chase")
 
 func flipDirection():
 	if moveDirection == 1:
@@ -55,4 +62,3 @@ func flipDirection():
 		moveDirection = 1
 		sideRay.set_rotation_degrees(270)
 	downRay.scale.x = -downRay.scale.x
-	bounces += 1

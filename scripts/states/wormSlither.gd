@@ -9,8 +9,10 @@ class_name Slither
 
 var moveDirection = -1
 var slitherTime: float
+var player: CharacterBody2D
 
 func walk():
+	player = get_tree().get_first_node_in_group("Player")
 	slitherTime = 1
 
 func Enter():
@@ -28,6 +30,11 @@ func PhysicsUpdate(_delta: float):
 			flipDirection()
 			
 		enemy.velocity.x = moveSpeed * moveDirection
+	
+	var direction_x = player.global_position.x - enemy.global_position.x
+	
+	if abs(direction_x) < 90 and enemy.is_on_floor():
+		Transitioned.emit(self, "Chase")
 
 func flipDirection():
 	if moveDirection == 1:

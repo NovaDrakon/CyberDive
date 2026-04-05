@@ -218,7 +218,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="msgPanel" type="Panel" parent="CanvasLayer/emailPanel"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -247,7 +246,7 @@ text = "Hello,
 
 You don’t know me, but I know you. I know that every day at your job feels the same: empty and meaningless. You keep working, day after day, but it never feels like what you imagined when you were younger, does it?
 
-That’s why I built something, something that I think you'll like. You deserve it. You’ll see what I mean soon enough. Another message with the details should be in you imbox now.
+That’s why I built something, something that I think you'll like. You deserve it. You’ll see what I mean soon enough. Another message with the details should be in you inbox now.
 
 - Cy"
 label_settings = ExtResource("4_bjxje")
@@ -267,7 +266,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "If you're reading this, that means you have likely read my last message, good. Most people don't choose to continue.
 
-I made a VM for you to practice in. Attached is the tutorial of my app. It will teach you the basics.
+I made a VM for you to practice in. Attached is the tutorial of my app. It will teach you the basics including introducing you to your first enemy: Malware. Don't worry, I've given you access to a sword so you can defend yourself.
 
 I assure you, I don't have any malicious intent. I only wish to help you.
 
@@ -306,7 +305,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "You completed the tutorial, good.
 
-This first \"level\" will introduce you to Malware. They are weak and easy to take down, perfect for training. I have given you access to your first weapon, a sword.
+This first \"level\" will give you more practice against Malware and navigating through levels.
 
 My next email will have the download for the shop. There, you can buy other weapons and spells. Upgrades will be available once you complete your \"trial\" period.
 
@@ -345,7 +344,9 @@ offset_right = -8.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Time to introduce you to a pesky thief, Ransomware. Carefully to not get hit, it has quick hands and will not return what is yours until it's defeated.
+text = "Good job beating the easy level. Now time for something slightly more challenging.
+
+Time to introduce you to a pesky thief, Ransomware. Carefully to not get hit, it has quick hands and will not return what is yours until it's defeated.
 
 Good Luck.
 
@@ -399,7 +400,7 @@ offset_right = -8.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Remember the Tojan Horse? Of Odyssus' trick? Now it's time to see if you can succeed where the Trojans failed.
+text = "Remember the Trojan Horse? Of Odyssus' trick? Now it's time to see if you can succeed where the Trojans failed.
 
 Good Luck.
 

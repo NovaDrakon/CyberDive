@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dthpsku3o6ul5"]
+[gd_scene load_steps=12 format=4 uid="uid://dthpsku3o6ul5"]
 
 [ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelParts/levelSetup.gd" id="1_ltyhc"]
 [ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/Themes/levelBG.tres" id="2_7c8cl"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ds767hhcmqump" path="res://scenes/levelParts/deathZone.tscn" id="6_gxlvy"]
 [ext_resource type="PackedScene" uid="uid://cu46doc6h0v3o" path="res://scenes/levelParts/flag.tscn" id="6_kortl"]
 [ext_resource type="PackedScene" uid="uid://dpb68mlkcalon" path="res://scenes/levelParts/folder.tscn" id="7_7c8cl"]
+[ext_resource type="PackedScene" uid="uid://dcwj0g56tkgh5" path="res://scenes/enemies/malware.tscn" id="9_gxlvy"]
 [ext_resource type="LabelSettings" uid="uid://dvtmpmyjkq1ws" path="res://assets/fonts/LevelLabel.tres" id="9_xbkvj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyhc"]
@@ -49,12 +50,24 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="Text"]
-offset_left = 385.0
+offset_left = 369.0
 offset_top = -91.0
-offset_right = 569.0
+offset_right = 613.0
 offset_bottom = -56.0
 scale = Vector2(0.5, 0.5)
-text = "Press 'W' to jump."
+text = "Press 'W' or 'Space' to jump."
+label_settings = ExtResource("9_xbkvj")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="Text"]
+offset_left = 114.0
+offset_top = 176.0
+offset_right = 358.0
+offset_bottom = 211.0
+scale = Vector2(0.5, 0.5)
+text = "Press the 'LMB' to attack."
 label_settings = ExtResource("9_xbkvj")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -118,9 +131,17 @@ position = Vector2(432, 61)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone"]
 shape = SubResource("RectangleShape2D_ltyhc")
 
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Malware" parent="Enemies" instance=ExtResource("9_gxlvy")]
+position = Vector2(259, 351)
+
+[node name="Malware2" parent="Enemies" instance=ExtResource("9_gxlvy")]
+position = Vector2(885, -37)
+
 [node name="mainCharacter" parent="." instance=ExtResource("5_xbkvj")]
 z_index = 1
-position = Vector2(30, 1)
+position = Vector2(33, -31)
 
 [node name="gameCamera" parent="mainCharacter" index="2"]
 limit_top = -240

@@ -37,6 +37,9 @@ func _physics_process(delta: float):
 		velocity.y = jump
 		coyoteTimer = 0
 	
+	if Input.is_action_just_released("Jump") and velocity.y < 0:
+		velocity.y = jump / 4.0
+	
 	if is_on_floor() and !$jumpBuffer.is_stopped():
 		velocity.y = jump
 	

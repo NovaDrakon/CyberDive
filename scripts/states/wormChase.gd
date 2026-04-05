@@ -1,0 +1,23 @@
+extends State
+class_name WormChase
+
+@export var enemy: CharacterBody2D
+@export var moveSpeed: float
+@onready var downRay: RayCast2D = $"../../downRay"
+var player: CharacterBody2D
+
+func Enter():
+	player = get_tree().get_first_node_in_group("Player")
+	
+func PhysicsUpdate(_delta: float):
+	var direction_x = player.global_position.x - enemy.global_position.x
+	
+	if abs(direction_x) > 25 and enemy.is_on_floor():
+		if not downRay.is_colliding():
+			enemy.velocity.x = 0
+		enemy.velocity.x = moveSpeed * sign(direction_x)
+	else:
+		enemy.velocity.x = 0
+	
+	if abs(direction_x) > 90:
+		Transitioned.emit(self, "Walk")

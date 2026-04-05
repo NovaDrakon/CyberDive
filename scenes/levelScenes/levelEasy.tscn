@@ -172,7 +172,7 @@ position = Vector2(656, 78)
 position = Vector2(1383, 189)
 
 [node name="mainCharacter" parent="." instance=ExtResource("8_k4qyh")]
-position = Vector2(40, 78)
+position = Vector2(41, 52)
 
 [node name="gameCamera" parent="mainCharacter" index="2"]
 limit_right = 479
