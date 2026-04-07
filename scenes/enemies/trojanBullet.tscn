@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwvsa6wiql567"]
+
+[ext_resource type="Texture2D" uid="uid://m426mxv3ilxj" path="res://assets/sprites/enemySprites/trojanBulletL.png" id="1_8y7t1"]
+[ext_resource type="Script" uid="uid://ffedxi3kvdm5" path="res://scripts/enemies/trojanBullet.gd" id="1_ayuwu"]
+[ext_resource type="Texture2D" uid="uid://78tbv4mb1w6r" path="res://assets/sprites/enemySprites/trojanBulletR.png" id="3_qen07"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkhn6"]
+atlas = ExtResource("1_8y7t1")
+region = Rect2(0, 0, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q5nw"]
+atlas = ExtResource("3_qen07")
+region = Rect2(0, 0, 33, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8k7qu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkhn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q5nw")
+}],
+"loop": false,
+"name": &"Bullet",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfec7"]
+size = Vector2(27, 20)
+
+[node name="trojanBullet" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_ayuwu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8k7qu")
+animation = &"Bullet"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_sfec7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

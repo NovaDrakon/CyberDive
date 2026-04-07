@@ -10,7 +10,8 @@ func _physics_process(delta):
 	if velocity.length() > 0:
 		animatedSprite2D.play("Slither")
 	else:
-		animatedSprite2D.play("Idle")
+		if GlobalVars.health <= 0:
+			animatedSprite2D.play("Idle")
 	
 	if velocity.x > 0:
 		animatedSprite2D.flip_h = true

@@ -26,7 +26,7 @@ func Update(_delta: float):
 			folderRayL.set_enabled(false)
 			folderRayR.set_enabled(false)
 			await get_tree().create_timer(0.75).timeout
-			Transitioned.emit(self, "Float")
+			Transitioned.emit(self, "Move")
 
 func PhysicsUpdate(_delta: float):
 	pass

@@ -44,8 +44,10 @@ func _process(_delta: float) -> void:
 			self.set_frame(2)
 		3:
 			self.set_frame(1)
-		0:
-			self.set_frame(0)
+	
+	if GlobalVars.mana <= 0:
+		self.set_frame(0)
+	
 	saveMana()
 
 func saveMana():

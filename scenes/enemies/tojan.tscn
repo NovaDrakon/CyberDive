@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://f503nw6sbhv5"]
+[gd_scene load_steps=46 format=3 uid="uid://f503nw6sbhv5"]
 
 [ext_resource type="Script" uid="uid://ddqymrn4ia6u1" path="res://scripts/enemies/tojan.gd" id="1_qhphk"]
 [ext_resource type="Texture2D" uid="uid://cip73bogolgio" path="res://assets/sprites/enemySprites/trojanAwaken.png" id="2_6nsd3"]
@@ -8,11 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://wbksnjogeq3f" path="res://assets/sprites/enemySprites/trojanFloatL.png" id="5_xbiy7"]
 [ext_resource type="Texture2D" uid="uid://dwbht2mcx1na1" path="res://assets/sprites/enemySprites/trojanFloatR.png" id="6_iyeek"]
 [ext_resource type="Texture2D" uid="uid://cqm0qrkys6jwv" path="res://assets/sprites/eButton.png" id="7_4dpwr"]
-[ext_resource type="Script" uid="uid://biop0ilecxtla" path="res://scripts/states/stateMachine.gd" id="7_cooye"]
+[ext_resource type="Script" uid="uid://biop0ilecxtla" path="res://scripts/enemyStates/stateMachine.gd" id="7_cooye"]
 [ext_resource type="Texture2D" uid="uid://2lylyqnb530l" path="res://assets/sprites/levelSprites/folder.png" id="8_j4rf5"]
-[ext_resource type="Script" uid="uid://c87qy5ru12bts" path="res://scripts/states/tojanFloat.gd" id="8_primo"]
-[ext_resource type="Script" uid="uid://bh3uldwpxlmyo" path="res://scripts/states/trojanAwaken.gd" id="12_j4rf5"]
-[ext_resource type="Script" uid="uid://dar5t7cq5oqnt" path="res://scripts/states/trojanChase.gd" id="13_xbiy7"]
+[ext_resource type="PackedScene" uid="uid://cwvsa6wiql567" path="res://scenes/enemies/trojanBullet.tscn" id="10_iyeek"]
+[ext_resource type="Script" uid="uid://bh3uldwpxlmyo" path="res://scripts/enemyStates/trojanAwaken.gd" id="12_j4rf5"]
+[ext_resource type="Script" uid="uid://w3fya013ba4b" path="res://scripts/enemyStates/enemyAttack.gd" id="15_fogd2"]
+[ext_resource type="Script" uid="uid://dnlulxs0rqv2t" path="res://scripts/enemyStates/enemyChase.gd" id="15_u6f12"]
+[ext_resource type="Script" uid="uid://5jp6eh6y0x7y" path="res://scripts/enemyStates/enemyMove.gd" id="15_ycygn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fogd2"]
 atlas = ExtResource("2_ontp0")
@@ -277,6 +279,10 @@ frame_progress = 0.97818285
 light_mask = 8
 shape = SubResource("RectangleShape2D_qhphk")
 
+[node name="trojanBullet" parent="." instance=ExtResource("10_iyeek")]
+visible = false
+position = Vector2(-12, 1)
+
 [node name="folderRayL" type="RayCast2D" parent="."]
 position = Vector2(3, 0)
 target_position = Vector2(-28, 0)
@@ -290,22 +296,46 @@ target_position = Vector2(-28, 2.4478377e-06)
 collision_mask = 4
 hit_from_inside = true
 
+[node name="sideRay" type="RayCast2D" parent="."]
+enabled = false
+target_position = Vector2(0, 5)
+
+[node name="downRay" type="RayCast2D" parent="."]
+enabled = false
+target_position = Vector2(0, 5)
+
+[node name="attackDelay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("initalState")]
 script = ExtResource("7_cooye")
 initalState = NodePath("Awaken")
-
-[node name="Float" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("8_primo")
-enemy = NodePath("../..")
-metadata/_custom_type_script = "uid://c87qy5ru12bts"
 
 [node name="Awaken" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("12_j4rf5")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://bh3uldwpxlmyo"
 
-[node name="Chase" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("13_xbiy7")
+[node name="Attack" type="Node" parent="stateMachine" node_paths=PackedStringArray("weapon")]
+script = ExtResource("15_fogd2")
+weapon = NodePath("../../trojanBullet")
+wait = 1.5
+weaponType = 1
+metadata/_custom_type_script = "uid://w3fya013ba4b"
+
+[node name="Move" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("15_ycygn")
 enemy = NodePath("../..")
-moveSpeed = 50.0
-metadata/_custom_type_script = "uid://dar5t7cq5oqnt"
+moveType = 2
+moveSpeed = 50
+chaseDistance = 60
+metadata/_custom_type_script = "uid://5jp6eh6y0x7y"
+
+[node name="Chase" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("15_u6f12")
+enemy = NodePath("../..")
+moveSpeed = 50
+chaseDistance = 60
+walkDistance = 90
+metadata/_custom_type_script = "uid://dnlulxs0rqv2t"

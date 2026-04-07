@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb1yytvtb567b"]
+
+[ext_resource type="Script" uid="uid://b3ej2sascc4pu" path="res://scripts/enemies/wormBite.gd" id="1_00ytu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43wom"]
+size = Vector2(12, 8)
+
+[node name="wormBite" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_00ytu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_43wom")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

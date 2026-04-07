@@ -1,13 +1,15 @@
-[gd_scene load_steps=25 format=3 uid="uid://ck0vrctxifvos"]
+[gd_scene load_steps=27 format=3 uid="uid://ck0vrctxifvos"]
 
 [ext_resource type="Script" uid="uid://ururfictf26o" path="res://scripts/enemies/ransomware.gd" id="1_g4yo4"]
 [ext_resource type="Texture2D" uid="uid://c3k3y4givyprt" path="res://assets/sprites/enemySprites/ransomHurt.png" id="1_u6wbt"]
 [ext_resource type="Texture2D" uid="uid://bjbytqa1hhnkr" path="res://assets/sprites/enemySprites/ransomIdle.png" id="2_lrmc6"]
 [ext_resource type="Texture2D" uid="uid://d3k3i1bvnbqal" path="res://assets/sprites/enemySprites/ransomJump.png" id="3_re2bu"]
 [ext_resource type="Texture2D" uid="uid://cw6uta1raqg6" path="res://assets/sprites/enemySprites/ransomWalk.png" id="4_htico"]
-[ext_resource type="Script" uid="uid://biop0ilecxtla" path="res://scripts/states/stateMachine.gd" id="7_bseht"]
-[ext_resource type="Script" uid="uid://coxugmfipamq8" path="res://scripts/states/ransomWalkJump.gd" id="7_syv6i"]
-[ext_resource type="Script" uid="uid://4ybi2uwu77rv" path="res://scripts/states/ransomChase.gd" id="8_syv6i"]
+[ext_resource type="PackedScene" uid="uid://w8l3dwdfqu8t" path="res://scenes/enemies/ransomKnife.tscn" id="6_jp7lp"]
+[ext_resource type="Script" uid="uid://biop0ilecxtla" path="res://scripts/enemyStates/stateMachine.gd" id="7_bseht"]
+[ext_resource type="Script" uid="uid://5jp6eh6y0x7y" path="res://scripts/enemyStates/enemyMove.gd" id="10_hrd1o"]
+[ext_resource type="Script" uid="uid://w3fya013ba4b" path="res://scripts/enemyStates/enemyAttack.gd" id="10_itvas"]
+[ext_resource type="Script" uid="uid://dnlulxs0rqv2t" path="res://scripts/enemyStates/enemyChase.gd" id="10_w3eew"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6wbt"]
 atlas = ExtResource("1_u6wbt")
@@ -152,10 +154,14 @@ light_mask = 8
 position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_syv6i")
 
+[node name="ransomKnife" parent="." instance=ExtResource("6_jp7lp")]
+visible = false
+position = Vector2(-13, -13)
+
 [node name="sideRay" type="RayCast2D" parent="."]
-position = Vector2(2.842171e-14, -5)
+position = Vector2(2.842171e-14, -9)
 rotation = 1.5707964
-scale = Vector2(0.600002, 1.6800025)
+scale = Vector2(1.7200024, 1.6800025)
 target_position = Vector2(0, 7.738084)
 
 [node name="downRay" type="RayCast2D" parent="."]
@@ -163,17 +169,32 @@ position = Vector2(0, -6)
 scale = Vector2(0.7, 0.45999876)
 target_position = Vector2(-12.857143, 15.217433)
 
+[node name="attackDelay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("initalState")]
 script = ExtResource("7_bseht")
-initalState = NodePath("Walk")
+initalState = NodePath("Move")
 
-[node name="Walk" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("7_syv6i")
+[node name="Attack" type="Node" parent="stateMachine" node_paths=PackedStringArray("weapon")]
+script = ExtResource("10_itvas")
+weapon = NodePath("../../ransomKnife")
+wait = 0.25
+metadata/_custom_type_script = "uid://w3fya013ba4b"
+
+[node name="Move" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("10_hrd1o")
 enemy = NodePath("../..")
-metadata/_custom_type_script = "uid://coxugmfipamq8"
+moveType = 1
+moveSpeed = 70
+chaseDistance = 40
+metadata/_custom_type_script = "uid://5jp6eh6y0x7y"
 
 [node name="Chase" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("8_syv6i")
+script = ExtResource("10_w3eew")
 enemy = NodePath("../..")
-moveSpeed = 70.0
-metadata/_custom_type_script = "uid://4ybi2uwu77rv"
+moveSpeed = 70
+chaseDistance = 25
+walkDistance = 60
+metadata/_custom_type_script = "uid://dnlulxs0rqv2t"
