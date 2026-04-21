@@ -46,7 +46,6 @@ enabled=PackedStringArray("res://addons/save_system/plugin.cfg")
 
 Player=""
 Enemy=""
-"Moving Platform"=""
 
 [input]
 

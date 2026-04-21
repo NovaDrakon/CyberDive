@@ -16,19 +16,19 @@ func Enter():
 	player = get_tree().get_first_node_in_group("Player")
 	
 func PhysicsUpdate(_delta: float):
-	var directionX = player.global_position.x - enemy.global_position.x
+	var distance = player.global_position.x - enemy.global_position.x
 	
-	if abs(directionX) > chaseDistance and enemy.is_on_floor():
+	if abs(distance) > chaseDistance and enemy.is_on_floor():
 		if not downRay.is_colliding():
 			enemy.velocity.x = 0
-		enemy.velocity.x = moveSpeed * sign(directionX)
+		enemy.velocity.x = moveSpeed * sign(distance)
 		
-	elif abs(directionX) < chaseDistance and enemy.is_on_floor():
+	elif abs(distance) < chaseDistance and enemy.is_on_floor():
 		if attackDelay.is_stopped() and GlobalVars.health > 0:
 			enemy.velocity.x = 0
 			Transitioned.emit(self, "Attack")
 		else:
 			enemy.velocity.x = 0
 	
-	if abs(directionX) > walkDistance:
+	if abs(distance) > walkDistance:
 		Transitioned.emit(self, "Walk")

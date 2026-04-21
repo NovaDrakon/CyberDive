@@ -281,7 +281,6 @@ shape = SubResource("RectangleShape2D_qhphk")
 
 [node name="trojanBullet" parent="." instance=ExtResource("10_iyeek")]
 visible = false
-position = Vector2(-12, 1)
 
 [node name="folderRayL" type="RayCast2D" parent="."]
 position = Vector2(3, 0)
@@ -291,8 +290,7 @@ hit_from_inside = true
 
 [node name="folderRayR" type="RayCast2D" parent="."]
 position = Vector2(-3, 0)
-rotation = 3.1415927
-target_position = Vector2(-28, 2.4478377e-06)
+target_position = Vector2(28, 0)
 collision_mask = 4
 hit_from_inside = true
 
@@ -320,8 +318,7 @@ metadata/_custom_type_script = "uid://bh3uldwpxlmyo"
 [node name="Attack" type="Node" parent="stateMachine" node_paths=PackedStringArray("weapon")]
 script = ExtResource("15_fogd2")
 weapon = NodePath("../../trojanBullet")
-wait = 1.5
-weaponType = 1
+wait = 0.5
 metadata/_custom_type_script = "uid://w3fya013ba4b"
 
 [node name="Move" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]

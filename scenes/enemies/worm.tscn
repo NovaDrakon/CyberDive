@@ -286,12 +286,12 @@ position = Vector2(-18, -14)
 position = Vector2(-1.9073486e-06, -13)
 rotation = 1.5707964
 scale = Vector2(0.5199973, 1.6800025)
-target_position = Vector2(1.9073486e-06, 10.119031)
+target_position = Vector2(0, 11)
 
 [node name="downRay" type="RayCast2D" parent="."]
 position = Vector2(-9.536743e-07, -5.999998)
 scale = Vector2(0.6, 0.40999874)
-target_position = Vector2(-19.999998, 17.07322)
+target_position = Vector2(-20, 17)
 
 [node name="attackDelay" type="Timer" parent="."]
 wait_time = 1.7999999999999998
@@ -318,6 +318,6 @@ metadata/_custom_type_script = "uid://5jp6eh6y0x7y"
 script = ExtResource("12_pjbdh")
 enemy = NodePath("../..")
 moveSpeed = 40
-chaseDistance = 25
+chaseDistance = 40
 walkDistance = 60
 metadata/_custom_type_script = "uid://dnlulxs0rqv2t"

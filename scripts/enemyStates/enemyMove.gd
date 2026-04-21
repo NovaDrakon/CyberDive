@@ -28,9 +28,8 @@ func move():
 	match moveType:
 		MoveType.Float:
 			xyDirection = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-			moveTime = 1.5
-		MoveType.WalkJump or MoveType.Walk:
-			moveTime = 1
+	
+	moveTime = 1
 
 func Enter():
 	player = get_tree().get_first_node_in_group("Player")
@@ -43,38 +42,39 @@ func Update(delta: float):
 		move()
 
 func PhysicsUpdate(_delta: float):
-	match moveType:
-		MoveType.Float:
-			enemy.velocity.x = moveSpeed * xDirection
+	if enemy:
+		match moveType:
+			MoveType.Float:
+				enemy.velocity = moveSpeed * xyDirection
 		
-		MoveType.WalkJump:
-			if enemy.position.y > 0:
-				jump = 0
-			else:
-				jump = -300
+			MoveType.WalkJump:
+				if enemy.position.y > 0:
+					jump = 0
+				else:
+					jump = -300
 		
-			if not downRay.is_colliding():
-				Jump()
+				if not downRay.is_colliding():
+					Jump()
 			
-			if sideRay.is_colliding():
-				flipDirection()
+				if sideRay.is_colliding():
+					flipDirection()
 			
-			enemy.velocity.x = moveSpeed * xDirection
+				enemy.velocity.x = moveSpeed * xDirection
 		
-		MoveType.Walk:
-			if not downRay.is_colliding() or sideRay.is_colliding():
-				flipDirection()
+			MoveType.Walk:
+				if not downRay.is_colliding() or sideRay.is_colliding():
+					flipDirection()
 			
-			enemy.velocity.x = moveSpeed * xDirection
+				enemy.velocity.x = moveSpeed * xDirection
 	
-	var distance = player.global_position.x - enemy.global_position.x
+		var distance = player.global_position.x - enemy.global_position.x
 	
-	if moveType == MoveType.Float:
-		if abs(distance) < chaseDistance:
-			Transitioned.emit(self, "Chase")
-	else:
-		if abs(distance) < chaseDistance and enemy.is_on_floor():
-			Transitioned.emit(self, "Chase")
+		if moveType == MoveType.Float:
+			if abs(distance) < chaseDistance:
+				Transitioned.emit(self, "Chase")
+		else:
+			if abs(distance) < chaseDistance and enemy.is_on_floor():
+				Transitioned.emit(self, "Chase")
 
 func flipDirection():
 	if xDirection == 1:

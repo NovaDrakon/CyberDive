@@ -2,44 +2,117 @@
 
 [ext_resource type="Texture2D" uid="uid://m426mxv3ilxj" path="res://assets/sprites/enemySprites/trojanBulletL.png" id="1_8y7t1"]
 [ext_resource type="Script" uid="uid://ffedxi3kvdm5" path="res://scripts/enemies/trojanBullet.gd" id="1_ayuwu"]
-[ext_resource type="Texture2D" uid="uid://78tbv4mb1w6r" path="res://assets/sprites/enemySprites/trojanBulletR.png" id="3_qen07"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rkhn6"]
-atlas = ExtResource("1_8y7t1")
-region = Rect2(0, 0, 33, 33)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0q5nw"]
-atlas = ExtResource("3_qen07")
-region = Rect2(0, 0, 33, 33)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8k7qu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rkhn6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0q5nw")
-}],
-"loop": false,
-"name": &"Bullet",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfec7"]
 size = Vector2(27, 20)
+
+[sub_resource type="Animation" id="Animation_qen07"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D/Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ayuwu"]
+resource_name = "ShootL"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0), Vector2(-150.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D/Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_rkhn6"]
+resource_name = "ShootR"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0), Vector2(150.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D/Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rkhn6"]
+_data = {
+&"RESET": SubResource("Animation_qen07"),
+&"ShootL": SubResource("Animation_ayuwu"),
+&"ShootR": SubResource("Animation_rkhn6")
+}
 
 [node name="trojanBullet" type="Area2D"]
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_ayuwu")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_8k7qu")
-animation = &"Bullet"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_sfec7")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-0.5, 0)
+texture = ExtResource("1_8y7t1")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rkhn6")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
