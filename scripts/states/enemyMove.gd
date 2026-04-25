@@ -4,7 +4,7 @@ class_name EnemyMove
 @export var enemy: CharacterBody2D
 @export var moveType: MoveType
 @export var moveSpeed: int
-@export var chaseDistance: int
+@export var chaseDistance: Vector2
 
 @onready var sideRay: RayCast2D = $"../../sideRay"
 @onready var downRay: RayCast2D = $"../../downRay"
@@ -28,7 +28,6 @@ func move():
 	match moveType:
 		MoveType.Float:
 			xyDirection = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-	
 	moveTime = 1
 
 func Enter():
@@ -42,39 +41,38 @@ func Update(delta: float):
 		move()
 
 func PhysicsUpdate(_delta: float):
-	if enemy:
-		match moveType:
-			MoveType.Float:
-				enemy.velocity = moveSpeed * xyDirection
+	match moveType:
+		MoveType.Float:
+			enemy.velocity = moveSpeed * xyDirection
 		
-			MoveType.WalkJump:
-				if enemy.position.y > 0:
-					jump = 0
-				else:
-					jump = -300
-		
-				if not downRay.is_colliding():
-					Jump()
-			
-				if sideRay.is_colliding():
-					flipDirection()
-			
-				enemy.velocity.x = moveSpeed * xDirection
-		
-			MoveType.Walk:
-				if not downRay.is_colliding() or sideRay.is_colliding():
-					flipDirection()
-			
-				enemy.velocity.x = moveSpeed * xDirection
+		MoveType.WalkJump:
+			if enemy.position.y > 0:
+				jump = 0
+			else:
+				jump = -300
 	
-		var distance = player.global_position.x - enemy.global_position.x
+			if not downRay.is_colliding():
+				Jump()
+			
+			if sideRay.is_colliding():
+				flipDirection()
+			
+			enemy.velocity.x = moveSpeed * xDirection
+		
+		MoveType.Walk:
+			if not downRay.is_colliding() or sideRay.is_colliding():
+				flipDirection()
+			
+			enemy.velocity.x = moveSpeed * xDirection
 	
-		if moveType == MoveType.Float:
-			if abs(distance) < chaseDistance:
-				Transitioned.emit(self, "Chase")
-		else:
-			if abs(distance) < chaseDistance and enemy.is_on_floor():
-				Transitioned.emit(self, "Chase")
+	var distance = player.global_position - enemy.global_position
+	
+	if moveType == MoveType.Float:
+		if abs(distance) < chaseDistance:
+			Transitioned.emit(self, "Chase")
+	else:
+		if abs(distance) < chaseDistance and enemy.is_on_floor():
+			Transitioned.emit(self, "Chase")
 
 func flipDirection():
 	if xDirection == 1:

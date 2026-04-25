@@ -1,9 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://d354hodrrybid"]
+[gd_scene load_steps=26 format=3 uid="uid://d354hodrrybid"]
 
 [ext_resource type="Script" uid="uid://bu47nlnqtwofy" path="res://scripts/levelParts/mainCharacter.gd" id="1_0n537"]
 [ext_resource type="Texture2D" uid="uid://btr6kfcki6y5c" path="res://assets/sprites/characterSprites/mcIdle.png" id="2_0n537"]
+[ext_resource type="Script" uid="uid://biop0ilecxtla" path="res://scripts/states/stateMachine.gd" id="2_7okkd"]
+[ext_resource type="Texture2D" uid="uid://bl54pgylmw4rp" path="res://assets/sprites/characterSprites/mcSideBlank.png" id="2_87x83"]
 [ext_resource type="Texture2D" uid="uid://cuv8xcobw4bv3" path="res://assets/sprites/characterSprites/mcJump.png" id="3_trh3t"]
+[ext_resource type="PackedScene" uid="uid://mvg1tyjdv65a" path="res://scenes/levelParts/attackArm.tscn" id="4_8wfj0"]
 [ext_resource type="PackedScene" uid="uid://cpdb8lr5irun" path="res://scenes/desktop/gameCamera.tscn" id="4_gff5m"]
+[ext_resource type="Script" uid="uid://cusqy0r068j3p" path="res://scripts/states/playerMove.gd" id="5_58aqw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_trh3t"]
 atlas = ExtResource("2_0n537")
@@ -57,6 +61,14 @@ region = Rect2(224, 0, 32, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_87x83")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_trh3t")
 }, {
 "duration": 1.0,
@@ -106,6 +118,43 @@ animations = [{
 radius = 6.0
 height = 54.0
 
+[sub_resource type="Animation" id="Animation_8wfj0"]
+resource_name = "Attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Attack"]
+}
+
+[sub_resource type="Animation" id="Animation_4g8id"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_87x83"]
+_data = {
+&"Attack": SubResource("Animation_8wfj0"),
+&"RESET": SubResource("Animation_4g8id")
+}
+
 [node name="mainCharacter" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 4
 collision_mask = 3
@@ -120,6 +169,10 @@ sprite_frames = SubResource("SpriteFrames_oh4mb")
 animation = &"Idle"
 autoplay = "Idle"
 
+[node name="attackArm" parent="." instance=ExtResource("4_8wfj0")]
+visible = false
+position = Vector2(-1, -4)
+
 [node name="characterBody" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_trh3t")
 
@@ -128,3 +181,23 @@ shape = SubResource("CapsuleShape2D_trh3t")
 [node name="jumpBuffer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="attackDelay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_87x83")
+}
+
+[node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("initalState")]
+script = ExtResource("2_7okkd")
+initalState = NodePath("Move")
+
+[node name="Move" type="Node" parent="stateMachine" node_paths=PackedStringArray("player", "weapon")]
+script = ExtResource("5_58aqw")
+player = NodePath("../..")
+weapon = NodePath("../../attackArm")
+wait = 0.4
+metadata/_custom_type_script = "uid://cusqy0r068j3p"

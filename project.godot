@@ -25,7 +25,6 @@ buses/default_bus_layout="res://assets/audio/busLayout.tres"
 SaveSystem="*res://addons/save_system/save_system.gd"
 GameSounds="*res://scenes/desktop/gameSounds.tscn"
 GlobalVars="*res://scripts/levelParts/globalVars.gd"
-GlobalFuncs="*res://scripts/levelParts/globalFuncs.gd"
 
 [display]
 
@@ -46,6 +45,7 @@ enabled=PackedStringArray("res://addons/save_system/plugin.cfg")
 
 Player=""
 Enemy=""
+Weapon=""
 
 [input]
 
@@ -90,16 +90,14 @@ Interact={
 
 2d_render/layer_1="Levels"
 2d_render/layer_2="Interactables"
-2d_render/layer_3="Players"
+2d_render/layer_3="Player"
 2d_render/layer_4="Enemies"
-2d_render/layer_6="Windows"
-2d_render/layer_7="UI Interfaces"
-2d_render/layer_9="Level Edges "
+2d_render/layer_6="Weapon"
 2d_physics/layer_1="Levels"
 2d_physics/layer_2="Interactables"
 2d_physics/layer_3="Player"
 2d_physics/layer_4="Enemies"
-2d_physics/layer_5="Platform"
+2d_physics/layer_6="PlayerWeapon"
 
 [rendering]
 

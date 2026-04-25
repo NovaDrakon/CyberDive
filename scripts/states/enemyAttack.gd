@@ -1,6 +1,7 @@
 extends State
 class_name EnemyAttack
 
+@export var enemy: CharacterBody2D
 @export var weapon: Area2D
 @export var wait: float
 

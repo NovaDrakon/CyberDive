@@ -77,7 +77,7 @@ position = Vector2(-73, -242)
 z_index = 1
 position = Vector2(-385, -109)
 
-[node name="gameCamera" parent="mainCharacter" index="2"]
+[node name="gameCamera" parent="mainCharacter" index="3"]
 limit_left = -416
 limit_top = -352
 limit_right = 400

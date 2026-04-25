@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ck0vrctxifvos"]
+[gd_scene load_steps=28 format=3 uid="uid://ck0vrctxifvos"]
 
 [ext_resource type="Script" uid="uid://ururfictf26o" path="res://scripts/enemies/ransomware.gd" id="1_g4yo4"]
 [ext_resource type="Texture2D" uid="uid://c3k3y4givyprt" path="res://assets/sprites/enemySprites/ransomHurt.png" id="1_u6wbt"]
@@ -6,10 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://d3k3i1bvnbqal" path="res://assets/sprites/enemySprites/ransomJump.png" id="3_re2bu"]
 [ext_resource type="Texture2D" uid="uid://cw6uta1raqg6" path="res://assets/sprites/enemySprites/ransomWalk.png" id="4_htico"]
 [ext_resource type="PackedScene" uid="uid://w8l3dwdfqu8t" path="res://scenes/enemies/ransomKnife.tscn" id="6_jp7lp"]
-[ext_resource type="Script" uid="uid://biop0ilecxtla" path="res://scripts/enemyStates/stateMachine.gd" id="7_bseht"]
-[ext_resource type="Script" uid="uid://5jp6eh6y0x7y" path="res://scripts/enemyStates/enemyMove.gd" id="10_hrd1o"]
-[ext_resource type="Script" uid="uid://w3fya013ba4b" path="res://scripts/enemyStates/enemyAttack.gd" id="10_itvas"]
-[ext_resource type="Script" uid="uid://dnlulxs0rqv2t" path="res://scripts/enemyStates/enemyChase.gd" id="10_w3eew"]
+[ext_resource type="Script" uid="uid://biop0ilecxtla" path="res://scripts/states/stateMachine.gd" id="7_bseht"]
+[ext_resource type="Script" uid="uid://5jp6eh6y0x7y" path="res://scripts/states/enemyMove.gd" id="10_hrd1o"]
+[ext_resource type="Script" uid="uid://w3fya013ba4b" path="res://scripts/states/enemyAttack.gd" id="10_itvas"]
+[ext_resource type="Script" uid="uid://dnlulxs0rqv2t" path="res://scripts/states/enemyChase.gd" id="10_w3eew"]
+[ext_resource type="Script" uid="uid://xofxri8fv7tf" path="res://scripts/states/enemyHurt.gd" id="11_hrd1o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6wbt"]
 atlas = ExtResource("1_u6wbt")
@@ -146,7 +147,7 @@ script = ExtResource("1_g4yo4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_m3eqf")
-animation = &"Idle"
+animation = &"Hurt"
 autoplay = "Idle"
 
 [node name="characterBody" type="CollisionShape2D" parent="."]
@@ -177,8 +178,9 @@ one_shot = true
 script = ExtResource("7_bseht")
 initalState = NodePath("Move")
 
-[node name="Attack" type="Node" parent="stateMachine" node_paths=PackedStringArray("weapon")]
+[node name="Attack" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy", "weapon")]
 script = ExtResource("10_itvas")
+enemy = NodePath("../..")
 weapon = NodePath("../../ransomKnife")
 wait = 0.25
 metadata/_custom_type_script = "uid://w3fya013ba4b"
@@ -188,13 +190,20 @@ script = ExtResource("10_hrd1o")
 enemy = NodePath("../..")
 moveType = 1
 moveSpeed = 70
-chaseDistance = 40
+chaseDistance = Vector2(50, 15)
 metadata/_custom_type_script = "uid://5jp6eh6y0x7y"
 
 [node name="Chase" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("10_w3eew")
 enemy = NodePath("../..")
 moveSpeed = 70
-chaseDistance = 40
-walkDistance = 60
+chaseDistance = Vector2(50, 15)
+attackDistance = Vector2(45, 15)
 metadata/_custom_type_script = "uid://dnlulxs0rqv2t"
+
+[node name="Hurt" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("11_hrd1o")
+enemy = NodePath("../..")
+enemyType = 1
+hurtTime = 0.4
+metadata/_custom_type_script = "uid://xofxri8fv7tf"

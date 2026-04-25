@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name TrojanEnemy
 
 @onready var animatedSprite2D: AnimatedSprite2D = $AnimatedSprite2D
-@onready var animatedSprite2D2: AnimatedSprite2D = $AnimatedSprite2D2
+@onready var interactSprite: AnimatedSprite2D = $interactSprite
 @onready var folderRayL: RayCast2D = $folderRayL
 @onready var folderRayR: RayCast2D = $folderRayR
 
@@ -11,9 +11,9 @@ func _ready() -> void:
 
 func _process(_delta):
 	if folderRayL.is_colliding() or folderRayR.is_colliding():
-		animatedSprite2D2.show()
+		interactSprite.show()
 	else:
-		animatedSprite2D2.hide()
+		interactSprite.hide()
 
 func _physics_process(_delta):
 	move_and_slide()

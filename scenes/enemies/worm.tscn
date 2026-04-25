@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://c6j4fownlis6a"]
+[gd_scene load_steps=45 format=3 uid="uid://c6j4fownlis6a"]
 
 [ext_resource type="Script" uid="uid://cw1jy5wpgvv0f" path="res://scripts/enemies/worm.gd" id="1_1xq0g"]
 [ext_resource type="Texture2D" uid="uid://dsd7ed0xeqase" path="res://assets/sprites/enemySprites/wormAttack.png" id="1_jmnwm"]
@@ -7,11 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://ghy1kvvwepcl" path="res://assets/sprites/enemySprites/wormHurt.png" id="3_6sr0l"]
 [ext_resource type="Texture2D" uid="uid://bqn6lnnio5arl" path="res://assets/sprites/enemySprites/wormSlither.png" id="5_w744w"]
 [ext_resource type="Texture2D" uid="uid://y4bexceqsqf2" path="res://assets/sprites/enemySprites/wormUp.png" id="6_juwyw"]
-[ext_resource type="Script" uid="uid://biop0ilecxtla" path="res://scripts/enemyStates/stateMachine.gd" id="8_akbxx"]
+[ext_resource type="Script" uid="uid://biop0ilecxtla" path="res://scripts/states/stateMachine.gd" id="8_akbxx"]
 [ext_resource type="PackedScene" uid="uid://cb1yytvtb567b" path="res://scenes/enemies/wormBite.tscn" id="8_ylbc2"]
-[ext_resource type="Script" uid="uid://5jp6eh6y0x7y" path="res://scripts/enemyStates/enemyMove.gd" id="12_hgn4a"]
-[ext_resource type="Script" uid="uid://dnlulxs0rqv2t" path="res://scripts/enemyStates/enemyChase.gd" id="12_pjbdh"]
-[ext_resource type="Script" uid="uid://w3fya013ba4b" path="res://scripts/enemyStates/enemyAttack.gd" id="12_yrys7"]
+[ext_resource type="Script" uid="uid://5jp6eh6y0x7y" path="res://scripts/states/enemyMove.gd" id="12_hgn4a"]
+[ext_resource type="Script" uid="uid://dnlulxs0rqv2t" path="res://scripts/states/enemyChase.gd" id="12_pjbdh"]
+[ext_resource type="Script" uid="uid://w3fya013ba4b" path="res://scripts/states/enemyAttack.gd" id="12_yrys7"]
+[ext_resource type="Script" uid="uid://xofxri8fv7tf" path="res://scripts/states/enemyHurt.gd" id="13_hgn4a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sr0l"]
 atlas = ExtResource("1_jmnwm")
@@ -267,10 +268,8 @@ script = ExtResource("1_1xq0g")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_m3eqf")
-animation = &"Bite"
+animation = &"Hurt"
 autoplay = "Idle"
-frame = 5
-frame_progress = 1.0
 
 [node name="characterBody" type="CollisionShape2D" parent="."]
 light_mask = 8
@@ -301,8 +300,9 @@ one_shot = true
 script = ExtResource("8_akbxx")
 initalState = NodePath("Move")
 
-[node name="Attack" type="Node" parent="stateMachine" node_paths=PackedStringArray("weapon")]
+[node name="Attack" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy", "weapon")]
 script = ExtResource("12_yrys7")
+enemy = NodePath("../..")
 weapon = NodePath("../../wormBite")
 wait = 0.7
 metadata/_custom_type_script = "uid://w3fya013ba4b"
@@ -311,13 +311,20 @@ metadata/_custom_type_script = "uid://w3fya013ba4b"
 script = ExtResource("12_hgn4a")
 enemy = NodePath("../..")
 moveSpeed = 40
-chaseDistance = 40
+chaseDistance = Vector2(50, 15)
 metadata/_custom_type_script = "uid://5jp6eh6y0x7y"
 
 [node name="Chase" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("12_pjbdh")
 enemy = NodePath("../..")
 moveSpeed = 40
-chaseDistance = 40
-walkDistance = 60
+chaseDistance = Vector2(50, 15)
+attackDistance = Vector2(45, 15)
 metadata/_custom_type_script = "uid://dnlulxs0rqv2t"
+
+[node name="Hurt" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("13_hgn4a")
+enemy = NodePath("../..")
+enemyType = 2
+hurtTime = 0.5
+metadata/_custom_type_script = "uid://xofxri8fv7tf"
