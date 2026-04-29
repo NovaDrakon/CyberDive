@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bu1tprvtkbr3l"]
+[gd_scene load_steps=30 format=4 uid="uid://bu1tprvtkbr3l"]
 
 [ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelParts/levelSetup.gd" id="1_30svh"]
 [ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/Themes/levelBG.tres" id="2_6w52n"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://f503nw6sbhv5" path="res://scenes/enemies/tojan.tscn" id="11_cv30n"]
 [ext_resource type="PackedScene" uid="uid://dcwj0g56tkgh5" path="res://scenes/enemies/malware.tscn" id="12_328xa"]
 [ext_resource type="PackedScene" uid="uid://ck0vrctxifvos" path="res://scenes/enemies/ransomware.tscn" id="13_cow6o"]
+[ext_resource type="Texture2D" uid="uid://brv723swcmclb" path="res://assets/sprites/codeStatic.png" id="13_t5s4d"]
+[ext_resource type="PackedScene" uid="uid://c03gwbrhqnsmu" path="res://scenes/levelParts/byteGiver.tscn" id="16_t4vk5"]
 
 [sub_resource type="Animation" id="Animation_5i84r"]
 resource_name = "Move"
@@ -224,6 +226,10 @@ tile_set = ExtResource("3_h63bk")
 [node name="flag" parent="." instance=ExtResource("10_a2gm5")]
 position = Vector2(1960, 1160)
 
+[node name="byteGiver" parent="." instance=ExtResource("16_t4vk5")]
+position = Vector2(1960, 1160)
+bytesGained = 15
+
 [node name="Platforms" type="Node" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms"]
@@ -422,17 +428,68 @@ position = Vector2(408, 724)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone"]
 shape = SubResource("RectangleShape2D_cv30n")
 
+[node name="TextureRect" type="TextureRect" parent="Dangers/deathZone"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = -4.0
+offset_right = 312.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_t5s4d")
+expand_mode = 1
+stretch_mode = 1
+
 [node name="deathZone2" parent="Dangers" instance=ExtResource("10_nkhjh")]
 position = Vector2(544, 1300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone2"]
 shape = SubResource("RectangleShape2D_d1pon")
 
+[node name="TextureRect" type="TextureRect" parent="Dangers/deathZone2"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -4.0
+offset_right = 224.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_t5s4d")
+expand_mode = 1
+stretch_mode = 1
+
 [node name="deathZone3" parent="Dangers" instance=ExtResource("10_nkhjh")]
 position = Vector2(1640, 1284)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone3"]
 shape = SubResource("RectangleShape2D_cow6o")
+
+[node name="TextureRect" type="TextureRect" parent="Dangers/deathZone3"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.0
+offset_top = -4.0
+offset_right = 264.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_t5s4d")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -473,7 +530,7 @@ position = Vector2(1160, 686)
 z_index = 1
 position = Vector2(615, 401)
 
-[node name="gameCamera" parent="mainCharacter" index="2"]
+[node name="gameCamera" parent="mainCharacter" index="3"]
 position = Vector2(1, -9)
 limit_right = 512
 limit_bottom = 272

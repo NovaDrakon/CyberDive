@@ -292,7 +292,6 @@ text = "tutorial.exe"
 icon = ExtResource("12_fp8g5")
 
 [node name="emailMsg2" type="Label" parent="CanvasLayer/emailPanel/msgPanel"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -307,7 +306,7 @@ text = "You completed the tutorial, good.
 
 This first \"level\" will give you more practice against Malware and navigating through levels. You will now start gaining a currency called 'bytes' at the end of each level that you can use in the shop.
 
-My next email will have the download for the shop. There, you can buy other weapons and spells. Upgrades will be available once you complete your \"trial\" period.
+My next email will have the download for the shop. There, you can buy other weapons and spells. Upgrades will be available once you complete your \"trial\" period. By the end of this level you will have 10 'bytes'.
 
 Good Luck.
 
@@ -495,7 +494,7 @@ layout_mode = 2
 theme = ExtResource("5_qpmm6")
 toggle_mode = true
 button_group = ExtResource("12_wfn1d")
-text = "Learning the Basics"
+text = "Malware 101"
 icon = ExtResource("5_06rbv")
 
 [node name="email_2" type="Button" parent="CanvasLayer/emailList"]
@@ -503,7 +502,7 @@ layout_mode = 2
 theme = ExtResource("5_qpmm6")
 toggle_mode = true
 button_group = ExtResource("12_wfn1d")
-text = "Malware 101"
+text = "Malware Continued"
 icon = ExtResource("5_06rbv")
 
 [node name="email_3" type="Button" parent="CanvasLayer/emailList"]
@@ -511,7 +510,7 @@ layout_mode = 2
 theme = ExtResource("5_qpmm6")
 toggle_mode = true
 button_group = ExtResource("12_wfn1d")
-text = "Trojans & Ransoms"
+text = "Ransomware"
 icon = ExtResource("5_06rbv")
 
 [node name="email_4" type="Button" parent="CanvasLayer/emailList"]
@@ -519,7 +518,7 @@ layout_mode = 2
 theme = ExtResource("5_qpmm6")
 toggle_mode = true
 button_group = ExtResource("12_wfn1d")
-text = "Worms & Locks"
+text = "Trojans"
 icon = ExtResource("5_06rbv")
 
 [node name="email_5" type="Button" parent="CanvasLayer/emailList"]

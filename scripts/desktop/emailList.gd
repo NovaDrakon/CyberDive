@@ -20,6 +20,7 @@ extends VBoxContainer
 
 var currentEmail := 0
 var shopAvailable := false
+var gameIntroDone := false
 
 func _ready():
 	for button in emailButtons.get_buttons():
@@ -63,6 +64,8 @@ func _on_email_button_pressed(button):
 		"email_0":
 			messages[0].show()
 			currentEmail = 1
+			gameIntroDone = true
+			finishIntro()
 		"email_1":
 			messages[1].show()
 			currentEmail = 2
@@ -82,7 +85,11 @@ func _on_email_button_pressed(button):
 func _on_cyber_shop_download_pressed() -> void:
 	shopAvailable = true
 	saveShopStatus()
-	
+
+func finishIntro():
+	SaveSystem.set_var("gameIntroDone", gameIntroDone)
+	SaveSystem.save(GlobalVars.filePath)
+
 func saveEmail():
 	SaveSystem.set_var("currentEmail", currentEmail)
 	SaveSystem.save(GlobalVars.filePath)

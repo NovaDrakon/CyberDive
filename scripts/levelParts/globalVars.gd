@@ -14,3 +14,6 @@ var byteShotDmg := 12
 
 var swordBought := false
 var byteShotBought := false
+
+# Other
+var gameIntroDone := false

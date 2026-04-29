@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvbhxdxldm58x"
-path="res://.godot/imported/dictionaryIcon.png-cfd2da2e6e92288ba860d478677513eb.ctex"
+uid="uid://ckta5f278m5te"
+path="res://.godot/imported/notif.png-5ce182381445ee966e8b495a82b92eb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dictionaryIcon.png"
-dest_files=["res://.godot/imported/dictionaryIcon.png-cfd2da2e6e92288ba860d478677513eb.ctex"]
+source_file="res://assets/sprites/notif.png"
+dest_files=["res://.godot/imported/notif.png-5ce182381445ee966e8b495a82b92eb4.ctex"]
 
 [params]
 

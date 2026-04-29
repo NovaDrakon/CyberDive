@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://b54eb4hick28n"]
+[gd_scene load_steps=15 format=4 uid="uid://b54eb4hick28n"]
 
 [ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelParts/levelSetup.gd" id="1_ub7yk"]
 [ext_resource type="TileSet" uid="uid://c08bi8v8n42rw" path="res://assets/sprites/levelSprites/backgroundTiles.tres" id="2_mwgql"]
@@ -6,10 +6,12 @@
 [ext_resource type="TileSet" uid="uid://c1he15yukhmbh" path="res://assets/sprites/levelSprites/foregroundTiles.tres" id="3_k1raf"]
 [ext_resource type="PackedScene" uid="uid://cu46doc6h0v3o" path="res://scenes/levelParts/flag.tscn" id="5_hr1uh"]
 [ext_resource type="PackedScene" uid="uid://dpb68mlkcalon" path="res://scenes/levelParts/folder.tscn" id="6_43xm0"]
+[ext_resource type="PackedScene" uid="uid://c03gwbrhqnsmu" path="res://scenes/levelParts/byteGiver.tscn" id="6_k4qyh"]
 [ext_resource type="PackedScene" uid="uid://bvgf3bv1mu8pl" path="res://scenes/levelParts/cameraChanger.tscn" id="7_43xm0"]
 [ext_resource type="PackedScene" uid="uid://ds767hhcmqump" path="res://scenes/levelParts/deathZone.tscn" id="7_r3n8n"]
 [ext_resource type="PackedScene" uid="uid://d354hodrrybid" path="res://scenes/levelParts/mainCharacter.tscn" id="8_k4qyh"]
 [ext_resource type="PackedScene" uid="uid://dcwj0g56tkgh5" path="res://scenes/enemies/malware.tscn" id="9_r3n8n"]
+[ext_resource type="Texture2D" uid="uid://brv723swcmclb" path="res://assets/sprites/codeStatic.png" id="10_k1q4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3n8n"]
 size = Vector2(192, 8)
@@ -35,6 +37,10 @@ tile_set = ExtResource("3_k1raf")
 
 [node name="flag" parent="." instance=ExtResource("5_hr1uh")]
 position = Vector2(1248, 248)
+
+[node name="byteGiver" parent="." instance=ExtResource("6_k4qyh")]
+position = Vector2(1248, 248)
+bytesGained = 10
 
 [node name="Doors" type="Node" parent="."]
 
@@ -157,6 +163,23 @@ wait_time = 0.45
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dangers/deathZone"]
 shape = SubResource("RectangleShape2D_k1q4k")
 
+[node name="TextureRect" type="TextureRect" parent="Dangers/deathZone"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.0
+offset_top = -4.0
+offset_right = 408.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_k1q4k")
+expand_mode = 1
+stretch_mode = 1
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Malware" parent="Enemies" instance=ExtResource("9_r3n8n")]
@@ -172,9 +195,10 @@ position = Vector2(656, 78)
 position = Vector2(1383, 189)
 
 [node name="mainCharacter" parent="." instance=ExtResource("8_k4qyh")]
+z_index = 1
 position = Vector2(41, 52)
 
-[node name="gameCamera" parent="mainCharacter" index="2"]
+[node name="gameCamera" parent="mainCharacter" index="3"]
 limit_right = 479
 limit_bottom = 239
 
