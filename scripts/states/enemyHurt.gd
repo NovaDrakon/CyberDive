@@ -11,7 +11,8 @@ enum EnemyType {
 	Malware,
 	Ransomware,
 	Worm,
-	Trojan
+	Trojan,
+	Boss
 }
 
 var maxHealth: int
@@ -27,6 +28,8 @@ func _ready() -> void:
 			maxHealth = 30
 		EnemyType.Trojan:
 			maxHealth = 80
+		EnemyType.Boss:
+			maxHealth = 120
 
 func Enter():
 	if maxHealth > 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dekg7nrbw3kbt"]
+[gd_scene load_steps=38 format=3 uid="uid://dekg7nrbw3kbt"]
 
 [ext_resource type="Script" uid="uid://c4koxep8ny4u1" path="res://scripts/desktop/desktop.gd" id="1_8gp1d"]
 [ext_resource type="Texture2D" uid="uid://dfspedwjqaut2" path="res://assets/sprites/background.jpg" id="1_81rff"]
@@ -81,9 +81,6 @@ font = ExtResource("5_gl26t")
 font_size = 24
 font_color = Color(0.043137256, 0.38431373, 0.67058825, 1)
 outline_color = Color(0.17508438, 0.29932195, 0.67671543, 1)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hp75d"]
-load_path = "res://.godot/imported/dictionaryIcon.png-cfd2da2e6e92288ba860d478677513eb.ctex"
 
 [node name="Desktop" type="Control"]
 layout_mode = 3
@@ -389,15 +386,6 @@ button_group = ExtResource("15_iamu6")
 text = "Cyber Shop"
 icon = ExtResource("8_nikxi")
 
-[node name="dictionaryTab" type="Button" parent="CanvasLayer/tabs"]
-visible = false
-layout_mode = 2
-theme = ExtResource("10_6r5gw")
-toggle_mode = true
-button_group = ExtResource("15_iamu6")
-text = "Dictionary"
-icon = SubResource("CompressedTexture2D_hp75d")
-
 [node name="emailNotif" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(110, 80)
 scale = Vector2(2, 2)
@@ -421,5 +409,4 @@ visible = false
 [connection signal="toggled" from="CanvasLayer/tabs/startButton" to="CanvasLayer/tabs" method="_on_start_button_toggled"]
 [connection signal="pressed" from="CanvasLayer/tabs/starMailTab" to="CanvasLayer/tabs" method="_on_star_mail_tab_pressed"]
 [connection signal="pressed" from="CanvasLayer/tabs/cyberShopTab" to="CanvasLayer/tabs" method="_on_cyber_shop_tab_pressed"]
-[connection signal="pressed" from="CanvasLayer/tabs/dictionaryTab" to="CanvasLayer/tabs" method="_on_dictionary_tab_pressed"]
 [connection signal="focus_entered" from="cyberShop" to="cyberShop" method="_on_focus_entered"]

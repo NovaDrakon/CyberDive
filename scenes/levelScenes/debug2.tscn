@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://0nvyicgw77gg" path="res://scripts/levelParts/levelSetup.gd" id="1_g0l8g"]
 [ext_resource type="TileSet" uid="uid://c08bi8v8n42rw" path="res://assets/sprites/levelSprites/backgroundTiles.tres" id="2_o3dua"]
-[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/Themes/levelBG.tres" id="2_o20k0"]
+[ext_resource type="Theme" uid="uid://j2e3a5yots8b" path="res://assets/themes/levelBG.tres" id="2_o20k0"]
 [ext_resource type="TileSet" uid="uid://c1he15yukhmbh" path="res://assets/sprites/levelSprites/foregroundTiles.tres" id="3_v6icl"]
 [ext_resource type="PackedScene" uid="uid://d354hodrrybid" path="res://scenes/levelParts/mainCharacter.tscn" id="4_8b61e"]
 [ext_resource type="PackedScene" uid="uid://cu46doc6h0v3o" path="res://scenes/levelParts/flag.tscn" id="5_o20k0"]
