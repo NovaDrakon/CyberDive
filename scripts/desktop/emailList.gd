@@ -21,6 +21,7 @@ extends VBoxContainer
 var currentEmail := 0
 var shopAvailable := false
 var gameIntroDone := false
+var emails = [email0, email1, email2, email3, email4, email5]
 
 func _ready():
 	for button in emailButtons.get_buttons():
@@ -40,14 +41,29 @@ func _process(_delta: float) -> void:
 		0:
 			emails2[0].show()
 		1:
+			emails2[0].show()
 			emails2[1].show()
 		2:
+			emails2[0].show()
+			emails2[1].show()
 			emails2[2].show()
 		3:
+			emails2[0].show()
+			emails2[1].show()
+			emails2[2].show()
 			emails2[3].show()
 		4:
+			emails2[0].show()
+			emails2[1].show()
+			emails2[2].show()
+			emails2[3].show()
 			emails2[4].show()
 		5:
+			emails2[0].show()
+			emails2[1].show()
+			emails2[2].show()
+			emails2[3].show()
+			emails2[4].show()
 			emails2[5].show()
 	
 func _on_email_button_pressed(button):

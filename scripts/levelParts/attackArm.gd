@@ -15,4 +15,5 @@ func _process(_delta: float) -> void:
 		collisionShape2D.set_disabled(true)
 
 func _on_body_entered(body: CharacterBody2D) -> void:
-	pass
+	if body.is_in_group("Enemy"):
+		pass

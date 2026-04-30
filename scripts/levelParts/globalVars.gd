@@ -17,3 +17,4 @@ var byteShotBought := false
 
 # Other
 var gameIntroDone := false
+var currentEmail := 0

@@ -260,6 +260,7 @@ size = Vector2(30, 24)
 
 [node name="Trojan" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 8
+motion_mode = 1
 script = ExtResource("1_qhphk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cx8k5hjvs7c7p"]
+[gd_scene format=3 uid="uid://cx8k5hjvs7c7p"]
 
 [ext_resource type="Theme" uid="uid://cu8ckn8ivsyew" path="res://assets/Themes/windowTheme2.tres" id="1_8pc6c"]
 [ext_resource type="Script" uid="uid://yft8todwmj54" path="res://scripts/desktop/cyberShop.gd" id="2_ogqy6"]
@@ -128,7 +128,7 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="cyberShop" type="Window"]
+[node name="cyberShop" type="Window" unique_id=764190344]
 transparent_bg = true
 canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
@@ -139,14 +139,14 @@ unresizable = true
 theme = ExtResource("1_8pc6c")
 script = ExtResource("2_ogqy6")
 
-[node name="backgroundPanel" type="Panel" parent="."]
+[node name="backgroundPanel" type="Panel" parent="." unique_id=723333640]
 offset_left = 5.0
 offset_top = 22.0
 offset_right = 795.0
 offset_bottom = 795.0
 theme = SubResource("Theme_4kpex")
 
-[node name="bytesAmount" type="Button" parent="."]
+[node name="bytesAmount" type="Button" parent="." unique_id=638647767]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -162,19 +162,19 @@ button_mask = 0
 text = "$$$"
 icon = ExtResource("6_1c252")
 
-[node name="shopPanel" parent="." instance=ExtResource("7_nvr21")]
+[node name="shopPanel" parent="." unique_id=1699159583 instance=ExtResource("7_nvr21")]
 offset_left = 12.0
 offset_top = 245.0
 offset_right = 398.0
 offset_bottom = 788.0
 
-[node name="upgradePanel" parent="." instance=ExtResource("8_25bhf")]
+[node name="upgradePanel" parent="." unique_id=1033892450 instance=ExtResource("8_25bhf")]
 offset_left = 404.0
 offset_top = 245.0
 offset_right = 788.0
 offset_bottom = 788.0
 
-[node name="merchantPanel" type="Panel" parent="."]
+[node name="merchantPanel" type="Panel" parent="." unique_id=465081474]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -185,7 +185,7 @@ offset_bottom = 239.0
 grow_horizontal = 2
 theme = SubResource("Theme_vc1t5")
 
-[node name="merchant" type="AnimatedSprite2D" parent="merchantPanel"]
+[node name="merchant" type="AnimatedSprite2D" parent="merchantPanel" unique_id=437802774]
 position = Vector2(194.00003, 116)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_341ru")

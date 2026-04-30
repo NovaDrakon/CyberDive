@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://vnq3rfnwmmqa"]
+[gd_resource type="Theme" format=3 uid="uid://vnq3rfnwmmqa"]
 
 [ext_resource type="FontFile" uid="uid://b602wbdxpq13j" path="res://assets/fonts/retro-pixel-arcade.ttf" id="1_x0aw0"]
 [ext_resource type="Texture2D" uid="uid://ck8axq335vk45" path="res://assets/sprites/roundedGreenButton.png" id="2_x0aw0"]

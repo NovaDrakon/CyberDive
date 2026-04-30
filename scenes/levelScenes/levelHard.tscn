@@ -528,7 +528,7 @@ position = Vector2(1160, 686)
 
 [node name="mainCharacter" parent="." instance=ExtResource("8_fi5nf")]
 z_index = 1
-position = Vector2(615, 401)
+position = Vector2(29, 228)
 
 [node name="gameCamera" parent="mainCharacter" index="3"]
 position = Vector2(1, -9)

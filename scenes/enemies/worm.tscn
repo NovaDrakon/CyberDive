@@ -319,7 +319,7 @@ script = ExtResource("12_pjbdh")
 enemy = NodePath("../..")
 moveSpeed = 40
 chaseDistance = Vector2(50, 15)
-attackDistance = Vector2(45, 10)
+attackDistance = Vector2(20, 10)
 metadata/_custom_type_script = "uid://dnlulxs0rqv2t"
 
 [node name="Hurt" type="Node" parent="stateMachine" node_paths=PackedStringArray("enemy")]
