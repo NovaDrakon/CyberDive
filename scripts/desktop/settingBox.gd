@@ -3,47 +3,28 @@ extends Panel
 @onready var musicVolumeSlider: HSlider = $musicVolumeSlider
 @onready var sfxVolumeSlider: HSlider = $sfxVolumeSlider
 
-var musicVal: float
-var sfxVal: float
+var musicVolume := 6.0
+var sfxVolume := 6.0
 
 func _ready() -> void:
 	loadAudio()
 
 func _on_music_volume_slider_value_changed(value: float) -> void:
-	value = musicVal
-	AudioServer.set_bus_volume_db(1, value)
+	musicVolume = value
+	AudioServer.set_bus_volume_db(1, musicVolume)
 	saveAudio()
+
 
 func _on_sfx_volume_slider_value_changed(value: float) -> void:
-	value = sfxVal
-	AudioServer.set_bus_volume_db(2, value)
+	sfxVolume = value
+	AudioServer.set_bus_volume_db(2, sfxVolume)
 	saveAudio()
 
-func _on_music_mute_button_toggled(toggled_on: bool) -> void:
-	GameSounds.click.play()
-	
-	if toggled_on:
-		AudioServer.set_bus_mute(1, true)
-		saveAudio()
-	else:
-		AudioServer.set_bus_mute(1, false)
-		saveAudio()
-
-func _on_sfx_mute_button_toggled(toggled_on: bool) -> void:
-	GameSounds.click.play()
-	
-	if toggled_on:
-		AudioServer.set_bus_mute(2, true)
-		saveAudio()
-	else:
-		AudioServer.set_bus_mute(2, false)
-		saveAudio()
-
 func saveAudio():
-	SaveSystem.set_var("music", musicVal)
-	SaveSystem.set_var("sfx", sfxVal)
+	SaveSystem.set_var("musicVolume", musicVolume)
+	SaveSystem.set_var("sfxVolume", sfxVolume)
 	SaveSystem.save(GlobalVars.filePath)
 
 func loadAudio():
-	musicVal = SaveSystem.get_var("music", musicVal)
-	sfxVal = SaveSystem.get_var("sfx", sfxVal)
+	musicVolumeSlider.value = SaveSystem.get_var("musicVolume", musicVolume)
+	sfxVolumeSlider.value = SaveSystem.get_var("sfxVolume", sfxVolume)

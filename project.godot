@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Cyber Dive"
-config/version="3.2.11"
+config/version="3.4.0"
 run/main_scene="res://scenes/desktop/mainMenu.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://bondd7aot77e4"

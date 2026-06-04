@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bh41me2fibbno" path="res://scenes/levelParts/door.tscn" id="6_jdos7"]
 [ext_resource type="PackedScene" uid="uid://bqe8pacyheqfa" path="res://scenes/levelParts/staticPlatform.tscn" id="6_sxoek"]
 [ext_resource type="Script" uid="uid://brlpsvlpvud1l" path="res://scripts/levelParts/bossDoor.gd" id="7_5c5hk"]
+[ext_resource type="Script" uid="uid://bpr4bdbacwlw4" path="res://scripts/levelParts/bossMusicStop.gd" id="8_j4bos"]
 [ext_resource type="PackedScene" uid="uid://cu46doc6h0v3o" path="res://scenes/levelParts/flag.tscn" id="9_snib0"]
 [ext_resource type="PackedScene" uid="uid://dpb68mlkcalon" path="res://scenes/levelParts/folder.tscn" id="10_2nlec"]
 [ext_resource type="PackedScene" uid="uid://ds767hhcmqump" path="res://scenes/levelParts/deathZone.tscn" id="10_5vfh1"]
@@ -17,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://dcwj0g56tkgh5" path="res://scenes/enemies/malware.tscn" id="14_e2n02"]
 [ext_resource type="Texture2D" uid="uid://brv723swcmclb" path="res://assets/sprites/codeStatic.png" id="15_61ktm"]
 [ext_resource type="PackedScene" uid="uid://f503nw6sbhv5" path="res://scenes/enemies/tojan.tscn" id="15_o771q"]
-[ext_resource type="Script" uid="uid://c6l1fl7vvaxa0" path="res://scripts/levelParts/bossSpawner.gd" id="16_j4bos"]
 [ext_resource type="PackedScene" uid="uid://c6j4fownlis6a" path="res://scenes/enemies/worm.tscn" id="16_o771q"]
 [ext_resource type="PackedScene" uid="uid://ck0vrctxifvos" path="res://scenes/enemies/ransomware.tscn" id="17_t7olf"]
 [ext_resource type="PackedScene" uid="uid://c03gwbrhqnsmu" path="res://scenes/levelParts/byteGiver.tscn" id="19_buvec"]
@@ -25,6 +25,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buvec"]
 size = Vector2(64, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi086"]
 
 [sub_resource type="Animation" id="Animation_jdos7"]
 resource_name = "Move"
@@ -337,9 +339,6 @@ size = Vector2(256, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htkuv"]
 size = Vector2(336, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cek43"]
-size = Vector2(8, 42)
-
 [node name="levelBoss" type="Node2D"]
 script = ExtResource("1_wcyr1")
 
@@ -372,6 +371,14 @@ script = ExtResource("6_bsr0d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bossMusic"]
 shape = SubResource("RectangleShape2D_buvec")
+
+[node name="bossMusicStop" type="Area2D" parent="."]
+position = Vector2(2025, 287)
+collision_mask = 4
+script = ExtResource("8_j4bos")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bossMusicStop"]
+shape = SubResource("RectangleShape2D_gi086")
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -680,13 +687,6 @@ texture = ExtResource("15_61ktm")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="bossSpawner" type="Area2D" parent="."]
-position = Vector2(1754, 507)
-script = ExtResource("16_j4bos")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bossSpawner"]
-shape = SubResource("RectangleShape2D_cek43")
-
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Malware" parent="Enemies" instance=ExtResource("14_e2n02")]
@@ -725,9 +725,9 @@ limit_right = 400
 limit_bottom = 608
 
 [connection signal="body_entered" from="bossMusic" to="bossMusic" method="_on_body_entered"]
+[connection signal="body_entered" from="bossMusicStop" to="bossMusicStop" method="_on_body_entered"]
 [connection signal="body_entered" from="Doors/doorOpener" to="Doors/doorMover" method="_on_door_opener_body_entered"]
 [connection signal="body_entered" from="Doors/doorCloser" to="Doors/doorMover" method="_on_door_closer_body_entered"]
-[connection signal="body_entered" from="bossSpawner" to="bossSpawner" method="_on_body_entered"]
 
 [editable path="Doors/folder"]
 [editable path="Doors/folder2"]
